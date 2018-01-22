@@ -221,7 +221,7 @@
             }
         }
         
-        @media screen and (max-width: 792px) {
+        @media screen and (max-width: 806px) {
             .nav li {
                 margin: 10px 3px 6px 0px!important
             }
@@ -752,6 +752,12 @@
     .advantage-box-2>div {}
 } */
         /* iphone8sp  大多手机 以下 */
+        
+        @media screen and (max-width:515px) {
+            .nav {
+                width: 100%;
+            }
+        }
         
         @media screen and (max-width:495px) {
             /* 调整导航 */
