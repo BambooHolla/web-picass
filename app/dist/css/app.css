@@ -179,6 +179,67 @@
         }
         /* 自适应----------------------------------------------------------- */
         
+        @media only screen and (min-width: 496px) {
+            .download-title-1 {
+                display: none;
+                width: 112px;
+                margin: 0 auto 1.5rem;
+            }
+            .download-title-2 {
+                display: block;
+            }
+        }
+        
+        @media only screen and (max-width: 496px) {
+            .advantage-box>div>.content-box {
+                height: 14rem;
+            }
+            .box-content {
+                padding: 0;
+                height: 100%;
+            }
+            .box-content .content-txt {
+                width: 90%;
+                margin: 0 auto;
+                font-size: 1.3rem;
+            }
+            .down-title {
+                display: none;
+            }
+            .download-title-1 {
+                display: block;
+                width: 112px;
+                margin: 18px auto;
+            }
+            .download-title-2 {
+                display: none;
+            }
+            .download-box-1 {
+                width: 100%;
+                margin-top: 1rem;
+                margin-left: 2.5rem;
+            }
+            .download-box {
+                display: flex;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                margin: 0 auto!important;
+            }
+            .download-box-2 {
+                width: 80%;
+                margin: 0 auto;
+            }
+            .download-iphone {
+                width: 208px;
+                height: 343px;
+            }
+            .download-box-2 ul {
+                margin: 0;
+            }
+        }
+        
         @media (min-width: 992px) {
             .download-box {
                 width: 970px;
@@ -819,9 +880,13 @@
             /* .advantage-box>div {
         display: block;
     } */
+            .section4 .advantage-box>div>.content-box {
+                margin: 1rem 0;
+            }
             .advantage-box>div>.content-box {
-                width: 50%;
-                height: 14rem;
+                width: 100%;
+                height: 13rem;
+                margin: .5rem 0;
             }
             .advantage-title {
                 margin-bottom: 4rem;
@@ -845,7 +910,7 @@
             /* 下面是home_3 五筒排布 */
             .content-title>span {
                 display: block;
-                font-size: 1.4rem;
+                font-size: 1.8rem;
                 color: #b38623;
             }
             .content-title img {
@@ -859,7 +924,7 @@
                 margin-bottom: 1rem;
             }
             .box-content .content-txt {
-                font-size: 1rem;
+                font-size: 1.5rem;
             }
             .box-content>div img {
                 width: 2.6rem;
@@ -868,70 +933,20 @@
             .advantage-box-1>div:nth-child(1) img {
                 width: 2.34rem;
             }
-            /* 下面是home_3 列排布 */
-            /* .box-content {
-        overflow: hidden;
-        padding: 0;
-        margin: 0 auto 0 auto;
-        text-align: left;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    .box-content>div,
-    .box-content>p {
-        padding: 0;
-        margin: 0;
-        display: inline-block;
-        height: auto;
-        width: auto;
-        vertical-align: middle;
-    }
-    .box-content>div {
-        padding-top: 1rem;
-        margin-right: 1rem;
-        width: 2.6rem;
-    }
-    .advantage-box-1 .content-title,
-    .advantage-box-2 .content-title {
-        padding-top: 1rem;
-    } */
-            /* 图标，规格不统一，单选出来 */
-            /* .advantage-box-1 div:nth-child(1) .content-title {
-        width: 13.327rem;
-    }
-    .advantage-box-1 div:nth-child(2) .content-title {
-        width: 10.656rem;
-    }
-    .advantage-box-1 div:nth-child(3) .content-title {
-        width: 10.66136rem;
-    }
-    .advantage-box-2 div:nth-child(1) .content-title {
-        width: 12.25464rem;
-    }
-    .advantage-box-2 div:nth-child(2) .content-title {
-        width: 13.32664rem;
-    }
-    .advantage-box-1 {
-        margin-bottom: auto;
-    }
-    .box-content .content-txt {
-        font-size: 1.2rem;
-    } */
-            /* home_4 */
             .download-btn button {
-                width: 100px;
-                height: 35px;
+                width: 12rem;
+                height: 4.5rem;
             }
             .download-btn img {
-                width: 80%;
-                margin: 22px 0 0 24px;
+                width: 65%;
+                margin: 1.5rem 0 0 2rem;
             }
             .box-2-title img {
                 width: 120px;
                 margin: 18px auto 5px;
             }
             .section4 .download {
-                margin-top: 10rem;
+                margin-top: 0;
             }
             .section4 .download {
                 padding: 0;
@@ -960,43 +975,16 @@
                 width: 12rem;
             }
             .box-2-title .titile-2 {
-                font-size: 1.23rem;
+                font-size: 1.53rem;
             }
             .box-2-title {
                 box-sizing: border-box;
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
             .download-iphone {
-                width: 190px;
-                height: 300px;
+                width: 18rem;
+                height: 32rem;
             }
-            /* .download-btn>div,
-            .download-btn button {
-                width: 8.569152rem;
-                height: 2.654208rem;
-            }
-            .download-btn {
-                height: 7.617024rem;
-                margin-right: 9%;
-            }
-            .download-btn button {
-                display: flex;
-                justify-content: center;
-            }
-            .download-btn,
-            .download-code,
-            .download-code .code img {
-                width: 7.617024rem;
-                height: 7.617024rem;
-            }
-            .download-btn img {
-                width: 1.1904rem;
-                display: block;
-            }
-            .download-btn p {
-                font-size: 0.9rem;
-                margin: 0;
-            } */
             .down-foot ol a {
                 font-size: 1.2rem;
             }
@@ -1025,18 +1013,12 @@
             }
         }
         
-        @media screen and (max-width: 359px) {
-            .content-title>span {
-                font-size: 1.2rem;
-            }
-            .box-content .content-txt {
-                font-size: 0.8rem;
-            }
-        }
-        
         @media screen and (max-width: 320px) {
             .nav a {
                 font-size: 1.4rem;
+            }
+            .box-content .content-txt {
+                font-size: 1.3rem;
             }
         }
         /* 页面高度过大 调整 页面margin top */
@@ -1060,6 +1042,6 @@
                 padding: 1% 0%;
             }
             .advantage-box>div>.content-box {
-                height: 13rem;
+                height: 12rem;
             }
         }
