@@ -43,11 +43,11 @@ body {
     font-size: 20px;
 }
 
-#total {
+.rate span:nth-child(1) {
     color: #cb9c35;
 }
 
-#priceId {
+.rate span:nth-child(2) {
     font-size: 18px;
 }
 
@@ -133,8 +133,6 @@ body {
 .layui-layer {
     border-radius: 15px!important;
     box-shadow: 0 0 60px #c1b082!important;
-    width: 400px!important;
-    height: 282.1875px!important;
 }
 
 .layui-layer-content {
@@ -148,9 +146,9 @@ body {
 .layui-layer-content>div>div {
     margin-left: auto;
     margin-right: auto;
-    width: 76.125px;
-    height: 70.875px;
-    margin-top: 19.6875px;
+    width: 116px;
+    height: 108px;
+    margin-top: 30px;
 }
 
 .layui-layer-content img {
@@ -159,29 +157,29 @@ body {
 }
 
 .layui-layer-content p {
-    margin-top: 19.6875px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 65%;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
-    line-height: 24.9375px;
-    margin-bottom: 20px;
+    line-height: 38px;
+    margin-bottom: 10px;
 }
 
 .layui-layer-content a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 164.0625px;
-    height: 32.8125px;
+    width: 230px;
+    height: 43px;
     text-align: center;
     color: #c1b082;
     background-color: #fff;
-    line-height: 32.8125px;
+    line-height: 43px;
     font-size: 18px;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 

@@ -4,11 +4,6 @@
     opacity: 0;
 }
 
-.box-2-title .down-app,
-.picasso-txt span {
-    display: none;
-}
-
 
 /* 顶部导航栏 */
 
@@ -574,7 +569,6 @@
 
 .content-txt {
     font-size: 18px;
-    word-break: break-all;
 }
 
 

@@ -42,7 +42,7 @@ $(function() {
                 min: 6,
                 max: 20
             })) {
-            layer.msg('密码长度需最短6位，最长20位', {
+            layer.msg('密码长度输入错误', {
                 time: 1500
             });
             return;
@@ -60,8 +60,7 @@ $(function() {
             layer.msg('登录成功');
 
             setTimeout(function() {
-                var lj = window.location.hash;
-                location.href = "management.html" + lj;
+                location.href = "management.html";
             }, 800);
 
         }, function(err) {
