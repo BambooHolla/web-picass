@@ -153,7 +153,7 @@
             width: 333px;
             margin-bottom: 4%;
             position: relative;
-            background-image: url('../images/home/phone_big.png')
+            /* background-image: url('../images/home/phone_big.png') */
         }
         
         .left-block {
@@ -180,6 +180,9 @@
         /* 自适应----------------------------------------------------------- */
         
         @media only screen and (min-width: 496px) {
+            .download {
+                padding: 12rem 0 0 0;
+            }
             .download-title-1 {
                 display: none;
                 width: 112px;
@@ -187,6 +190,19 @@
             }
             .download-title-2 {
                 display: block;
+            }
+            .advantage-box>div {
+                margin: 5rem 0 0 0;
+            }
+            .content-box {
+                width: 42%;
+                height: 55%;
+            }
+            .section4 .advantage {
+                margin: 10rem 0;
+            }
+            .section4 .box-content {
+                height: 100%;
             }
         }
         
@@ -871,9 +887,9 @@
             .section3 .advantage {
                 margin-top: 1rem;
             }
-            /* .advantage-box>div {
-        display: block;
-    } */
+            .rate span:nth-child(2) {
+                font-size: 14px;
+            }
             .section4 .advantage-box>div>.content-box {
                 margin: 1rem 0;
             }
@@ -881,7 +897,6 @@
                 width: 100%;
                 height: 14rem;
                 margin: .5rem 0;
-                background: #b38623;
             }
             .advantage-title {
                 margin-bottom: 4rem;
