@@ -1,0 +1,44 @@
+{
+    "nav": {
+        "home": "Home",
+        "picasso": "Picasso",
+        "download": "Download",
+        "assets": "Assets",
+        "language": "English",
+        "languageSwich": "简体中文",
+        "login": "Login / Register",
+        "outLogin": "Exit"
+    },
+    "foot": {
+        "about": "About",
+        "contact": "Contact",
+        "service": "Service Hotline",
+        "copyright": "Copyright @2017 Xiamen Instinct Blockchain Technology Co., Ltd. I "
+    },
+    "section2": {
+        "txt-1": "Picasso will be officially on the line on 16th January 2018.",
+        "txt-2": "Now register as Picasso Member to get IBT incentive."
+    },
+    "section3": {
+        "title": "Advantages of Picasso",
+        "title-1": "Fast and secure technical assurance",
+        "txt-1": "Technical team with rich experience of transaction  platform and blockchain development provides you technical assurance.",
+        "title-2": "Rational integration of resources",
+        "txt-2": "Committed to connect and integrate  resources from all exchanges through standardized technical services.",
+        "title-3": "User Resources Sharing",
+        "txt-3": "All exchanges using Picasso Technology  can share user resources to reach highter-efficiency trades, more accurate maket info and market development.",
+        "title-4": "Standardized Technical Support",
+        "txt-4": "Offering a standardized platform construction  and top up services for digital transaction platforms and blockchain enterprises.",
+        "title-5": "Risk Sharing of various of assets",
+        "txt-5": "Standardized technical services and  rational integration among all exchanges promote the sharing of risks and enhance assurance."
+
+    },
+    "section4": {
+        "title": "PICASSO App",
+        "txt": "To experience reliable, high-efficiency and secure  digital asset transaction, please download Picasso App."
+
+
+    },
+    "flag": "img/french.jpg",
+    "alert": "Cliquez sur OK pour fermer."
+}
