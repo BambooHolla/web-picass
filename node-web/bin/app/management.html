@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <link href="dist/static/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>币加所</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./dist/css/hover.css"> -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/common.css">
+    <!-- 引用首页的样式 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/app.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/animate.css">
+
+    <!-- 本页样式调整 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/management.css">
+
+</head>
+
+<body style=" min-height: 100%;" id="body">
+    <div id="app">
+        <!-- 导航 -->
+        <nav class="nav right">
+            <div class="nav-logo">
+                <img src="./dist/images/home/nav_logo.png" alt="">
+            </div>
+            <div class="mob-navicon topbar-btn">
+                <!-- <img src="./dist/images/home/mob_navicon.png" alt=""> -->
+                <img class="mob-navicon-logo" src="./dist/images/home/nav_logo.png" alt="">
+            </div>
+            <ul class="web-nav">
+                <li class="tag nav-active ">
+                    <a href="index.html#home">首页</a>
+                </li>
+                <li class="tag ">
+                    <a href="index.html#picassotxt">币加所</a>
+                </li>
+                <li class="tag">
+                    <a href="index.html#download">下载中心</a>
+                </li>
+                <li class="tag">
+                    <a href="management.html">资产管理</a>
+                </li>
+                <li>
+                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt>简体中文</dt>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="">English</a> </dd>
+                    </dl>
+                </li>
+                <li class="login nav-login">
+                    <a href="register.html" style="font-size: 12px;">登录 / 注册</a>
+                </li>
+            </ul>
+        </nav>
+        <span class="target mobile-none"></span>
+        <div class="main">
+            <div class="assets-title">
+                <img src="./dist/images/management/Assets.png" alt="">
+                <p>币加所的优势</p>
+
+            </div>
+            <div class="assets-content">
+                <div class="rate">
+                    <!-- 折合数据接口获取，先写死 -->
+                    总资产折合：<span id="total">总资产加载中...</span> <span id="priceId"></span>
+                    <!-- 约等于 先去掉 -->
+                    <!-- ≈ <span id="CNY">0</span> CNY -->
+                </div>
+                <div>
+                    <ul id="content" cellspacing="0">
+                        <li class="content-th">
+                            <div>币 种</div>
+                            <div>可 用</div>
+                            <div>冻 结</div>
+                            <div>操 作</div>
+                        </li>
+                        <!-- 接口获取数据，字符串拼接，不可用 `` ie10不兼容 -->
+                        <!-- 模板 -->
+                        <!-- <li class="content-td">
+                            <div>
+                                <div>USDT</div>
+                            </div>
+                            <div>
+                                <div>0.00000000</div>
+                            </div>
+                            <div>
+                                <div>0.00000000</div>
+                            </div>
+                            <div>
+                                <div class="content-btn">
+                                    <button class="warning">提币</button>
+                                    <button class="warning">充币</button>
+                                </div>
+                            </div>
+                        </li> -->
+                        <li class="content-td">
+                            <div style="width:100%">
+                                <div>资产列表加载中...</div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="down-foot">
+            <div class="company">
+                <div class="contact-icon">
+                    <a>
+                        <img src="./dist/images/home/1.png" alt="">
+                    </a>
+                    <a>
+                        <img src="./dist/images/home/weixin.png" alt="">
+                    </a>
+                    <a>
+                        <img src="./dist/images/home/xinglang.png" alt="">
+                    </a>
+                    <a>
+                        <img src="./dist/images/home/4.png" alt="">
+                    </a>
+                    <a>
+                        <img src="./dist/images/home/5.png" alt="">
+                    </a>
+                    <a>
+                        <img src="./dist/images/home/6.png" alt="">
+                    </a>
+
+                </div>
+            </div>
+            <ol>
+                <li><a href="about.html" target="_blank">关于我们</a></li>
+                <li>|</li>
+                <li><a href="contact.html" target="_blank">联系我们</a></li>
+                <li>|</li>
+                <li><a href="business.html" target="_blank">商务合作</a></li>
+            </ol>
+            <div class="grant">
+                <p>Copyright @2017 厦门本能管家科技有限公司 I 闽ICP1234567890</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div class=" navbar  animated-1 fff" id="navbar">
+        <ul class="page-list" id="page-list">
+            <li>
+                <a href="index.html#home">
+                    <p data-to="toIndex" data-i18n="home">主页</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#picassotxt">
+                    <p>币加所</p>
+                </a>
+            </li>
+            <li>
+                <a href="management.html">
+                    <p>资产管理</p>
+                </a>
+            </li>
+            <li class="moblie-nav">
+                <!-- <a href="login.html" style="font-size: 14px;">登录</a>
+                <a href="javascript:;">&nbsp;/&nbsp;</a>
+                <a href="register.html" style="font-size: 14px;">注册</a> -->
+                <a href="javascript:;" style="font-size: 12px;">登录 / 注册</a>
+            </li>
+            <li>
+                <p id="lan_exchange">中文</p>
+            </li>
+        </ul>
+    </div>
+    <!-- end -->
+    <script type="text/javascript" src="./dist/js/hm.js"></script>
+    <script type="text/javascript" src="./dist/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./dist/js/main.js"></script>
+    <!-- 登录状态 -->
+    <script type="text/javascript" src="./dist/js/login-state.js"></script>
+    <script type="text/javascript" src="./dist/js/picasso-request.js"></script>
+    <!-- layer插件 -->
+    <script type="text/javascript" src="./dist/libs/layer/layer.js"></script>
+
+    <script>
+    </script>
+
+
+    <script type="text/javascript">
+        // 未登入 跳到登入界面
+        if (!sessionStorage.token || !sessionStorage.name) {
+            location.href = "login.html";
+        }
+
+        // //登入，获取数据
+        $(function() {
+
+            var getFrozenCount = 0;
+            var productIdArray = []
+                //冻结持仓，在最后才调用
+            function getFrozen(accountId) {
+                if (getFrozenCount >= productIdArray.length) {
+                    return;
+                }
+
+                $.picassoGet('/account/accounts/products', {
+                    accountId: accountId,
+                    productId: productIdArray[getFrozenCount]
+                }, function(data) {
+                    var freezeBalance = (data.freezeBalance / 100000000).toFixed(4);
+                    freezeBalance = freezeBalance.toString();
+                    $('#id_' + productIdArray[getFrozenCount]).text(parseFloat(freezeBalance))
+                    getFrozenCount++;
+                    getFrozen(accountId)
+                }, function(err) {
+                    console.log(err);
+                    layer.msg(err.message);
+
+                });
+            }
+
+            // 获取总资产
+            $.picassoGet('/account/accounts/assets', {
+                accountType: '003'
+            }, function(assetsData) {
+                var total = (assetsData.asset.total / 100000000).toFixed(4);
+                var priceId = assetsData.asset.priceId;
+                total = total.toString();
+
+                $.picassoGet('/product/product/' + priceId, {},
+                    function(priceIdData) {
+                        setTimeout(function() {
+                            $('#total').text(parseFloat(total));
+                            $('#priceId').text(priceIdData.productName);
+                        }, 500);
+
+                    },
+                    function(priceIdErr) {
+                        console.log(priceIdErr);
+                        layer.msg(priceIdErr.message);
+                    })
+            }, function(assetsErr) {
+                console.log(assetsErr);
+                layer.msg(assetsErr.message);
+            });
+
+            // 获取持仓
+            $.picassoGet('/account/position/totals', {},
+                function(totalsData) {
+                    var totalStr = '<li class="content-th"><div>币 种</div><div>可 用</div><div>冻 结</div><div>操 作</div></li>';
+                    var count = 0; //记录次数
+
+                    productIdArray = []
+
+                    if (totalsData.length > 0) {
+                        var accountId = totalsData[0].accountId
+                            // 遍历
+                        totalsData.forEach(function(item, index) {
+                            var productId = item.productId
+                            var totalAmount = (item.totalAmount / 100000000).toFixed(4);
+                            totalAmount = totalAmount.toString();
+                            productIdArray.push(productId)
+
+                            $.picassoGet('/product/product/' + productId, {},
+                                function(productIdData) {
+
+                                    var str = '<li class="content-td"><div><div>';
+                                    str += productIdData.productName + "</div></div><div><div>";
+                                    str += parseFloat(totalAmount) + "</div></div><div><div id='id_" + productId + "'>0</div></div>";
+                                    str += '<div><div class="content-btn"><button class="warning">提币</button><button class="warning">充币</button></div></div></li>';
+                                    totalStr += str;
+                                    count++;
+                                    if (count == totalsData.length) {
+                                        setTimeout(function() {
+                                            $('#content').html(totalStr)
+
+                                            getFrozenCount = 0;
+                                            // 获取冻结
+                                            getFrozen(accountId)
+
+                                            // layer弹出框
+                                            $('.warning').click(function() {
+                                                layer.open({
+                                                    type: 1,
+                                                    title: false,
+                                                    area: ['690px', '430px'],
+                                                    skin: 'layui-layer-demo', //样式类名
+                                                    closeBtn: 0, //不显示关闭按钮
+                                                    anim: 0, //动画效果
+                                                    shadeClose: true, //开启遮罩关闭
+                                                    content: '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全， 目前币加所暂未上线PC端充币/提币等功能， 请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
+                                                });
+                                            });
+                                        }, 500);
+                                    }
+                                },
+                                function(productIdErr) {
+                                    console.log(productIdErr);
+                                    layer.msg(productIdErr.message);
+                                })
+                        })
+                    } else {
+
+                        var str = '<li class="content-td"><div style="width:100%;"><div>当前账户还没有资产，请先进行资产<a class="warning" style="border-bottom:1px solid #c1b17f;cursor:pointer;"> 充值 </a>。</div></div></li>';
+                        totalStr += str;
+                        setTimeout(function() {
+
+                            $('#content').html(totalStr)
+                                // layer弹出框
+                            $('.warning').click(function() {
+                                layer.open({
+                                    type: 1,
+                                    title: false,
+                                    area: ['690px', '430px'],
+                                    skin: 'layui-layer-demo', //样式类名
+                                    closeBtn: 0, //不显示关闭按钮
+                                    anim: 0, //动画效果
+                                    shadeClose: true, //开启遮罩关闭
+                                    content: '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>&nbsp;&nbsp;&nbsp;&nbsp;很抱歉的提醒您，为了保证用户资产的安全， 目前币加所暂未上线PC端充币/提币等功能， 请您赴下载中心下载币加所APP。<div style="width:100%;height:8px;"></div></p><a href="index.html#download">下载中心</a></div>'
+                                });
+                            });
+                        }, 500);
+                    }
+
+                },
+                function(totalsErr) {
+                    console.log(totalsErr);
+                    layer.msg(totalsErr.message);
+                });
+
+        })
+    </script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?f39218da2a6e9068ee0b5d66a050cde6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        var winWidth = $(window).width();
+        $(function() {
+            setTimeout(function() {
+                $('#body').css(
+                    'opacity', '1'
+                )
+            }, 20);
+            var navActive = document.querySelector(".nav-active");
+            var navUnderline = document.querySelector('.nav ul');
+
+            function navActiveFunc(num) {
+                $('.tag').removeClass('nav-active');
+                $('.tag').eq(num).addClass('nav-active');
+                var target = document.querySelector(".target");
+                var navActive = document.querySelector(".nav-active");
+                var width = navActive.getBoundingClientRect().width;
+                var height = navActive.getBoundingClientRect().height;
+                var left = navActive.getBoundingClientRect().left + window.pageXOffset;
+                var top = navActive.getBoundingClientRect().top + window.pageYOffset;
+
+                target.style.width = width + "px";
+                target.style.height = height + "px";
+                target.style.left = left + "px";
+                target.style.top = top + "px";
+                target.style.borderColor = color;
+                target.style.borderWidth = '3px'
+                target.style.transform = "none";
+                target.style.zIndex = 1;
+            }
+            navActiveFunc(3);
+
+            function mouseleaveFunc() {
+                navActive = document.querySelector(".nav-active");
+                var width = navActive.getBoundingClientRect().width;
+                var height = navActive.getBoundingClientRect().height;
+                var left = navActive.getBoundingClientRect().left + window.pageXOffset;
+                var top = navActive.getBoundingClientRect().top + window.pageYOffset;
+
+                target.style.width = width + "px";
+                target.style.height = height + "px";
+                target.style.left = left + "px";
+                target.style.top = top + "px";
+                target.style.borderColor = color;
+                target.style.borderWidth = '3px'
+                target.style.transform = "none";
+                target.style.zIndex = 1;
+            }
+            navUnderline.addEventListener("mouseleave", mouseleaveFunc);
+        });
+    </script>
+</body>
+
+</html>

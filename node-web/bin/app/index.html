@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <link href="dist/static/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>币加所</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./dist/css/hover.css"> -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/common.css">
+
+    <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/app.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/animate.css">
+
+    <!--滚动点css-->
+    <link rel="stylesheet" href="./dist/css/jquery.fullPage.css">
+    <!-- 英文状态下的样式调整 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/englishStyle.css">
+</head>
+
+
+<body class="fp-viewing-home" style="overflow: hidden; height: 100%;" id="body">
+    <div id="app">
+        <!-- 导航 -->
+        <nav class="nav right ">
+            <div class="nav-logo">
+                <img src="./dist/images/home/nav_logo.png" alt="">
+            </div>
+            <div class="mob-navicon topbar-btn">
+                <!-- <img src="./dist/images/home/mob_navicon.png" alt=""> -->
+                <img class="mob-navicon-logo" src="./dist/images/home/nav_logo.png" alt="">
+            </div>
+            <ul class="web-nav">
+                <li class="tag nav-active ">
+                    <a href="index.html#home" data-i18n='nav.home'>首页</a>
+                </li>
+                <li class="tag ">
+                    <a href="index.html#picassotxt" data-i18n='nav.picasso'>币加所</a>
+                </li>
+                <li class="tag">
+                    <a href="index.html#download" data-i18n='nav.download'>下载中心</a>
+                </li>
+                <li class="tag">
+                    <a href="management.html" data-i18n='nav.assets'>资产管理</a>
+                </li>
+                <li>
+                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt data-i18n='nav.language'>简体中文</dt>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="" data-i18n='nav.languageSwich'>English</a> </dd>
+                    </dl>
+                </li>
+                <li class="login nav-login">
+                    <a href="login.html" style="font-size: 14px;" data-i18n='nav.login'>登录 / 注册</a>
+
+                </li>
+            </ul>
+        </nav>
+        <span class="target mobile-none"></span>
+        <!-- ICON -->
+        <div id="nextPage" class="next-page">
+            <img src="./dist/images/home/next_down.png" alt="">
+        </div>
+        <!-- fullpage -->
+
+        <div id="downPage" class="fullpage-wrapper" style="height: 100%; position: relative; touch-action: none; transform: translate3d(0px, -60px, 0px);">
+            <div class="section section1 fp-section fp-table active fp-completely" style="height: 100%">
+                <div class="fp-tableCell" style="height: 100%">
+                    <!-- bj1,bj2 补充pro下 背景 -->
+                    <div class="section1-bj1"></div>
+                    <div class="section1-bj2"></div>
+                    <!-- 白色阳光日晕背景 -->
+                    <div class="section1-bj3"></div>
+                    <div class="picasso">
+                        <div class="picasso-txt">
+                            <p class="picasso-txt-1">
+                                <img src="./dist/images/home/home_1_title1.png" alt="">
+                                <!-- <span>Reliable, high-efficiency and secure asset transaction platform</span> -->
+                                <!-- 文字渐变，效果调整好，但框口缩小，css文字大小变化后，需要重新执行相应的函数，造成冲突 -->
+                                <!-- <span name="clip:g" rel="#af8a3d-#fbeac6">&nbsp;&nbsp;可靠、高效、安全的资产交易平台</span> -->
+                            </p>
+                            <p class="picasso-txt-2">
+                                <img src="./dist/images/home/home_1_title.png" alt="">
+                                <!-- <span>Bring you to Credit Age</span> -->
+                                <!-- 文字渐变，效果调整好，但框口缩小，css文字大小变化后，需要重新执行相应的函数，造成冲突 -->
+                                <!-- <span name="clip:g" rel="#af8a3d-#fbeac6">助您通往信用时代</span> -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section2 fp-section fp-table" style="height: 100%">
+                <div class="fp-tableCell" style="height: 100%">
+                    <div class="picasso">
+                        <div align="center" class="lab-text">
+                            <p class="lab-text-b">IBT</p>
+
+                            <p class="lab-text-b" data-i18n='section2.txt-1'>1月16日正式上线币加所交易</p>
+                            <p data-i18n='section2.txt-2'>现注册成为币加所会员即可获得IBT奖励</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section3 fp-section fp-table" style="height: 100%">
+                <div>
+
+                    <div class="advantage">
+                        <div class="advantage-title">
+
+                            <div class="title">
+                                <p data-i18n="section3.title">币加所的优势</p>
+
+                                <img src="./dist//images/home/home_3_title.png" alt="">
+                            </div>
+                            <div class="underline">
+                                <img src="./dist//images/home/ys.png" alt="">
+
+                            </div>
+                        </div>
+                        <div class="advantage-box">
+                            <div class="advantage-box-1">
+                                <div class="content-box">
+                                    <div class="box-content box-icon-1">
+                                        <div>
+                                            <img src="./dist/images/home/securityIcon.png" alt="">
+                                        </div>
+                                        <p class="content-title">
+                                            <span data-i18n="section3.title-1">快速安全的技术保障</span>
+
+                                            <img src="./dist/images/home/guarantee.png" alt="">
+                                        </p>
+                                        <p class="content-txt" data-i18n="section3.txt-1">具备丰富交易平台和区块链开发经验的技术团队为您提供技术保障。</p>
+                                    </div>
+                                </div>
+                                <div class="content-box">
+                                    <div class="box-content box-icon-2">
+                                        <div>
+                                            <img src="./dist/images/home/integrationIcon.png" alt="">
+                                        </div>
+                                        <p class="content-title">
+                                            <span data-i18n="section3.title-2">资源的合理整合</span>
+                                            <img src="./dist/images/home/integration.png" alt="">
+                                        </p>
+                                        <p class="content-txt" data-i18n="section3.txt-2">致力于通过标准化的技术服务，来打通各大交易所之间的资源，帮助资源的合理整合。</p>
+                                    </div>
+                                </div>
+                                <div class="content-box">
+                                    <div class="box-content box-icon-3">
+                                        <div>
+                                            <img src="./dist/images/home/circulationIcon.png" alt="">
+                                        </div>
+                                        <p class="content-title">
+                                            <span data-i18n="section3.title-3">用户资源的流通</span>
+                                            <img src="./dist/images/home/user.png" alt="">
+                                        </p>
+                                        <p class="content-txt" data-i18n="section3.txt-3">使用币加所技术支持的各大交易所可互通用户资源，达成更高效的撮合，展现更准确的行情和市场发展。</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section4 fp-section fp-table" style="height: 100%">
+                <div class="advantage">
+                    <div class="advantage-title">
+
+                        <div class="title">
+                            <p data-i18n="section3.title">币加所的优势</p>
+
+                            <img src="./dist//images/home/home_3_title.png" alt="">
+                        </div>
+                        <div class="underline">
+                            <img src="./dist//images/home/ys.png" alt="">
+
+                        </div>
+                    </div>
+                    <div class="advantage-box">
+                        <div class="advantage-box-2">
+                            <div class="content-box">
+                                <div class="box-content box-icon-4">
+                                    <div>
+                                        <img src="./dist/images/home/serviceIcon.png" alt="">
+                                    </div>
+                                    <p class="content-title">
+                                        <span data-i18n="section3.title-4">标准化的技术服务</span>
+
+                                        <img src="./dist/images/home/service.png" alt="">
+                                    </p>
+                                    <p class="content-txt" data-i18n="section3.txt-4">为数字资产交易平台和区块链企业提供标准化的平台建设及上币服务。</p>
+                                </div>
+                            </div>
+                            <div class="content-box">
+                                <div class="box-content box-icon-5">
+                                    <div>
+                                        <img src="./dist/images/home/vectorIcon.png" alt="">
+                                    </div>
+                                    <p class="content-title">
+                                        <span data-i18n="section3.title-5">各类资产的风险共享</span>
+                                        <img src="./dist/images/home/risk.png" alt="">
+                                    </p>
+                                    <p class="content-txt" data-i18n="section3.txt-5">标准化的技术服务以及各大交易所之间的合理整合帮助促进风险的合理共享，提高保障。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section5 fp-section fp-table" style="height: 100%">
+                <div style="height: 100%">
+                    <div class="download">
+                        <div class="download-box">
+                            <div class="download-box-1">
+                                <div class="download-iphone">
+                                </div>
+                            </div>
+                            <div class="download-box-2">
+                                <div class="box-2-title">
+                                    <img src="./dist/images/home/client.png" alt="" class="down-title">
+                                    <p class="titile-2">&nbsp;&nbsp;&nbsp;&nbsp;<span data-i18n="section4.txt">可靠、高效、安全的数字资产交易，尽在币加所APP</span></p>
+                                </div>
+                                <ul class="download-btn">
+                                    <li class="left-block">
+                                        <button>
+                                                    </button>
+                                        <button>
+                                                    </button>
+                                    </li>
+                                    <li class="right-block">
+                                        <img src="./dist/images/home/QRcode.png" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="down-foot">
+                    <div class="company">
+                        <div class="contact-icon">
+                            <a>
+                                <img src="./dist/images/home/1.png" alt="">
+                            </a>
+                            <a>
+                                <img src="./dist/images/home/weixin.png" alt="">
+                            </a>
+                            <a>
+                                <img src="./dist/images/home/xinglang.png" alt="">
+                            </a>
+                            <a>
+                                <img src="./dist/images/home/4.png" alt="">
+                            </a>
+                            <a>
+                                <img src="./dist/images/home/5.png" alt="">
+                            </a>
+                            <a>
+                                <img src="./dist/images/home/6.png" alt="">
+                            </a>
+
+                        </div>
+                    </div>
+                    <ol>
+                        <li><a href="about.html" target="_blank" data-i18n="foot.about">关于我们</a></li>
+                        <li>|</li>
+                        <li><a href="contact.html" target="_blank" data-i18n="foot.contact">联系我们</a></li>
+                        <li>|</li>
+                        <li><a href="business.html" target="_blank" data-i18n="foot.service">商务合作</a></li>
+                    </ol>
+                    <div class="grant">
+                        <span data-i18n="foot.copyright">Copyright @2017 厦门本能管家科技有限公司 I </span><a href="index.html" style="display:inline-block">闽ICP1234567890</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- mobile menu -->
+    <div class=" navbar  animated-1 fff" id="navbar">
+        <ul class="page-list" id="page-list">
+            <li>
+                <a href="index.html#home">
+                    <p data-to="toIndex" data-i18n='nav.home'>主页</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#picassotxt">
+                    <p data-i18n='nav.picasso'>币加所</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#download">
+                    <p data-i18n='nav.download'>下载中心</p>
+                </a>
+            </li>
+            <li>
+                <a href="management.html">
+                    <p data-i18n='nav.assets'>资产管理</p>
+                </a>
+            </li>
+            <li class="moblie-nav">
+                <a href="register.html" style="font-size: 12px;" data-i18n='nav.login'>登录 / 注册</a>
+
+            </li>
+            <li>
+                <p id="lan_exchange" data-i18n="nav.language">简体中文</p>
+            </li>
+        </ul>
+    </div>
+    <!-- end -->
+
+    <script type="text/javascript" src="./dist/js/hm.js"></script>
+    <script type="text/javascript" src="./dist/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./dist/js/jquery.fullpage.js"></script>
+
+    <script type="text/javascript" src="./dist/js/main.js"></script>
+    <!-- 文字渐变js,里面有模板使用方法 -->
+    <script type="text/javascript" src="./dist/js/textColourGradient.js"></script>
+    <!-- 登录状态 -->
+    <script type="text/javascript" src="./dist/js/login-state.js"></script>
+    <!-- 国际化 -->
+    <!-- <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script> -->
+    <!-- <script type="text/javascript" src="./dist/js/language.js?v=6"></script> -->
+
+    <!-- <script>
+        $(function() {
+            i18n.init({
+                resGetPath: './dist/language/en/__ns__.json'
+            }, function(t) {
+                // i18n est maintenant initialisé
+                $('body').i18n();
+
+                // 首页
+
+
+            });
+            // var lj = window.location.hash;
+            // if (lj == "#en") {
+            //     en();
+            // }
+            // if (lj == "#cn") {
+            //     cn();
+            // };
+
+        })
+    </script> -->
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?f39218da2a6e9068ee0b5d66a050cde6";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        $(function() {
+
+            setTimeout(function() {
+                $('#body').css(
+                    'opacity', '1'
+                )
+            }, 20);
+
+            // 导航栏 激活状态 下滑线,有与main.js里面相关 ,移出 返回原来位置
+            var navActive = document.querySelector(".nav-active");
+            var navUnderline = document.querySelector('.nav ul');
+
+            function mouseleaveFunc() {
+                navActive = document.querySelector(".nav-active");
+                var width = navActive.getBoundingClientRect().width;
+                var height = navActive.getBoundingClientRect().height;
+                var left = navActive.getBoundingClientRect().left + window.pageXOffset;
+                var top = navActive.getBoundingClientRect().top + window.pageYOffset;
+
+                target.style.width = width + "px";
+                target.style.height = height + "px";
+                target.style.left = left + "px";
+                target.style.top = top + "px";
+                target.style.borderColor = color;
+                target.style.borderWidth = '3px'
+                target.style.transform = "none";
+                target.style.zIndex = 1;
+            }
+            navUnderline.addEventListener("mouseleave", mouseleaveFunc);
+
+            function navActiveFunc(num) {
+                $('.tag').removeClass('nav-active');
+                $('.tag').eq(num).addClass('nav-active');
+                var target = document.querySelector(".target");
+                var navActive = document.querySelector(".nav-active");
+                var width = navActive.getBoundingClientRect().width;
+                var height = navActive.getBoundingClientRect().height;
+                var left = navActive.getBoundingClientRect().left + window.pageXOffset;
+                var top = navActive.getBoundingClientRect().top + window.pageYOffset;
+
+                target.style.width = width + "px";
+                target.style.height = height + "px";
+                target.style.left = left + "px";
+                target.style.top = top + "px";
+                target.style.borderColor = color;
+                target.style.borderWidth = '3px'
+                target.style.transform = "none";
+                target.style.zIndex = 1;
+            }
+            $('#downPage').fullpage({
+                anchors: ['home', 'picasso', 'picassotxt', 'picassotxt1', 'download'],
+                continuousVertical: false,
+                verticalCentered: true,
+                navigation: false,
+                scrollingSpeed: 500,
+                afterLoad: function(anchorLink, index) {
+                    if (index == 1) {
+                        navActiveFunc(0)
+                    }
+                    if (index == 2) {
+                        navActiveFunc(1)
+                    }
+                    if (index == 3) {
+                        navActiveFunc(1)
+                    }
+                    if (index == 4) {
+                        navActiveFunc(2)
+                    }
+                    if (index == 5) {
+                        navActiveFunc(2)
+                        $('#nextPage').css("display", "none")
+                    } else {
+                        $('#nextPage').css("display", "block")
+                    }
+                },
+            });
+            //点击底部向下箭头轮播
+            $("#nextPage").click(function() {
+                $.fn.fullpage.moveSectionDown();
+            });
+
+
+        })
+    </script>
+</body>
+
+</html>
