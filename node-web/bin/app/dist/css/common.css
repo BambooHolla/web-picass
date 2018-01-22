@@ -1,0 +1,153 @@
+/* 初始化、以及通用 */
+
+
+/*font*/
+
+
+/* @font-face {
+    font-family: 'apple-regular';
+    src: url('../../fonts/apple-regular.ttf');
+}
+
+@font-face {
+    font-family: 'apple';
+    src: url('../../fonts/apple.ttf');
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /*,"apple-regular",*/
+    /* font-family: -webkit-font-smoothing: antialiased; */
+    height: 100%;
+    width: 100%;
+    background-color: rgb(25, 23, 29);
+}
+
+
+/*media query pc*/
+
+@media screen and(min-width: 1026px) {
+    body {
+        min-width: 1200px;
+    }
+}
+
+
+/*media query mobile*/
+
+@media screen and (max-width: 1025px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+/* 部分初始化 */
+
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+a {
+    background-color: transparent;
+    /* 1 */
+    -webkit-text-decoration-skip: objects;
+    /* 2 */
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+}
+
+td {
+    padding: 0;
+}
+
+audio,
+video {
+    display: inline-block;
+}
+
+img {
+    border-style: none;
+    width: 100%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: sans-serif;
+    /* 1 */
+    font-size: 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin: 0;
+    /* 2 */
+}
+
+button,
+input {
+    /* 1 */
+    overflow: visible;
+}
+
+button,
+select {
+    /* 1 */
+    text-transform: none;
+}
+
+button,
+html [type="button"],
+
+/* 1 */
+
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    /* 2 */
+    cursor: pointer;
+}
+
+canvas {
+    display: inline-block;
+}
+
+[hidden] {
+    display: none;
+}
