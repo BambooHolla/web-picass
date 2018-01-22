@@ -7,7 +7,7 @@
         "language": "English",
         "languageSwich": "简体中文",
         "login": "Login / Register",
-        "outLogin": "Exit"
+        "outLogin": "Exit account"
     },
     "foot": {
         "about": "About",
@@ -33,10 +33,22 @@
 
     },
     "section4": {
-        "title": "PICASSO App",
+        "title": "Picasso App",
         "txt": "To experience reliable, high-efficiency and secure  digital asset transaction, please download Picasso App."
 
 
+    },
+    "assets": {
+        "title": "Asset Management",
+        "total": "Total assets convert into",
+        "th-1": "Coin",
+        "th-2": "Available",
+        "th-3": "On orders",
+        "th-4": "Action",
+        "btn-1": "deposit",
+        "btn-2": "withdraw",
+        "layer-txt": "Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets. Please go to Download Center for Picasso App",
+        "layer-btn": "Download Center"
     },
     "flag": "img/french.jpg",
     "alert": "Cliquez sur OK pour fermer."
