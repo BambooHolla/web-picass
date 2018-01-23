@@ -17,6 +17,8 @@
 
     <!-- 本页样式调整 -->
     <link rel="stylesheet" type="text/css" href="./dist/css/management.css">
+    <!-- 英文状态下的样式调整 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/englishStyle.css">
 
 </head>
 
@@ -32,7 +34,7 @@
                 <img class="mob-navicon-logo" src="./dist/images/home/nav_logo.png" alt="">
             </div>
             <ul class="web-nav">
-                <li class="tag nav-active ">
+                <li class="tag  ">
                     <a data-href="index.html#home" data-i18n='nav.home'>首页</a>
                 </li>
                 <li class="tag ">
@@ -41,7 +43,7 @@
                 <li class="tag">
                     <a data-href="index.html#download" data-i18n='nav.download'>下载中心</a>
                 </li>
-                <li class="tag">
+                <li class="tag nav-active">
                     <a data-href="management.html" data-i18n='nav.assets' class="asset">资产管理</a>
                 </li>
                 <li>
@@ -59,7 +61,7 @@
         <div class="main">
             <div class="assets-title">
                 <img src="./dist/images/management/Assets.png" alt="">
-                <p data-i18n='assets.title'>币加所的优势</p>
+                <p data-i18n='assets.title'>资产管理</p>
 
             </div>
             <div class="assets-content">
@@ -149,25 +151,33 @@
     <div class=" navbar  animated-1 fff" id="navbar">
         <ul class="page-list" id="page-list">
             <li>
-                <a href="index.html#home">
-                    <p data-to="toIndex" data-i18n="home">主页</p>
+                <a data-href="index.html#home">
+                    <p data-to="toIndex" data-i18n="nav.home">主页</p>
                 </a>
             </li>
             <li>
-                <a href="index.html#picassotxt">
-                    <p>币加所</p>
+                <a data-href="index.html#picassotxt">
+                    <p data-i18n='nav.picasso'>币加所</p>
                 </a>
             </li>
             <li>
-                <a href="management.html">
-                    <p>资产管理</p>
+                <a data-href="index.html#download">
+                    <p data-i18n='nav.download'>下载中心</p>
+                </a>
+            </li>
+            <li>
+                <a data-href="management.html" class="asset">
+                    <p data-i18n='nav.assets'>资产管理</p>
                 </a>
             </li>
             <li class="moblie-nav">
-                <a href="register.html" style="font-size: 12px;">登录 / 注册</a>
+                <!-- <a href="login.html" style="font-size: 14px;">登录</a>
+                <a href="javascript:;">&nbsp;/&nbsp;</a>
+                <a href="register.html" style="font-size: 14px;">注册</a> -->
+                <a data-href="login.html" style="font-size: 12px;" data-i18n="nav.login">登录 / 注册</a>
             </li>
             <li>
-                <p id="lan_exchange">中文</p>
+                <p id="lan_exchange" data-i18n="nav.language">简体中文</p>
             </li>
         </ul>
     </div>
@@ -271,7 +281,7 @@
                                     if (language == "简体中文") {
                                         str += '<div><div class="content-btn"><button class="warning" data-i18n="assets.btn-1">提币</button><button class="warning" data-i18n="assets.btn-2">充币</button></div></div></li>';
                                     } else if (language == "English") {
-                                        str += '<div><div class="content-btn"><button class="warning" data-i18n="assets.btn-1">deposit</button><button class="warning" data-i18n="assets.btn-2">withdraw</button></div></div></li>';
+                                        str += '<div><div class="content-btn"><button class="warning en-as-btn" data-i18n="assets.btn-1">deposit</button><button class="warning en-as-btn" data-i18n="assets.btn-2">withdraw</button></div></div></li>';
 
                                     } else {
                                         str += '<div><div class="content-btn"><button class="warning" data-i18n="assets.btn-1">提币</button><button class="warning" data-i18n="assets.btn-2">充币</button></div></div></li>';
@@ -297,7 +307,7 @@
                                                 if (language == "简体中文") {
                                                     content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
                                                 } else if (language == "English") {
-                                                    content = "<div><div><img src='./dist/images/management/PromptIcon.png' alt=''></div><p>Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets.Please go to Download Center for Picasso App.</p><a href='index.html#download?en'>Download Center</a> </div>"
+                                                    content = "<div class='en-as-layer'><div><img src='./dist/images/management/PromptIcon.png' alt=''></div><p>Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets.Please go to Download Center for Picasso App.</p><a href='index.html#download?en'>Download Center</a> </div>"
 
                                                 } else {
                                                     content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'

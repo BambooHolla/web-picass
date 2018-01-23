@@ -137,6 +137,10 @@ $(function() {
 
         var url = "/user"
         var valiData = {}
+        if (registerType == 0) {
+            layer.msg("验证码发送失败，请稍后再试");
+            return;
+        }
         $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
             console.log(data);
 
@@ -147,10 +151,7 @@ $(function() {
                 return;
             }
 
-            // 开始倒计时,发送验证码请求
-            $('.validate-btn').css('cursor', 'not-allowed')
-            $('.validate-btn').off('click', validateClick)
-            validateTime()
+
             if (registerType) {
                 url += "/sendSmsToAppointed"
                 valiData = {
@@ -166,14 +167,19 @@ $(function() {
             }
             $.picassoGet(url, valiData, function(data) {
                 console.log(data)
+
+                // 开始倒计时,发送验证码请求
+                $('.validate-btn').css('cursor', 'not-allowed')
+                $('.validate-btn').off('click', validateClick)
+                validateTime()
             }, function(err) {
                 console.log(err);
-                layer.msg(err.message);
+                layer.msg("请求出错");
             })
 
         }, function(err) {
             console.log(err);
-            layer.msg(err.message);
+            layer.msg("验证码发送失败，请稍后再试");
         });
 
     }

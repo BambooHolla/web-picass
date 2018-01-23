@@ -376,6 +376,10 @@
     margin-top: 350px;
 }
 
+.section .picasso-txt span {
+    display: none;
+}
+
 .section1 .picasso-txt p {
     width: 100%;
     font-size: 40px;
@@ -650,6 +654,10 @@
     display: -webkit-flex;
     -webkit-flex-direction: column;
     flex-direction: column;
+}
+
+.box-2-title .down-app {
+    display: none;
 }
 
 .title-1 img {
