@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <link href="dist/static/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>币加所</title>
+    <link rel="stylesheet" type="text/css" href="./dist/css/common.css">
+    <!-- login页面修改 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/app.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/login.css">
+    <!-- 本页样式 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/userProtocol.css">
+</head>
+
+<body>
+    <div id="app" style="height:100%;">
+        <!-- 导航 -->
+        <nav class="nav right">
+            <div class="nav-logo">
+                <img src="./dist/images/home/nav_logo.png" alt="">
+            </div>
+            <div class="mob-navicon topbar-btn">
+                <!-- <img src="./dist/images/home/mob_navicon.png" alt=""> -->
+                <img class="mob-navicon-logo" src="./dist/images/home/nav_logo.png" alt="">
+            </div>
+            <ul class="web-nav">
+                <li class="tag nav-active ">
+                    <a href="index.html#home">首页</a>
+                </li>
+                <li class="tag ">
+                    <a href="index.html#picassotxt">币加所</a>
+                </li>
+                <li class="tag">
+                    <a href="index.html#download">下载中心</a>
+                </li>
+                <li class="tag">
+                    <a href="management.html">资产管理</a>
+                </li>
+                <li>
+                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt>简体中文</dt>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="">English</a> </dd>
+                    </dl>
+                </li>
+                <li class="login nav-login">
+                    <a href="register.html" style="font-size: 12px;">登录 / 注册</a>
+                </li>
+            </ul>
+        </nav>
+        <span class="target mobile-none"></span>
+
+
+        <!--  显示内容-->
+
+        <div style=" position: relative;" id="main">
+
+            <div class="main">
+                <p class="user-title">关于我们</p>
+                <div class="main-box">
+                    <p style=" text-align: center;">币加所（以下称 “公司”）是本能区块链旗下的一款专门供用户进行数字资产交易和提供相关服务的平台。</p>
+
+                </div>
+
+            </div>
+
+            <!-- 使用首页的页脚样式 -->
+            <div class="down-foot">
+                <ol>
+
+                    <li><a href="about.html" target="_blank">关于我们</a></li>
+                    <li>|</li>
+                    <li><a href="contact.html" target="_blank">联系我们</a></li>
+                    <li>|</li>
+                    <li><a href="business.html" target="_blank">商务合作</a></li>
+
+                </ol>
+                <div class="company">
+                    <div class="address">
+                        <div>
+                            <img src="./dist/images/home/address.png" alt="">
+                            <p>福建省厦门市思明区滨北路72号中闽大厦38楼</p>
+
+                        </div>
+                        <div class="tel">
+
+                            <img src="./dist/images/home/tel.png" alt="">
+                            <p>0592-2121760</p>
+
+                        </div>
+                        <div class="email">
+
+                            <img src="./dist/images/home/email.png" alt="">
+                            <p>ifmteam@ifmchain.com</p>
+
+                        </div>
+                    </div>
+                    <div class="contact-icon">
+                        <a>
+                            <img src="./dist/images/home/1.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/weixin.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/xinglang.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/4.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/5.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/6.png" alt="">
+                        </a>
+
+                    </div>
+                </div>
+                <div class="grant">
+                    <p>Copyright @2017 厦门本能管家科技有限公司 I 闽ICP1234567890</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- mobile menu -->
+    <div class=" navbar  animated-1 fff" id="navbar">
+        <ul class="page-list" id="page-list">
+            <li>
+                <a href="index.html#home">
+                    <p data-to="toIndex" data-i18n="home">主页</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#picassotxt">
+                    <p>币加所</p>
+                </a>
+            </li>
+            <li>
+                <a href="management.html">
+                    <p>资产管理</p>
+                </a>
+            </li>
+            <li class="moblie-nav">
+                <!-- <a href="login.html" style="font-size: 14px;">登录</a>
+                <a href="javascript:;">&nbsp;/&nbsp;</a>
+                <a href="register.html" style="font-size: 14px;">注册</a> -->
+                <a href="javascript:;" style="font-size: 12px;">登录 / 注册</a>
+            </li>
+            <li>
+                <p id="lan_exchange">中文</p>
+            </li>
+        </ul>
+    </div>
+    <!-- end -->
+    <script type="text/javascript" src="./dist/js/jquery.min.js"></script>
+
+    <!-- 登录状态 -->
+    <script type="text/javascript" src="./dist/js/login-state.js"></script>
+    <script type="text/javascript" src="./dist/js/main.js"></script>
+
+    <script>
+        var heightOld = $('#main').height();
+
+        function footPosition() {
+            if (($(window).height() - 100) > heightOld) {
+
+                var heightNew = ($(window).height() - 100)
+                $('#main').height(heightNew + 'px')
+                $('.down-foot').css('bottom', '-' + (heightNew - heightOld) + 'px')
+            }
+            console.log()
+        }
+        window.addEventListener('resize', footPosition)
+
+        footPosition()
+    </script>
+</body>
+
+
+</html>

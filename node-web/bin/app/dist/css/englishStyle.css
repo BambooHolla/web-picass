@@ -1,0 +1,55 @@
+.section1 .picasso-txt span {
+    width: 100%;
+    font-size: 36px;
+    text-align: center;
+}
+
+
+/* 自适应----------------------------------------------------------- */
+
+
+/* 中屏 */
+
+@media screen and (max-width: 1270px) {
+    .section1 .picasso-txt span {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .section1 .picasso-txt span {
+        font-size: 24px;
+    }
+}
+
+
+/* 导航 宽度不够 */
+
+@media screen and (min-width:793px) and (max-width:859px) {
+    .en-nav li {
+        margin: 10px 3px 6px 0px!important;
+    }
+}
+
+@media screen and (min-width:496px) and (max-width:560px) {
+    .en-nav li {
+        margin: 10px 3px 6px 0px!important;
+    }
+}
+
+@media screen and (min-width:875px) and (max-width:991px) {}
+
+
+/* 比小屏小，比手机屏大，之间的样式 */
+
+@media screen and (min-width:496px) and (max-width:992px) {}
+
+@media screen and (max-width:495px) {
+    .section1 .picasso-txt span {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 359px) {}
+
+@media screen and (max-width: 320px) {}
