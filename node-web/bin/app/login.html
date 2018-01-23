@@ -8,17 +8,19 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <link href="dist/static/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <title>币加所</title>
+
     <link rel="stylesheet" type="text/css" href="./dist/css/common.css">
 
     <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
     <link rel="stylesheet" type="text/css" href="./dist/css/app.css">
     <link rel="stylesheet" type="text/css" href="./dist/css/animate.css">
-    <!-- 登录样式 -->
+
+    <!-- 登录跟注册页面差不多，参考登陆的样式 -->
     <link rel="stylesheet" type="text/css" href="./dist/css/login.css">
 </head>
 
 <body>
-    <div id="app" style="height:100%;">
+    <div id="" style="height:100%;position:relative">
         <!-- 导航 -->
         <nav class="nav right">
             <div class="nav-logo">
@@ -56,51 +58,50 @@
 
         <!--  显示内容-->
 
-        <div style=" position: relative;  ">
 
-            <div class="main">
-                <div class="main-box">
-                    <div class="login-title">
-                        <p>欢迎登录</p>
-                    </div>
-                    <div class="login-content">
-                        <div>
-                            <form action="">
-                                <div class="account">
-                                    <p>账号</p>
+        <div class="main">
+            <div class="main-box">
+                <div class="login-title">
+                    <p>欢迎登录</p>
+                </div>
+                <div class="login-content">
+                    <div>
+                        <form action="">
+                            <div class="account">
+                                <p>账号</p>
 
-                                    <input type="text" name="account" maxlength="254" id="account" autocomplete="off" autofocus="autofocus">
-                                </div>
-                                <div class="pwd">
-                                    <p>密码</p>
-                                    <input type="password" style="display: none;">
-                                    <input type="password" name="pwd" id="password" autocomplete="off">
-                                </div>
-                                <!-- 滑块验证隐藏  display:none; -->
-                                <!-- <div class="validate" style="display:none;">
-                                    <p>验证</p>
-                                    <div class="wrap">
-                                        <div id="slider">
-                                            <div class="drag_bg"></div>
-                                            <div class="drag_text" onselectstart="return false;" unselectable="on">请按住滑块，拖动到最右边</div>
-                                            <div class="handler handler_bg"></div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <div class="sub">
+                                <input type="text" name="account" maxlength="254" id="account" autocomplete="off" autofocus="autofocus">
+                            </div>
+                            <div class="pwd">
+                                <p>密码</p>
+                                <input type="password" style="display: none;">
+                                <input type="password" name="pwd" id="password" autocomplete="off">
+                            </div>
+                            <!-- 滑块验证隐藏  display:none; -->
+                            <!-- <div class="validate" style="display:none;">
+                                            <p>验证</p>
+                                            <div class="wrap">
+                                                <div id="slider">
+                                                    <div class="drag_bg"></div>
+                                                    <div class="drag_text" onselectstart="return false;" unselectable="on">请按住滑块，拖动到最右边</div>
+                                                    <div class="handler handler_bg"></div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                            <div class="sub">
+                                <div>
+                                    <input type="submit" value="登录">
                                     <div>
-                                        <input type="submit" value="登录">
-                                        <div>
-                                            <span>还没有账户？ </span><a href="register.html">去注册</a>
-                                        </div>
+                                        <span>还没有账户？ </span><a href="register.html">去注册</a>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- 使用首页的页脚样式 -->
         <div class="down-foot">
             <div class="company">
@@ -138,7 +139,6 @@
             </div>
         </div>
     </div>
-    </div>
 
 
 
@@ -164,8 +164,8 @@
             </li>
             <li class="moblie-nav">
                 <!-- <a href="login.html" style="font-size: 14px;">登录</a>
-                <a href="javascript:;">&nbsp;/&nbsp;</a>
-                <a href="register.html" style="font-size: 14px;">注册</a> -->
+                        <a href="javascript:;">&nbsp;/&nbsp;</a>
+                        <a href="register.html" style="font-size: 14px;">注册</a> -->
                 <a href="javascript:;" style="font-size: 12px;">登录 / 注册</a>
             </li>
             <li>
