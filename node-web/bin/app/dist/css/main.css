@@ -524,8 +524,8 @@
 .box-content {
     box-sizing: border-box;
     width: 85%;
-    height: 90%;
-    padding: 1% 6%;
+    height: 100%;
+    padding: 2% 0%;
     background-image: url(../images/home/home_3_rectangle.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -539,7 +539,7 @@
 
 .box-content>div {
     width: 100%;
-    height: 17.547%;
+    height: auto;
     padding-top: 30px;
     margin-bottom: 40px;
 }
@@ -679,7 +679,7 @@
 
 .download-btn,
 .download-code {
-    height: 180px;
+    height: auto;
     display: flex;
     display: -webkit-flex;
     -webkit-flex-direction: row;
@@ -740,7 +740,6 @@
     bottom: 0;
     left: 0;
     color: #999999;
-    background-image: url(../images/home/bj.png);
 }
 
 .down-foot a {
