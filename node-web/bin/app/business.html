@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="./dist/css/userProtocol.css">
 
     <link rel="stylesheet" type="text/css" href="./dist/css/business.css">
+    <!-- 英文状态下的样式调整 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/englishStyle.css">
 </head>
 
 <body>
@@ -32,7 +34,7 @@
                 <img class="mob-navicon-logo" src="./dist/images/home/nav_logo.png" alt="">
             </div>
             <ul class="web-nav">
-                <li class="tag nav-active ">
+                <li class="tag  ">
                     <a data-href="index.html#home" data-i18n='nav.home'>首页</a>
                 </li>
                 <li class="tag ">
@@ -149,28 +151,33 @@
     <div class=" navbar  animated-1 fff" id="navbar">
         <ul class="page-list" id="page-list">
             <li>
-                <a href="index.html#home">
-                    <p data-to="toIndex" data-i18n="home">主页</p>
+                <a data-href="index.html#home">
+                    <p data-to="toIndex" data-i18n="nav.home">主页</p>
                 </a>
             </li>
             <li>
-                <a href="index.html#picassotxt">
-                    <p>币加所</p>
+                <a data-href="index.html#picassotxt">
+                    <p data-i18n='nav.picasso'>币加所</p>
                 </a>
             </li>
             <li>
-                <a href="management.html">
-                    <p>资产管理</p>
+                <a data-href="index.html#download">
+                    <p data-i18n='nav.download'>下载中心</p>
+                </a>
+            </li>
+            <li>
+                <a data-href="management.html" class="asset" s>
+                    <p data-i18n='nav.assets'>资产管理</p>
                 </a>
             </li>
             <li class="moblie-nav">
                 <!-- <a href="login.html" style="font-size: 14px;">登录</a>
                 <a href="javascript:;">&nbsp;/&nbsp;</a>
                 <a href="register.html" style="font-size: 14px;">注册</a> -->
-                <a href="javascript:;" style="font-size: 12px;">登录 / 注册</a>
+                <a data-href="login.html" style="font-size: 12px;" data-i18n="nav.login">登录 / 注册</a>
             </li>
             <li>
-                <p id="lan_exchange">中文</p>
+                <p id="lan_exchange" data-i18n="nav.language">简体中文</p>
             </li>
         </ul>
     </div>
@@ -198,6 +205,14 @@
         window.addEventListener('resize', footPosition)
 
         footPosition()
+            // 滑动条下划线  start
+        var navUnderline = document.querySelector('.nav ul');
+
+        function mouseleaveFunc() {
+            target.style.borderColor = 'transparent';
+        }
+        navUnderline.addEventListener("mouseleave", mouseleaveFunc);
+        // 滑动条下划线  end
     </script>
 </body>
 
