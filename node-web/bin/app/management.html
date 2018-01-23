@@ -23,7 +23,7 @@
 <body style=" min-height: 100%;" id="body">
     <div id="app">
         <!-- 导航 -->
-        <nav class="nav right">
+        <nav class="nav right ">
             <div class="nav-logo">
                 <img src="./dist/images/home/nav_logo.png" alt="">
             </div>
@@ -33,24 +33,25 @@
             </div>
             <ul class="web-nav">
                 <li class="tag nav-active ">
-                    <a href="index.html#home">首页</a>
+                    <a data-href="index.html#home" data-i18n='nav.home'>首页</a>
                 </li>
                 <li class="tag ">
-                    <a href="index.html#picassotxt">币加所</a>
+                    <a data-href="index.html#picassotxt" data-i18n='nav.picasso'>币加所</a>
                 </li>
                 <li class="tag">
-                    <a href="index.html#download">下载中心</a>
+                    <a data-href="index.html#download" data-i18n='nav.download'>下载中心</a>
                 </li>
                 <li class="tag">
-                    <a href="management.html">资产管理</a>
+                    <a data-href="management.html" data-i18n='nav.assets' class="asset">资产管理</a>
                 </li>
                 <li>
-                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt>简体中文</dt>
-                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="">English</a> </dd>
+                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt data-i18n='nav.language'>简体中文</dt>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="" data-i18n='nav.languageSwich'>English</a> </dd>
                     </dl>
                 </li>
                 <li class="login nav-login">
-                    <a href="register.html" style="font-size: 12px;">登录 / 注册</a>
+                    <a data-href="login.html" style="font-size: 12px;" data-i18n='nav.login'>登录 / 注册</a>
+
                 </li>
             </ul>
         </nav>
@@ -58,23 +59,23 @@
         <div class="main">
             <div class="assets-title">
                 <img src="./dist/images/management/Assets.png" alt="">
-                <p>币加所的优势</p>
+                <p data-i18n='assets.title'>币加所的优势</p>
 
             </div>
             <div class="assets-content">
                 <div class="rate">
                     <!-- 折合数据接口获取，先写死 -->
-                    总资产折合：<span id="total">总资产加载中...</span> <span id="priceId"></span>
+                    <span data-i18n='assets.total'>总资产折合</span>：<span id="total">总资产加载中...</span> <span id="priceId"></span>
                     <!-- 约等于 先去掉 -->
                     <!-- ≈ <span id="CNY">0</span> CNY -->
                 </div>
                 <div>
                     <ul id="content" cellspacing="0">
                         <li class="content-th">
-                            <div>币 种</div>
-                            <div>可 用</div>
-                            <div>冻 结</div>
-                            <div>操 作</div>
+                            <div data-i18n='assets.th-1'>币 种</div>
+                            <div data-i18n='assets.th-2'>可 用</div>
+                            <div data-i18n='assets.th-3'>冻 结</div>
+                            <div data-i18n='assets.th-4'>操 作</div>
                         </li>
                         <!-- 接口获取数据，字符串拼接，不可用 `` ie10不兼容 -->
                         <!-- 模板 -->
@@ -95,12 +96,14 @@
                                 </div>
                             </div>
                         </li> -->
-                        <li class="content-td">
-                            <div style="width:100%">
-                                <div>资产列表加载中...</div>
-                            </div>
+                        <div id="totalsData">
+                            <li class="content-td">
+                                <div style="width:100%">
+                                    <div>资产列表加载中...</div>
+                                </div>
 
-                        </li>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -130,14 +133,14 @@
                 </div>
             </div>
             <ol>
-                <li><a href="about.html" target="_blank">关于我们</a></li>
+                <li><a data-href="about.html" target="_blank" data-i18n="foot.about">关于我们</a></li>
                 <li>|</li>
-                <li><a href="contact.html" target="_blank">联系我们</a></li>
+                <li><a data-href="contact.html" target="_blank" data-i18n="foot.contact">联系我们</a></li>
                 <li>|</li>
-                <li><a href="business.html" target="_blank">商务合作</a></li>
+                <li><a data-href="business.html" target="_blank" data-i18n="foot.service">商务合作</a></li>
             </ol>
             <div class="grant">
-                <p>Copyright @2017 厦门本能管家科技有限公司 I 闽ICP1234567890</p>
+                <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
             </div>
         </div>
     </div>
@@ -178,14 +181,13 @@
     <!-- layer插件 -->
     <script type="text/javascript" src="./dist/libs/layer/layer.js"></script>
 
-    <script>
-    </script>
 
 
     <script type="text/javascript">
         // 未登入 跳到登入界面
         if (!sessionStorage.token || !sessionStorage.name) {
-            location.href = "login.html";
+            var hash = window.location.hash ? window.location.hash : '';
+            location.href = "login.html" + hash;
         }
 
         // //登入，获取数据
@@ -243,7 +245,7 @@
             // 获取持仓
             $.picassoGet('/account/position/totals', {},
                 function(totalsData) {
-                    var totalStr = '<li class="content-th"><div>币 种</div><div>可 用</div><div>冻 结</div><div>操 作</div></li>';
+                    var totalStr = ""
                     var count = 0; //记录次数
 
                     productIdArray = []
@@ -263,19 +265,43 @@
                                     var str = '<li class="content-td"><div><div>';
                                     str += productIdData.productName + "</div></div><div><div>";
                                     str += parseFloat(totalAmount) + "</div></div><div><div id='id_" + productId + "'>0</div></div>";
-                                    str += '<div><div class="content-btn"><button class="warning">提币</button><button class="warning">充币</button></div></div></li>';
+
+                                    var language = $('#slide_lang dt').text().trim()
+
+                                    if (language == "简体中文") {
+                                        str += '<div><div class="content-btn"><button class="warning" data-i18n="assets.btn-1">提币</button><button class="warning" data-i18n="assets.btn-2">充币</button></div></div></li>';
+                                    } else if (language == "English") {
+                                        str += '<div><div class="content-btn"><button class="warning" data-i18n="assets.btn-1">deposit</button><button class="warning" data-i18n="assets.btn-2">withdraw</button></div></div></li>';
+
+                                    } else {
+                                        str += '<div><div class="content-btn"><button class="warning" data-i18n="assets.btn-1">提币</button><button class="warning" data-i18n="assets.btn-2">充币</button></div></div></li>';
+                                    }
                                     totalStr += str;
                                     count++;
                                     if (count == totalsData.length) {
                                         setTimeout(function() {
-                                            $('#content').html(totalStr)
+                                            $('#totalsData').html(totalStr)
 
                                             getFrozenCount = 0;
                                             // 获取冻结
                                             getFrozen(accountId)
+                                            var language = $('#slide_lang dt').text().trim()
+
 
                                             // layer弹出框
                                             $('.warning').click(function() {
+
+                                                //判断语言
+                                                var content = '';
+                                                var language = $('#slide_lang dt').text().trim()
+                                                if (language == "简体中文") {
+                                                    content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
+                                                } else if (language == "English") {
+                                                    content = "<div><div><img src='./dist/images/management/PromptIcon.png' alt=''></div><p>Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets.Please go to Download Center for Picasso App.</p><a href='index.html#download?en'>Download Center</a> </div>"
+
+                                                } else {
+                                                    content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
+                                                }
                                                 layer.open({
                                                     type: 1,
                                                     title: false,
@@ -284,7 +310,7 @@
                                                     closeBtn: 0, //不显示关闭按钮
                                                     anim: 0, //动画效果
                                                     shadeClose: true, //开启遮罩关闭
-                                                    content: '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全， 目前币加所暂未上线PC端充币/提币等功能， 请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
+                                                    content: content
                                                 });
                                             });
                                         }, 500);
@@ -301,7 +327,7 @@
                         totalStr += str;
                         setTimeout(function() {
 
-                            $('#content').html(totalStr)
+                            $('#totalsData').html(totalStr)
                                 // layer弹出框
                             $('.warning').click(function() {
                                 layer.open({
@@ -387,6 +413,9 @@
             navUnderline.addEventListener("mouseleave", mouseleaveFunc);
         });
     </script>
+    <!-- 国际化 -->
+    <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
+    <script type="text/javascript" src="./dist/js/language.js"></script>
 </body>
 
 </html>

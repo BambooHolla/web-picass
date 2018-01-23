@@ -12,8 +12,8 @@
     "foot": {
         "about": "关于我们",
         "contact": "联系我们",
-        "service": "商务合作",
-        "copyright": "Copyright @2017 厦门本能管家科技有限公司 I "
+        "service": "商务合作"
+
     },
     "section2": {
         "txt-1": "1月16日正式上线币加所交易",
@@ -36,8 +36,18 @@
     "section4": {
         "title": "PICASSO App",
         "txt": "可靠、高效、安全的数字资产交易，尽在币加所APP"
-
-
+    },
+    "assets": {
+        "title": "资产管理",
+        "total": "总资产折合",
+        "th-1": "币 种",
+        "th-2": "可 用",
+        "th-3": "冻 结",
+        "th-4": "操 作",
+        "btn-1": "提币",
+        "btn-2": "充币",
+        "layer-txt": "很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。",
+        "layer-btn": "下载中心"
     },
     "flag": "img/french.jpg",
     "alert": "Cliquez sur OK pour fermer."
