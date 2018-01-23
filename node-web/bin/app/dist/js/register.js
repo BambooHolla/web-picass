@@ -327,7 +327,7 @@ $(function() {
                 min: 6,
                 max: 20
             })) {
-            layer.msg('登录密码长度输入错误', {
+            layer.msg('登录密码长度须在6~20位之间', {
                 time: 1500
             });
             return;
@@ -342,7 +342,7 @@ $(function() {
                 min: 6,
                 max: 20
             })) {
-            layer.msg('确认密码长度输入错误', {
+            layer.msg('确认密码长度须在6~20位之间', {
                 time: 1500
             });
             return;

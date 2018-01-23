@@ -21,7 +21,7 @@
 <body>
     <div id="app" style="height:100%;">
         <!-- 导航 -->
-        <nav class="nav right">
+        <nav class="nav right ">
             <div class="nav-logo">
                 <img src="./dist/images/home/nav_logo.png" alt="">
             </div>
@@ -31,24 +31,25 @@
             </div>
             <ul class="web-nav">
                 <li class="tag nav-active ">
-                    <a href="index.html#home">首页</a>
+                    <a data-href="index.html#home" data-i18n='nav.home'>首页</a>
                 </li>
                 <li class="tag ">
-                    <a href="index.html#picassotxt">币加所</a>
+                    <a data-href="index.html#picassotxt" data-i18n='nav.picasso'>币加所</a>
                 </li>
                 <li class="tag">
-                    <a href="index.html#download">下载中心</a>
+                    <a data-href="index.html#download" data-i18n='nav.download'>下载中心</a>
                 </li>
                 <li class="tag">
-                    <a href="management.html">资产管理</a>
+                    <a data-href="management.html" data-i18n='nav.assets' class="asset">资产管理</a>
                 </li>
                 <li>
-                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt>简体中文</dt>
-                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="">English</a> </dd>
+                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt data-i18n='nav.language'>简体中文</dt>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="" data-i18n='nav.languageSwich'>English</a> </dd>
                     </dl>
                 </li>
                 <li class="login nav-login">
-                    <a href="register.html" style="font-size: 12px;">登录 / 注册</a>
+                    <a data-href="login.html" style="font-size: 12px;" data-i18n='nav.login'>登录 / 注册</a>
+
                 </li>
             </ul>
         </nav>
@@ -70,35 +71,7 @@
 
             <!-- 使用首页的页脚样式 -->
             <div class="down-foot">
-                <ol>
-
-                    <li><a href="about.html" target="_blank">关于我们</a></li>
-                    <li>|</li>
-                    <li><a href="contact.html" target="_blank">联系我们</a></li>
-                    <li>|</li>
-                    <li><a href="business.html" target="_blank">商务合作</a></li>
-
-                </ol>
                 <div class="company">
-                    <div class="address">
-                        <div>
-                            <img src="./dist/images/home/address.png" alt="">
-                            <p>福建省厦门市思明区滨北路72号中闽大厦38楼</p>
-
-                        </div>
-                        <div class="tel">
-
-                            <img src="./dist/images/home/tel.png" alt="">
-                            <p>0592-2121760</p>
-
-                        </div>
-                        <div class="email">
-
-                            <img src="./dist/images/home/email.png" alt="">
-                            <p>ifmteam@ifmchain.com</p>
-
-                        </div>
-                    </div>
                     <div class="contact-icon">
                         <a>
                             <img src="./dist/images/home/1.png" alt="">
@@ -121,8 +94,15 @@
 
                     </div>
                 </div>
+                <ol>
+                    <li><a data-href="about.html" target="_blank" data-i18n="foot.about">关于我们</a></li>
+                    <li>|</li>
+                    <li><a data-href="contact.html" target="_blank" data-i18n="foot.contact">联系我们</a></li>
+                    <li>|</li>
+                    <li><a data-href="business.html" target="_blank" data-i18n="foot.service">商务合作</a></li>
+                </ol>
                 <div class="grant">
-                    <p>Copyright @2017 厦门本能管家科技有限公司 I 闽ICP1234567890</p>
+                    <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
                 </div>
             </div>
         </div>
@@ -169,7 +149,9 @@
     <!-- 登录状态 -->
     <script type="text/javascript" src="./dist/js/login-state.js"></script>
     <script type="text/javascript" src="./dist/js/main.js"></script>
-
+    <!-- 国际化 -->
+    <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
+    <script type="text/javascript" src="./dist/js/language.js"></script>
     <script>
         var heightOld = $('#main').height();
 
@@ -186,6 +168,7 @@
 
         footPosition()
     </script>
+
 </body>
 
 
