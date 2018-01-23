@@ -180,6 +180,9 @@
         /* 自适应----------------------------------------------------------- */
         
         @media only screen and (min-width: 496px) {
+            .box-content {
+                padding: 2% 2%;
+            }
             .download {
                 padding: 12rem 0 0 0;
             }
@@ -192,11 +195,12 @@
                 display: block;
             }
             .advantage-box>div {
-                margin: 5rem 0 0 0;
+                margin: 2rem 0 0 0;
             }
             .content-box {
                 width: 42%;
-                height: 55%;
+                height: 50%;
+                margin-bottom: 2rem;
             }
             .section4 .advantage {
                 margin: 10rem 0;
