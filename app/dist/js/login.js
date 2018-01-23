@@ -42,7 +42,7 @@ $(function() {
                 min: 6,
                 max: 20
             })) {
-            layer.msg('密码长度输入错误', {
+            layer.msg('密码长度须在6~20位之间', {
                 time: 1500
             });
             return;
@@ -60,7 +60,17 @@ $(function() {
             layer.msg('登录成功');
 
             setTimeout(function() {
-                location.href = "management.html";
+                var txt = $('#slide_lang dt').text().trim()
+
+                if (txt == "简体中文") {
+                    window.location.href = "management.html" + "#cn";
+                } else if (txt == "English") {
+                    window.location.href = "management.html" + "#en";
+
+                } else {
+                    window.location.href = "management.html"
+                }
+
             }, 800);
 
         }, function(err) {

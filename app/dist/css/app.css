@@ -180,6 +180,9 @@
         /* 自适应----------------------------------------------------------- */
         
         @media only screen and (min-width: 496px) {
+            .box-content {
+                padding: 2% 2%;
+            }
             .download {
                 padding: 12rem 0 0 0;
             }
@@ -192,67 +195,18 @@
                 display: block;
             }
             .advantage-box>div {
-                margin: 5rem 0 0 0;
+                margin: 2rem 0 0 0;
             }
             .content-box {
                 width: 42%;
-                height: 55%;
+                height: 50%;
+                margin-bottom: 2rem;
             }
             .section4 .advantage {
                 margin: 10rem 0;
             }
             .section4 .box-content {
                 height: 100%;
-            }
-        }
-        
-        @media only screen and (max-width: 496px) {
-            .advantage-box>div>.content-box {
-                height: 14rem;
-            }
-            .box-content {
-                padding: 0;
-                height: 100%;
-            }
-            .box-content .content-txt {
-                width: 90%;
-                margin: 0 auto;
-                font-size: 1.3rem;
-            }
-            .down-title {
-                display: none;
-            }
-            .download-title-1 {
-                display: block;
-                width: 112px;
-                margin: 18px auto;
-            }
-            .download-title-2 {
-                display: none;
-            }
-            .download-box-1 {
-                width: 100%;
-                margin-top: 1rem;
-                margin-left: 2.5rem;
-            }
-            .download-box {
-                display: flex;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                -ms-flex-direction: column;
-                flex-direction: column;
-                margin: 0 auto!important;
-            }
-            .download-box-2 {
-                width: 80%;
-                margin: 0 auto;
-            }
-            .download-iphone {
-                width: 208px;
-                height: 343px;
-            }
-            .download-box-2 ul {
-                margin: 0;
             }
         }
         
@@ -830,7 +784,63 @@
 } */
         /* iphone8sp  大多手机 以下 */
         
+        @media screen and (max-height:570px) {
+            .advantage-title {
+                margin-bottom: 0rem!important;
+            }
+            .download-iphone {
+                width: 14rem!important;
+                height: 26rem!important;
+            }
+        }
+        
         @media screen and (max-width:495px) {
+            /* 新增 */
+            .advantage-box>div>.content-box {
+                height: 14rem;
+            }
+            .box-content {
+                height: auto;
+            }
+            .box-content .content-txt {
+                width: 90%;
+                margin: 0 auto;
+            }
+            .down-title {
+                display: none;
+            }
+            .download-title-1 {
+                display: block;
+                width: 112px;
+                margin: 18px auto;
+            }
+            .download-title-2 {
+                display: none;
+            }
+            .download-box-1 {
+                width: 100%;
+                margin-top: 1rem;
+                margin-left: 2.5rem;
+            }
+            .download-box {
+                display: flex;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                margin: 0 auto!important;
+            }
+            .download-box-2 {
+                width: 80%;
+                margin: 0 auto;
+            }
+            .download-iphone {
+                width: 208px;
+                height: 343px;
+            }
+            .download-box-2 ul {
+                margin: 0;
+            }
             /* 调整导航 */
             .web-nav,
             .mobile-none {
@@ -888,7 +898,7 @@
                 margin-top: 1rem;
             }
             .rate span:nth-child(2) {
-                font-size: 14px;
+                font-size: 14px!important;
             }
             .section4 .advantage-box>div>.content-box {
                 margin: 1rem 0;
@@ -1039,6 +1049,9 @@
                 margin-top: 180px
             }
         }
+        /* .box-content {
+            padding: 1rem 0!important;
+        } */
         /* iphone 5s */
         
         @media screen and (min-width:310px) and (max-width:360px) {
@@ -1048,10 +1061,9 @@
             }
             .box-content {
                 width: 97%;
-                height: 95%;
-                padding: 1% 0%;
+                height: auto;
             }
             .advantage-box>div>.content-box {
-                height: 12rem;
+                height: auto;
             }
         }

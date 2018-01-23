@@ -6,10 +6,6 @@ body {
     position: relative;
 }
 
-.down-foot {
-    position: absolute;
-}
-
 
 /* 显示部分 */
 
@@ -43,11 +39,11 @@ body {
     font-size: 20px;
 }
 
-.rate span:nth-child(1) {
+.rate #total {
     color: #cb9c35;
 }
 
-.rate span:nth-child(2) {
+.rate #priceId {
     font-size: 18px;
 }
 
