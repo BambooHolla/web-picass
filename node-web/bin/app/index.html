@@ -36,24 +36,24 @@
             </div>
             <ul class="web-nav">
                 <li class="tag nav-active ">
-                    <a href="index.html#home" data-i18n='nav.home'>首页</a>
+                    <a href="#home" data-i18n='nav.home'>首页</a>
                 </li>
                 <li class="tag ">
-                    <a href="index.html#picassotxt" data-i18n='nav.picasso'>币加所</a>
+                    <a href="#picassotxt" data-i18n='nav.picasso'>币加所</a>
                 </li>
                 <li class="tag">
-                    <a href="index.html#download" data-i18n='nav.download'>下载中心</a>
+                    <a href="#download" data-i18n='nav.download'>下载中心</a>
                 </li>
                 <li class="tag">
-                    <a href="management.html" data-i18n='nav.assets'>资产管理</a>
+                    <a data-href="management.html" data-i18n='nav.assets' class="asset">资产管理</a>
                 </li>
                 <li>
                     <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt data-i18n='nav.language'>简体中文</dt>
-                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="" data-i18n='nav.languageSwich'>English</a> </dd>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="" data-i18n='nav.languageSwich'>English</a> </dd>
                     </dl>
                 </li>
                 <li class="login nav-login">
-                    <a href="login.html" style="font-size: 14px;" data-i18n='nav.login'>登录 / 注册</a>
+                    <a data-href="login.html" style="font-size: 12px;" data-i18n='nav.login'>登录 / 注册</a>
 
                 </li>
             </ul>
@@ -77,13 +77,13 @@
                         <div class="picasso-txt">
                             <p class="picasso-txt-1">
                                 <img src="./dist/images/home/home_1_title1.png" alt="">
-                                <!-- <span>Reliable, high-efficiency and secure asset transaction platform</span> -->
+                                <span>Reliable, high-efficiency and secure asset transaction platform</span>
                                 <!-- 文字渐变，效果调整好，但框口缩小，css文字大小变化后，需要重新执行相应的函数，造成冲突 -->
                                 <!-- <span name="clip:g" rel="#af8a3d-#fbeac6">&nbsp;&nbsp;可靠、高效、安全的资产交易平台</span> -->
                             </p>
                             <p class="picasso-txt-2">
                                 <img src="./dist/images/home/home_1_title.png" alt="">
-                                <!-- <span>Bring you to Credit Age</span> -->
+                                <span>Bring you to Credit Age</span>
                                 <!-- 文字渐变，效果调整好，但框口缩小，css文字大小变化后，需要重新执行相应的函数，造成冲突 -->
                                 <!-- <span name="clip:g" rel="#af8a3d-#fbeac6">助您通往信用时代</span> -->
                             </p>
@@ -212,35 +212,36 @@
                 </div>
             </div>
 
-            <div class="section section5 fp-section fp-table" style="height: 100%">
-                <div style="height: 100%">
-                    <div class="download">
-                        <div class="download-box">
-                            <div class="download-box-1">
-                                <a href="./dist/images/home/phone_big.png">
-                                    <img src="./dist/images/home/phone_big.png" alt="" class="download-iphone">
-                                </a>
+            <div class="section section5 fp-section fp-table" style="height: 100%;position:relative">
+                <div class="download">
+                    <div class="download-box">
+                        <div class="download-box-1">
+                            <a href="./dist/images/home/phone_big_2.png">
+                                <img src="./dist/images/home/phone_big.png" alt="" class="download-iphone">
+                            </a>
+                        </div>
+                        <div class="download-box-2">
+                            <div class="box-2-title">
+                                <img src="./dist/images/home/client.png" alt="" class="down-title">
+                                <p class="down-app">Picasso App</p>
+                                <p class="titile-2">&nbsp;&nbsp;&nbsp;&nbsp;<span data-i18n="section4.txt">可靠、高效、安全的数字资产交易，尽在币加所APP</span></p>
                             </div>
-                            <div class="download-box-2">
-                                <div class="box-2-title">
-                                    <img src="./dist/images/home/client.png" alt="" class="down-title">
-                                    <p class="titile-2">&nbsp;&nbsp;&nbsp;&nbsp;<span data-i18n="section4.txt">可靠、高效、安全的数字资产交易，尽在币加所APP</span></p>
-                                </div>
-                                <ul class="download-btn">
-                                    <li class="left-block">
-                                        <button>
+                            <ul class="download-btn">
+                                <li class="left-block">
+                                    <button>
                                                     </button>
-                                        <button>
+                                    <button>
                                                     </button>
-                                    </li>
-                                    <li class="right-block">
-                                        <img src="./dist/images/home/QRcode.png" alt="">
-                                    </li>
-                                </ul>
-                            </div>
+                                </li>
+                                <li class="right-block">
+                                    <img src="./dist/images/home/QRcode.png" alt="">
+                                </li>
+                            </ul>
                         </div>
                     </div>
+
                 </div>
+                <!-- footer -->
                 <div class="down-foot">
                     <div class="company">
                         <div class="contact-icon">
@@ -266,16 +267,17 @@
                         </div>
                     </div>
                     <ol>
-                        <li><a href="about.html" target="_blank" data-i18n="foot.about">关于我们</a></li>
+                        <li><a data-href="about.html" target="_blank" data-i18n="foot.about">关于我们</a></li>
                         <li>|</li>
-                        <li><a href="contact.html" target="_blank" data-i18n="foot.contact">联系我们</a></li>
+                        <li><a data-href="contact.html" target="_blank" data-i18n="foot.contact">联系我们</a></li>
                         <li>|</li>
-                        <li><a href="business.html" target="_blank" data-i18n="foot.service">商务合作</a></li>
+                        <li><a data-href="business.html" target="_blank" data-i18n="foot.service">商务合作</a></li>
                     </ol>
                     <div class="grant">
-                        <span data-i18n="foot.copyright">Copyright @2017 厦门本能管家科技有限公司 I </span><a href="index.html" style="display:inline-block">闽ICP1234567890</a>
+                        <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
                     </div>
                 </div>
+                <!-- end -->
             </div>
         </div>
     </div>
@@ -288,28 +290,30 @@
     <div class=" navbar  animated-1 fff" id="navbar">
         <ul class="page-list" id="page-list">
             <li>
-                <a href="index.html#home">
-                    <p data-to="toIndex" data-i18n='nav.home'>主页</p>
+                <a href="#home">
+                    <p data-to="toIndex" data-i18n="nav.home">主页</p>
                 </a>
             </li>
             <li>
-                <a href="index.html#picassotxt">
+                <a href="#picassotxt">
                     <p data-i18n='nav.picasso'>币加所</p>
                 </a>
             </li>
             <li>
-                <a href="index.html#download">
+                <a href="#download">
                     <p data-i18n='nav.download'>下载中心</p>
                 </a>
             </li>
             <li>
-                <a href="management.html">
+                <a data-href="management.html" class="asset">
                     <p data-i18n='nav.assets'>资产管理</p>
                 </a>
             </li>
             <li class="moblie-nav">
-                <a href="register.html" style="font-size: 12px;" data-i18n='nav.login'>登录 / 注册</a>
-
+                <!-- <a href="login.html" style="font-size: 14px;">登录</a>
+                <a href="javascript:;">&nbsp;/&nbsp;</a>
+                <a href="register.html" style="font-size: 14px;">注册</a> -->
+                <a data-href="login.html" style="font-size: 12px;" data-i18n="nav.login">登录 / 注册</a>
             </li>
             <li>
                 <p id="lan_exchange" data-i18n="nav.language">简体中文</p>
@@ -328,32 +332,8 @@
     <!-- 登录状态 -->
     <script type="text/javascript" src="./dist/js/login-state.js"></script>
     <script type="text/javascript" src="./dist/js/fs_forse.js"></script>
-    <!-- 国际化 -->
-    <!-- <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script> -->
-    <!-- <script type="text/javascript" src="./dist/js/language.js?v=6"></script> -->
-
-    <!-- <script>
-        $(function() {
-            i18n.init({
-                resGetPath: './dist/language/en/__ns__.json'
-            }, function(t) {
-                // i18n est maintenant initialisé
-                $('body').i18n();
-
-                // 首页
 
 
-            });
-            // var lj = window.location.hash;
-            // if (lj == "#en") {
-            //     en();
-            // }
-            // if (lj == "#cn") {
-            //     cn();
-            // };
-
-        })
-    </script> -->
 
     <script>
         var _hmt = _hmt || [];
@@ -431,7 +411,7 @@
                         navActiveFunc(1)
                     }
                     if (index == 4) {
-                        navActiveFunc(2)
+                        navActiveFunc(1)
                     }
                     if (index == 5) {
                         navActiveFunc(2)
@@ -449,6 +429,10 @@
 
         })
     </script>
+    <!-- 国际化 -->
+    <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
+    <script type="text/javascript" src="./dist/js/language.js"></script>
+
 </body>
 
 </html>

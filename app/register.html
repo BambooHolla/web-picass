@@ -17,15 +17,20 @@
 
     <!-- 登录跟注册页面差不多，参考登陆的样式 -->
     <link rel="stylesheet" type="text/css" href="./dist/css/login.css">
+<<<<<<< HEAD
 
     <!-- 注册页面样式,进行修改 跟 添加 -->
     <link rel="stylesheet" type="text/css" href="./dist/css/register.css">
+    <!-- 英文状态下的样式调整 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/englishStyle.css">
+=======
+>>>>>>> 070b119e397910c043ea9aff6d1e872a071e9f3d
 </head>
 
 <body>
     <div id="app" style="height:100%;">
         <!-- 导航 -->
-        <nav class="nav right">
+        <nav class="nav right ">
             <div class="nav-logo">
                 <img src="./dist/images/home/nav_logo.png" alt="">
             </div>
@@ -34,25 +39,26 @@
                 <img class="mob-navicon-logo" src="./dist/images/home/nav_logo.png" alt="">
             </div>
             <ul class="web-nav">
-                <li class="tag nav-active ">
-                    <a href="index.html#home">首页</a>
+                <li class="tag  ">
+                    <a data-href="index.html#home" data-i18n='nav.home'>首页</a>
                 </li>
                 <li class="tag ">
-                    <a href="index.html#picassotxt">币加所</a>
+                    <a data-href="index.html#picassotxt" data-i18n='nav.picasso'>币加所</a>
                 </li>
                 <li class="tag">
-                    <a href="index.html#download">下载中心</a>
+                    <a data-href="index.html#download" data-i18n='nav.download'>下载中心</a>
                 </li>
                 <li class="tag">
-                    <a href="management.html">资产管理</a>
+                    <a data-href="management.html" data-i18n='nav.assets' class="asset">资产管理</a>
                 </li>
                 <li>
-                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt>简体中文</dt>
-                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="">English</a> </dd>
+                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt data-i18n='nav.language'>简体中文</dt>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="" data-i18n='nav.languageSwich'>English</a> </dd>
                     </dl>
                 </li>
                 <li class="login nav-login">
-                    <a href="register.html" style="font-size: 12px;">登录 / 注册</a>
+                    <a data-href="login.html" style="font-size: 12px;" data-i18n='nav.login'>登录 / 注册</a>
+
                 </li>
             </ul>
         </nav>
@@ -113,13 +119,13 @@
                                     <input type="password" name="againPwd" id="passwordAgain" autocomplete="off">
                                 </div>
                                 <div class="request">
-                                    <input type="checkbox" name="request" id="userProtocol" autocomplete="off" /><span>我已阅读并同意<a href="userProtocol.html" target="_blank">《用户协议》</a></span>
+                                    <input type="checkbox" name="request" id="userProtocol" autocomplete="off" /><span>我已阅读并同意<a data-href="userProtocol.html" target="_blank" id='userHref' style="cursor:pointer;">《用户协议》</a></span>
                                 </div>
                                 <div class="sub">
                                     <div>
                                         <input type="submit" value="注册" autocomplete="off">
                                         <div>
-                                            <span>已有账户？ </span><a href="login.html">去登录</a>
+                                            <span>已有账户？ </span><a data-href="login.html" id="goLogin" style="cursor:pointer;">去登录</a>
                                         </div>
                                     </div>
                                 </div>
@@ -128,40 +134,41 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="down-foot">
-            <div class="company">
-                <div class="contact-icon">
-                    <a>
-                        <img src="./dist/images/home/1.png" alt="">
-                    </a>
-                    <a>
-                        <img src="./dist/images/home/weixin.png" alt="">
-                    </a>
-                    <a>
-                        <img src="./dist/images/home/xinglang.png" alt="">
-                    </a>
-                    <a>
-                        <img src="./dist/images/home/4.png" alt="">
-                    </a>
-                    <a>
-                        <img src="./dist/images/home/5.png" alt="">
-                    </a>
-                    <a>
-                        <img src="./dist/images/home/6.png" alt="">
-                    </a>
 
+            <div class="down-foot">
+                <div class="company">
+                    <div class="contact-icon">
+                        <a>
+                            <img src="./dist/images/home/1.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/weixin.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/xinglang.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/4.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/5.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/6.png" alt="">
+                        </a>
+
+                    </div>
                 </div>
-            </div>
-            <ol>
-                <li><a href="about.html" target="_blank">关于我们</a></li>
-                <li>|</li>
-                <li><a href="contact.html" target="_blank">联系我们</a></li>
-                <li>|</li>
-                <li><a href="business.html" target="_blank">商务合作</a></li>
-            </ol>
-            <div class="grant">
-                <p>Copyright @2017 厦门本能管家科技有限公司 I 闽ICP1234567890</p>
+                <ol>
+                    <li><a href="about.html" target="_blank">关于我们</a></li>
+                    <li>|</li>
+                    <li><a href="contact.html" target="_blank">联系我们</a></li>
+                    <li>|</li>
+                    <li><a href="business.html" target="_blank">商务合作</a></li>
+                </ol>
+                <div class="grant">
+                    <p>Copyright @2017 厦门本能管家科技有限公司 I 闽ICP1234567890</p>
+                </div>
             </div>
         </div>
     </div>
@@ -176,28 +183,33 @@
     <div class=" navbar  animated-1 fff" id="navbar">
         <ul class="page-list" id="page-list">
             <li>
-                <a href="index.html#home">
-                    <p data-to="toIndex" data-i18n="home">主页</p>
+                <a data-href="index.html#home">
+                    <p data-to="toIndex" data-i18n="nav.home">主页</p>
                 </a>
             </li>
             <li>
-                <a href="index.html#picassotxt">
-                    <p>币加所</p>
+                <a data-href="index.html#picassotxt">
+                    <p data-i18n='nav.picasso'>币加所</p>
                 </a>
             </li>
             <li>
-                <a href="management.html">
-                    <p>资产管理</p>
+                <a data-href="index.html#download">
+                    <p data-i18n='nav.download'>下载中心</p>
+                </a>
+            </li>
+            <li>
+                <a data-href="management.html" class="asset">
+                    <p data-i18n='nav.assets'>资产管理</p>
                 </a>
             </li>
             <li class="moblie-nav">
                 <!-- <a href="login.html" style="font-size: 14px;">登录</a>
                 <a href="javascript:;">&nbsp;/&nbsp;</a>
                 <a href="register.html" style="font-size: 14px;">注册</a> -->
-                <a href="javascript:;" style="font-size: 12px;">登录 / 注册</a>
+                <a data-href="login.html" style="font-size: 12px;" data-i18n="nav.login">登录 / 注册</a>
             </li>
             <li>
-                <p id="lan_exchange">中文</p>
+                <p id="lan_exchange" data-i18n="nav.language">简体中文</p>
             </li>
         </ul>
     </div>
@@ -214,12 +226,14 @@
 
     <script type="text/javascript" src="./dist/js/picasso-request.js"></script>
 
-    <script type="text/javascript" src="./dist/js/language.js"></script>
+
     <script type="text/javascript" src="./dist/js/main.js"></script>
 
     <!-- 页面导航下划线样式动作，注册类型切换,底下有注册事件 -->
     <script type="text/javascript" src="./dist/js/register.js"></script>
-
+    <!-- 国际化 -->
+    <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
+    <script type="text/javascript" src="./dist/js/language.js"></script>
 
 
 </html>

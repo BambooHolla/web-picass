@@ -4,11 +4,55 @@
     text-align: center;
 }
 
+.en-s2-p,
+.en-s3-bigTitle,
+.en-s3-title,
+.en-s3-txt,
+.en-s5-app,
+.en-s5-txt,
+.en-as-title {
+    display: block!important;
+}
+
+.en-s3-img,
+.en-s5-img,
+.en-as-img {
+    display: none;
+}
+
+.en-s3-bigTitle {
+    font-size: 36px;
+    margin-bottom: 6px!important;
+    color: #cb9c35;
+}
+
+.en-s3-title {
+    font-size: 18px;
+    color: #cb9c35;
+}
+
+.en-s5-app {
+    font-size: 32px;
+    color: #cb9c35;
+    font-weight: 600;
+}
+
+.en-s5-txt {
+    font-size: 26px;
+}
+
+.en-as-title {
+    font-size: 32px;
+    color: #cb9c35;
+    font-weight: 600;
+}
+
+.en-as-btn {
+    font-size: 16px!important;
+}
+
 
 /* 自适应----------------------------------------------------------- */
-
-
-/* 中屏 */
 
 @media screen and (max-width: 1270px) {
     .section1 .picasso-txt span {
@@ -21,9 +65,6 @@
         font-size: 24px;
     }
 }
-
-
-/* 导航 宽度不够 */
 
 @media screen and (min-width:793px) and (max-width:859px) {
     .en-nav li {
@@ -39,16 +80,9 @@
 
 @media screen and (min-width:875px) and (max-width:991px) {}
 
-
-/* 比小屏小，比手机屏大，之间的样式 */
-
 @media screen and (min-width:496px) and (max-width:992px) {}
 
-@media screen and (max-width:495px) {
-    .section1 .picasso-txt span {
-        font-size: 1.2rem;
-    }
-}
+@media screen and (max-width:495px) {}
 
 @media screen and (max-width: 359px) {}
 

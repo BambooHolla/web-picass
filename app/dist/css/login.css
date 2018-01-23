@@ -6,13 +6,10 @@ body {
     position: relative;
 }
 
-.down-foot {
-    position: absolute;
-}
-
 .main p {
     margin: 0;
     padding: 0;
+    color: rgba(255, 255, 255, .7);
 }
 
 .main-box {
@@ -57,7 +54,7 @@ form>div {
 .login-content p {
     font-size: 16px;
     font-family: "PingFangSC";
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255, .7);
     line-height: 2;
 }
 
@@ -112,7 +109,7 @@ input {
 }
 
 .sub input {
-    border-radius: 10px;
+    border-radius: 6px;
     background-image: -moz-linear-gradient( 0deg, rgb(213, 179, 109) 0%, rgb(179, 133, 34) 32%, rgb(235, 191, 96) 81%, rgb(251, 234, 198) 100%);
     background-image: -webkit-linear-gradient( 0deg, rgb(213, 179, 109) 0%, rgb(179, 133, 34) 32%, rgb(235, 191, 96) 81%, rgb(251, 234, 198) 100%);
     background-image: -ms-linear-gradient( 0deg, rgb(213, 179, 109) 0%, rgb(179, 133, 34) 32%, rgb(235, 191, 96) 81%, rgb(251, 234, 198) 100%);
@@ -129,7 +126,7 @@ input {
 .sub span {
     font-size: 13px;
     font-family: "PingFangSC";
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, .7);
     line-height: 2;
 }
 
@@ -166,6 +163,11 @@ input {
     background-position: 50% 50%;
     width: 10%;
     height: 72px;
+}
+
+.down-foot ol,
+.down-foot .grant {
+    text-align: center;
 }
 
 
@@ -213,7 +215,7 @@ input {
 
 @media screen and (max-width: 485px) {
     .main {
-        margin-bottom: 10rem;
+        margin-bottom: 13rem;
     }
     .main-box {
         margin: auto;
@@ -239,12 +241,12 @@ input {
     .account input,
     .pwd input,
     .validate div {
-        height: 3.84rem;
+        height: 3.88rem;
     }
     .account input,
     .pwd input {
         border-width: 0.1rem;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         padding: 0 1rem;
     }
     /* 拖动滑块 start */
@@ -274,7 +276,306 @@ input {
         line-height: 1.3334;
     }
     .sub a {
+        text-decoration: underline;
         font-size: 1.2rem;
         line-height: 1.3334;
+    }
+}
+
+
+/* register */
+
+.register-type {
+    text-align: left;
+}
+
+.register-type>div {
+    display: inline-block;
+    font-size: 18px;
+    font-family: "PingFangSC";
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.register-type {
+    margin-bottom: 50px;
+}
+
+.register-phone {
+    margin-right: 6%;
+}
+
+.register-email div,
+.register-phone div {
+    overflow: hidden;
+}
+
+.register-email div {
+    height: 0;
+}
+
+.register-type>div div {
+    position: absolute;
+    top: 11px;
+}
+
+form input {
+    width: 100%;
+    height: 50px;
+    font-size: 36px;
+    color: #bf9742;
+    line-height: 1;
+    z-index: 40;
+    text-align: left;
+    margin: 0 0 0;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d5b46d;
+    background-color: #323233;
+    font-size: 17px;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nationality p,
+.tel p,
+.email p,
+.register-validate p,
+.pwd p,
+.againPwd p {
+    margin-bottom: 10px;
+}
+
+.email {
+    display: none;
+}
+
+.request input {
+    width: 24px;
+    height: 24px;
+    border: none;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.request span {
+    font-size: 15px;
+    vertical-align: middle;
+    margin-left: 16px;
+    color: rgba(255, 255, 255, .7);
+}
+
+.request span a {
+    font-size: 15px;
+    vertical-align: middle;
+    color: #ac9e75;
+}
+
+
+/* 下拉框 */
+
+.nationality input {
+    cursor: pointer!important;
+}
+
+.nationality>div {
+    position: relative;
+    cursor: pointer;
+}
+
+.select-logo {
+    width: 0;
+    height: 0;
+    border-top: 12px solid #fff;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    right: 20px;
+    top: 32px;
+}
+
+.select-select {
+    box-sizing: border-box;
+    position: absolute;
+    overflow: hidden;
+    top: 72px;
+    left: 0px;
+    background-color: #323233;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #d5b46d;
+    width: 100%;
+    border-top: none;
+    font-size: 24px;
+    font-family: "PingFangSC";
+    line-height: 2;
+    cursor: pointer;
+    display: none;
+}
+
+.select-option {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.select-option:hover {
+    background-color: #19171d;
+}
+
+input[type='submit'] {
+    text-align: center;
+}
+
+
+/* 手机下拉框 */
+
+.tel>div {
+    position: relative;
+    cursor: pointer;
+}
+
+.tel-box {
+    cursor: pointer!important;
+    width: 174px;
+    height: 70px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-right: #fff 2px solid;
+    box-sizing: border-box
+}
+
+.tel-content {
+    font-size: 24px;
+    padding-left: 20px;
+    line-height: 72px;
+    height: 72px;
+}
+
+.tel-box .select-select {
+    width: 174px;
+}
+
+
+/* 获取验证码 */
+
+.validate-box {
+    position: relative;
+}
+
+.validate-btn {
+    position: absolute;
+    width: 122px;
+    right: 0px;
+    top: 14px;
+    border-left: #fff solid 2px;
+    text-align: center;
+    font-size: 15px;
+    color: #bf9742;
+    font-family: "PingFangSC";
+    cursor: pointer;
+}
+
+@media screen and (min-width:486px) and (max-width:768px) {
+    .validate-btn {
+        width: 126px;
+    }
+    .tel-box {
+        width: 124px;
+    }
+    .tel-box .select-select {
+        width: 124px;
+    }
+    .tel input {
+        padding-left: 144px;
+    }
+}
+
+@media screen and (max-width:485px) {
+    .register-type p,
+    .login-content p {
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, .8);
+    }
+    .register-type {
+        margin-bottom: 3.2rem;
+    }
+    .register-type>div {
+        font-size: 1.8rem;
+    }
+    .register-type>div div {
+        top: 1.4rem;
+    }
+    form input {
+        height: 3.84rem;
+        font-size: 1.6rem;
+        padding: 0 1rem;
+        border-width: 0.1rem;
+    }
+    .request input {
+        width: 1.4rem;
+        height: 1.4rem;
+        font-size: 1.2rem;
+    }
+    .request span {
+        font-size: 1.2rem;
+        margin-left: 0.4rem;
+    }
+    .request span a {
+        font-size: 1.2rem;
+        position: relative;
+        top: -0.1rem;
+    }
+    /* 下拉框 */
+    .select-logo {
+        width: 0;
+        height: 0;
+        border-top: 0.6rem solid #fff;
+        border-right: 0.6rem solid transparent;
+        border-left: 0.6rem solid transparent;
+        position: absolute;
+        right: 0.8rem;
+        top: 1.6rem;
+    }
+    .select-select {
+        border-width: 0.1rem;
+        font-size: 1.6rem;
+        top: 3.84rem;
+    }
+    .select-option {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    /* 手机下拉框 */
+    .tel-box {
+        width: 7.2rem;
+        height: 3.64rem;
+        top: 0.1rem;
+        border-width: 0.1rem;
+    }
+    .tel-content {
+        font-size: 1.6rem;
+        padding-left: 1rem;
+        line-height: 3.64rem;
+        height: 3.64rem;
+    }
+    .tel-box .select-select {
+        width: 7.2rem;
+        top: 3.74rem;
+        border-width: 0.1rem;
+    }
+    /* 获取验证码 */
+    .validate-btn {
+        width: 7.2rem;
+        height: 2.84rem;
+        top: 0.5rem;
+        line-height: 2.84rem;
+        font-size: 1.2rem;
+        border-left-width: 0.1rem;
     }
 }
