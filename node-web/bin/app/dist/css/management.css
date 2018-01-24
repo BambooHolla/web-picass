@@ -117,7 +117,7 @@ body {
     background-image: url(../images/management/btn_bj.png);
     background-size: 100% 100%;
     margin-right: 20px;
-    font-size: 24px;
+    font-size: 18px;
     color: #c1b17f;
     cursor: pointer;
     background-repeat: no-repeat;
@@ -204,8 +204,8 @@ body {
         margin-right: auto;
     }
     .assets-title img {
-        width: 149.6px;
-        height: 36.792px;
+        width: 119.68px;
+        height: 29.4336px;
     }
 }
 
@@ -219,16 +219,11 @@ body {
     .main>div {
         width: 90%
     }
-    /* 折合 */
-    .rate {
-        font-size: 22px;
-    }
     /* 表格第一行标题 */
     #content .content-th {
         height: 60px;
     }
     #content .content-th div {
-        font-size: 22px;
         font-weight: 500;
         color: #fff;
         width: 25%;
@@ -299,7 +294,8 @@ body {
         height: 29.4336px;
     }
     /* 折合 */
-    .rate {
+    .rate,
+    .rate #priceId {
         font-size: 14px;
     }
     /* 表格 */
@@ -312,7 +308,7 @@ body {
         height: 48px;
     }
     #content .content-th div {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 48px;
     }
     /* 表格内容 */
@@ -379,7 +375,8 @@ body {
         height: 2.354688rem;
     }
     /* 折合 */
-    .rate {
+    .rate,
+    .rate #priceId {
         font-size: 1.2rem;
     }
     /* 表格 */

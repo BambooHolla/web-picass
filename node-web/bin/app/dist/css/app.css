@@ -894,7 +894,8 @@
                 font-size: 2.4rem;
             }
             /* home_3 */
-            .section3 .advantage {
+            .section3 .advantage,
+            .section4 .advantage {
                 margin-top: 1rem;
             }
             .rate span:nth-child(2) {
@@ -930,7 +931,7 @@
             /* 下面是home_3 五筒排布 */
             .content-title>span {
                 display: block;
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 color: #b38623;
             }
             .content-title img {
