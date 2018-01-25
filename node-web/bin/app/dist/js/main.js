@@ -11,8 +11,16 @@ $(function() {
             $('.navbar').hide()
         }, 500)
     })
-    $('#slide_lang').click(function() {
-        $('#slide_lang_box').toggle()
+    $('#slide_lang').mouseenter(function() {
+        // $('#slide_lang_box').toggle()
+        $('#slide_lang_box').css('display', "block")
+    })
+    $('.nav,#slide_lang_box').mouseleave(function() {
+
+        $('#slide_lang_box').css('display', "none")
+    })
+    $('#slide_lang_box').click(function() {
+        $('#slide_lang_box').css('display', "none")
     })
 })
 
