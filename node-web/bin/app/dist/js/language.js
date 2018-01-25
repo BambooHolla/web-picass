@@ -128,6 +128,11 @@ $(function() {
             $('body').i18n();
             window.location.hash = '#cn'
 
+
+            // 导航栏
+            $('.nav').removeClass('en-nav')
+
+
             //首页section1
             $('.section1 .picasso-txt span').css('display', 'none')
             $('.section1 .picasso-txt img').css('display', 'inline-block')
@@ -169,6 +174,9 @@ $(function() {
             // i18n est maintenant initialisé
             $('body').i18n();
             window.location.hash = '#en'
+
+            // 导航栏
+            $('.nav').addClass('en-nav')
 
             //首页section1
             $('.section1 .picasso-txt span').css('display', 'block')
