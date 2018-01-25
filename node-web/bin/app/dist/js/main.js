@@ -22,6 +22,15 @@ $(function() {
     $('#slide_lang_box').click(function() {
         $('#slide_lang_box').css('display', "none")
     })
+
+    $('.android-btn').on("click mouseenter", function() {
+        $('.iphone_code').removeClass('fadeInRight').hide();
+        $('.android_code').removeClass('zoomOut').show().addClass('fadeInRight')
+    })
+    $('.iphone-btn').on("click mouseenter", function() {
+        $('.iphone_code').removeClass('zoomOut').show().addClass('fadeInRight')
+        $('.android_code').removeClass('fadeInRight').hide();
+    })
 })
 
 //导航条 翻译选择 start
