@@ -217,6 +217,14 @@
     -webkit-animation: nextPage 1.5s infinite;
 }
 
+.download-btn li:nth-child(2) {
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
 @keyframes nextPage {
     0% {
         left: 50%;
