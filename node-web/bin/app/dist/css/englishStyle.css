@@ -4,6 +4,11 @@
     text-align: center;
 }
 
+.section1 .picasso-txt-2 span {
+    font-size: 32px;
+    font-weight: 300;
+}
+
 .en-s2-p,
 .en-s3-bigTitle,
 .en-s3-title,
@@ -20,6 +25,16 @@
     display: none;
 }
 
+.en-s2-p p {
+    font-weight: 300!important;
+    font-size: 36px!important;
+}
+
+.en-s2-p .lab-text-b {
+    font-weight: 400!important;
+    font-size: 42px!important;
+}
+
 .en-s3-bigTitle {
     font-size: 36px;
     margin-bottom: 6px!important;
@@ -27,8 +42,12 @@
 }
 
 .en-s3-title {
-    font-size: 18px;
+    font-size: 20px;
     color: #cb9c35;
+}
+
+.en-s3-txt {
+    font-size: 16px;
 }
 
 .en-s5-app {
@@ -38,6 +57,7 @@
 }
 
 .en-s5-txt {
+    font-weight: 400;
     font-size: 26px;
 }
 
@@ -51,6 +71,10 @@
     font-size: 16px!important;
 }
 
+.en-as-layer p {
+    word-break: break-all
+}
+
 
 /* 自适应----------------------------------------------------------- */
 
@@ -58,17 +82,90 @@
     .section1 .picasso-txt span {
         font-size: 32px;
     }
+    .section1 .picasso-txt-2 span {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .en-as-btn {
+        width: 80px!important;
+        height: 32px!important;
+        font-size: 14px!important;
+        margin-right: 6px!important;
+    }
+    .en-as-layer p {
+        margin-bottom: 10px!important;
+        margin-top: 10px!important;
+    }
 }
 
 @media screen and (max-width: 992px) {
     .section1 .picasso-txt span {
         font-size: 24px;
     }
+    .section1 .picasso-txt-2 span {
+        font-size: 20px;
+    }
+    .en-s2-p p {
+        font-size: 22px!important;
+    }
+    .en-s2-p .lab-text-b {
+        font-size: 32px!important;
+    }
+    .en-s3-bigTitle {
+        font-size: 30px;
+    }
+    .en-as-title {
+        font-size: 28px;
+    }
 }
 
 @media screen and (min-width:793px) and (max-width:859px) {
     .en-nav li {
         margin: 10px 3px 6px 0px!important;
+    }
+}
+
+@media screen and (max-width: 780px) and (min-width: 611px) {
+    .en-s3-title {
+        font-size: 14px!important;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .en-as-btn {
+        width: 64px!important;
+        height: 25.6px!important;
+        font-size: 12px!important;
+        margin-right: 4px!important;
+    }
+}
+
+@media screen and (max-width: 610px) and (min-width: 495px) {
+    .en-s3-title {
+        font-size: 10px!important;
+    }
+}
+
+@media screen and (max-width: 605px) {
+    .en-as-btn {
+        width: 50px!important;
+        height: 25.6px!important;
+        font-size: 10px!important;
+        margin-right: 4px!important;
+    }
+}
+
+@media screen and (max-width: 640px) and (min-width: 486px) {
+    .en-as-layer p {
+        width: 89%!important;
+    }
+    .en-as-layer a {
+        font-size: 14px;
+    }
+    .en-as-title {
+        font-size: 22px;
     }
 }
 
@@ -82,7 +179,44 @@
 
 @media screen and (min-width:496px) and (max-width:992px) {}
 
-@media screen and (max-width:495px) {}
+@media screen and (max-width:495px) {
+    .section1 .picasso-txt span {
+        font-size: 1.8rem;
+    }
+    .section1 .picasso-txt-2 span {
+        font-size: 1.4rem;
+    }
+    .en-s2-p p {
+        font-size: 1.8rem!important;
+    }
+    .en-s2-p .lab-text-b {
+        font-size: 2.4rem!important;
+    }
+    .en-s3-txt {
+        font-size: 1.2rem!important;
+    }
+    .en-s5-app {
+        display: none!important;
+    }
+    .en-s5-txt {
+        font-size: 1.2rem!important;
+        margin-top: -3rem!important;
+    }
+    .en-as-btn {
+        height: 1.6312rem!important;
+        font-size: 0.8rem!important;
+    }
+    .en-as-layer p {
+        width: 89%!important;
+        font-size: 1rem!important;
+    }
+    .en-as-layer a {
+        font-size: 0.8rem!important;
+    }
+    .en-as-title {
+        font-size: 1.8rem;
+    }
+}
 
 @media screen and (max-width: 359px) {}
 

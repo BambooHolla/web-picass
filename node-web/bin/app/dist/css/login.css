@@ -356,8 +356,8 @@ form input {
 }
 
 .request input {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     border: none;
     font-size: 16px;
     vertical-align: middle;
@@ -366,7 +366,7 @@ form input {
 .request span {
     font-size: 15px;
     vertical-align: middle;
-    margin-left: 16px;
+    margin-left: 8px;
     color: rgba(255, 255, 255, .7);
 }
 
@@ -491,9 +491,9 @@ input[type='submit'] {
     .tel-box .select-select {
         width: 124px;
     }
-    .tel input {
+    /* .tel input {
         padding-left: 144px;
-    }
+    } */
 }
 
 @media screen and (max-width:485px) {

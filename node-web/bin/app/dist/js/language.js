@@ -4,20 +4,20 @@ $(function() {
         //导航栏下划线，切换语言，需重新调整
         var navActive = document.querySelector(".nav-active");
         var navUnderline = document.querySelector('.nav ul');
-
-
-        var width = navActive.getBoundingClientRect().width;
-        var height = navActive.getBoundingClientRect().height;
-        var left = navActive.getBoundingClientRect().left + window.pageXOffset;
-        var top = navActive.getBoundingClientRect().top + window.pageYOffset;
-        target.style.width = width + "px";
-        target.style.height = height + "px";
-        target.style.left = left + "px";
-        target.style.top = top + "px";
-        target.style.borderColor = color;
-        target.style.borderWidth = '3px'
-        target.style.transform = "none";
-        target.style.zIndex = 1;
+        if (navActive) {
+            var width = navActive.getBoundingClientRect().width;
+            var height = navActive.getBoundingClientRect().height;
+            var left = navActive.getBoundingClientRect().left + window.pageXOffset;
+            var top = navActive.getBoundingClientRect().top + window.pageYOffset;
+            target.style.width = width + "px";
+            target.style.height = height + "px";
+            target.style.left = left + "px";
+            target.style.top = top + "px";
+            target.style.borderColor = color;
+            target.style.borderWidth = '3px'
+            target.style.transform = "none";
+            target.style.zIndex = 1;
+        }
     }
 
 
@@ -128,6 +128,11 @@ $(function() {
             $('body').i18n();
             window.location.hash = '#cn'
 
+
+            // 导航栏
+            $('.nav').removeClass('en-nav')
+
+
             //首页section1
             $('.section1 .picasso-txt span').css('display', 'none')
             $('.section1 .picasso-txt img').css('display', 'inline-block')
@@ -154,9 +159,9 @@ $(function() {
             $('#totalsData .content-btn button').removeClass('en-as-btn')
 
             // 首页导航下划线，长度定位调整
-            if (window.location.href.indexOf('index.html') != -1) {
-                mouseleaveFunc()
-            }
+
+            mouseleaveFunc()
+
 
         });
     }
@@ -169,6 +174,9 @@ $(function() {
             // i18n est maintenant initialisé
             $('body').i18n();
             window.location.hash = '#en'
+
+            // 导航栏
+            $('.nav').addClass('en-nav')
 
             //首页section1
             $('.section1 .picasso-txt span').css('display', 'block')
@@ -196,9 +204,10 @@ $(function() {
             $('#totalsData .content-btn button').addClass('en-as-btn')
 
             // 首页导航下划线，长度定位调整
-            if (window.location.href.indexOf('index.html') != -1) {
-                mouseleaveFunc()
-            }
+
+            mouseleaveFunc()
+
+
         });
     }
 
