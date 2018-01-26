@@ -265,7 +265,7 @@
         
         @media screen and (max-width: 1270px) {
             .picasso {
-                background-size: 1700px auto;
+                background-size: 700px auto;
             }
             .picasso-txt>p:nth-child(1) img {
                 width: 500px;
@@ -578,7 +578,7 @@
                 background-size: auto 100%;
             }
             .section1 .picasso {
-                background-size: 886px auto;
+                background-size: 480px auto;
             }
             .picasso .picasso-txt {
                 margin-top: 180px;
@@ -868,8 +868,8 @@
                 background-size: 1400px auto;
             }
             .section1 .picasso {
-                background-size: 650px auto;
-                background-position: 47% 50%;
+                background-size: 350px auto;
+                background-position: 50% 50%;
             }
             .picasso .picasso-txt {
                 margin-top: 14rem;

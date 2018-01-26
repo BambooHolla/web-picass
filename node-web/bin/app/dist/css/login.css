@@ -15,7 +15,7 @@ body {
 .main-box {
     max-width: 380px;
     width: 88%;
-    margin: 30px auto 150px;
+    margin: 30px auto 0px;
 }
 
 .login-title {
