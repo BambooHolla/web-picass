@@ -137,10 +137,10 @@ $(function() {
 
         var url = "/user"
         var valiData = {}
-        if (registerType == 0) {
-            layer.msg("验证码发送失败，请稍后再试");
-            return;
-        }
+            // if (registerType == 0) {
+            //     layer.msg("验证码发送失败，请稍后再试");
+            //     return;
+            // }
         $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
             console.log(data);
 
@@ -162,7 +162,7 @@ $(function() {
                 url += "/sendEmailCode"
                 valiData = {
                     email: account,
-                    type: "101"
+                    type: "201"
                 }
             }
             $.picassoGet(url, valiData, function(data) {
