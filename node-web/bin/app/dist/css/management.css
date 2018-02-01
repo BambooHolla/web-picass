@@ -126,12 +126,12 @@ body {
 
 /* 弹出框样式修改 */
 
-.layui-layer {
+.layui-layer-page {
     border-radius: 15px!important;
     box-shadow: 0 0 60px #c1b082!important;
 }
 
-.layui-layer-content {
+.layui-layer-page .layui-layer-content {
     background-image: url(../images/management/rectangle.png);
     background-color: transparent;
     background-size: 100% 100%;
@@ -139,7 +139,7 @@ body {
     border-radius: 15px;
 }
 
-.layui-layer-content>div>div {
+.layui-layer-page .layui-layer-content>div>div {
     margin-left: auto;
     margin-right: auto;
     width: 116px;
@@ -147,12 +147,12 @@ body {
     margin-top: 30px;
 }
 
-.layui-layer-content img {
+.layui-layer-page .layui-layer-content img {
     width: 100%;
     height: 100%;
 }
 
-.layui-layer-content p {
+.layui-layer-page .layui-layer-content p {
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -164,7 +164,7 @@ body {
     margin-bottom: 10px;
 }
 
-.layui-layer-content a {
+.layui-layer-page .layui-layer-content a {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -257,29 +257,29 @@ body {
         margin-right: 6px;
     }
     /* 弹出框样式修改 */
-    .layui-layer {
+    .layui-layer-page {
         border-radius: 15px!important;
         box-shadow: 0 0 60px #c1b082!important;
         width: 400px!important;
         height: 282.1875px!important;
     }
-    .layui-layer-content>div>div {
+    .layui-layer-page .layui-layer-content>div>div {
         width: 76.125px;
         height: 70.875px;
         margin-top: 19.6875px;
     }
-    .layui-layer-content img {
+    .layui-layer-page .layui-layer-content img {
         width: 100%;
         height: 100%;
     }
-    .layui-layer-content p {
+    .layui-layer-page .layui-layer-content p {
         margin-top: 19.6875px;
         width: 80%;
         font-size: 16px;
         line-height: 24.9375px;
         margin-bottom: 20px;
     }
-    .layui-layer-content a {
+    .layui-layer-page .layui-layer-content a {
         width: 164.0625px;
         height: 32.8125px;
         line-height: 32.8125px;
@@ -331,29 +331,29 @@ body {
         margin-right: 2px;
     }
     /* 弹出框样式修改 */
-    .layui-layer {
+    .layui-layer-page {
         border-radius: 15px!important;
         box-shadow: 0 0 60px #c1b082!important;
         width: 380px!important;
         height: 262.1875px!important;
     }
-    .layui-layer-content>div>div {
+    .layui-layer-page .layui-layer-content>div>div {
         width: 76.125px;
         height: 70.875px;
         margin-top: 19.6875px;
     }
-    .layui-layer-content img {
+    .layui-layer-page .layui-layer-content img {
         width: 100%;
         height: 100%;
     }
-    .layui-layer-content p {
+    .layui-layer-page .layui-layer-content p {
         margin-top: 19.6875px;
         width: 80%;
         font-size: 14px;
         line-height: 24.9375px;
         margin-bottom: 20px;
     }
-    .layui-layer-content a {
+    .layui-layer-page .layui-layer-content a {
         width: 164.0625px;
         height: 32.8125px;
         line-height: 32.8125px;
@@ -415,22 +415,22 @@ body {
         display: block;
     }
     /* 弹出框样式修改 */
-    .layui-layer {
+    .layui-layer-page {
         border-radius: 1.5rem!important;
         box-shadow: 0 0 6rem #c1b082!important;
         width: 24.36rem!important;
         height: 16.866875rem!important;
     }
-    .layui-layer-content>div>div {
+    .layui-layer-page .layui-layer-content>div>div {
         width: 4.41525rem;
         height: 4.11075rem;
         margin-top: 1.141875rem;
     }
-    .layui-layer-content img {
+    .layui-layer-page .layui-layer-content img {
         width: 100%;
         height: 100%;
     }
-    .layui-layer-content p {
+    .layui-layer-page .layui-layer-content p {
         margin-top: 1.141875rem;
         width: 80%;
         font-size: 1.2rem;
