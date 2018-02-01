@@ -24,12 +24,12 @@ $(function() {
     })
 
     $('.android-btn').on("click mouseenter", function() {
-        $('.iphone_code').removeClass('fadeInRight').hide();
-        $('.android_code').removeClass('zoomOut').show().addClass('fadeInRight')
+        $('.iphone_code').removeClass('fadeInDown').hide();
+        $('.android_code').removeClass('zoomOut').show().addClass('fadeInDown')
     })
     $('.iphone-btn').on("click mouseenter", function() {
-        $('.iphone_code').removeClass('zoomOut').show().addClass('fadeInRight')
-        $('.android_code').removeClass('fadeInRight').hide();
+        $('.iphone_code').removeClass('zoomOut').show().addClass('fadeInDown')
+        $('.android_code').removeClass('fadeInDown').hide();
     })
 })
 
