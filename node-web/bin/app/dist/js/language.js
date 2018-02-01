@@ -102,11 +102,11 @@ $(function() {
         })
     }
 
-    // 页脚 底部3个链接,跳转到用户协议
+    // 页脚 底部链接,跳转到用户协议
     $('.down-foot ol a,#userHref').click(function() {
         var href = $(this).attr("data-href");
         var txt = $('#slide_lang dt').text().trim()
-
+        if (href == undefined) { return; }
         if (txt == "简体中文") {
             window.open(href + "#cn");
         } else if (txt == "English") {
