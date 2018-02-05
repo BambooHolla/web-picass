@@ -390,7 +390,7 @@ $(function() {
                 code: code
             }
             if (recommendCode.length > 0 && recommendCode.length <= 40 && (/^[0-9a-zA-Z\-]*$/g).test(recommendCode)) {
-                parameter.recommendCode = recommendCode;
+                parameter.ref = recommendCode;
             }
 
             // 注册请求
