@@ -137,10 +137,10 @@ $(function() {
 
         var url = "/user"
         var valiData = {}
-        if (registerType == 0) {
-            layer.msg("验证码发送失败，请稍后再试");
-            return;
-        }
+            // if (registerType == 0) {
+            //     layer.msg("验证码发送失败，请稍后再试");
+            //     return;
+            // }
         $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
             console.log(data);
 
@@ -162,7 +162,7 @@ $(function() {
                 url += "/sendEmailCode"
                 valiData = {
                     email: account,
-                    type: "101"
+                    type: "201"
                 }
             }
             $.picassoGet(url, valiData, function(data) {
@@ -390,7 +390,7 @@ $(function() {
                 code: code
             }
             if (recommendCode.length > 0 && recommendCode.length <= 40 && (/^[0-9a-zA-Z\-]*$/g).test(recommendCode)) {
-                parameter.recommendCode = recommendCode;
+                parameter.ref = recommendCode;
             }
 
             // 注册请求
