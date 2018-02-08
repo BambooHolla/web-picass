@@ -6,6 +6,10 @@ body {
     position: relative;
 }
 
+.main {
+    margin-bottom: 50px;
+}
+
 .main p {
     margin: 0;
     padding: 0;
@@ -372,7 +376,6 @@ form input {
 
 .request span a {
     font-size: 15px;
-    vertical-align: middle;
     color: #ac9e75;
 }
 
@@ -528,8 +531,6 @@ input[type='submit'] {
     }
     .request span a {
         font-size: 1.2rem;
-        position: relative;
-        top: -0.1rem;
     }
     /* 下拉框 */
     .select-logo {
