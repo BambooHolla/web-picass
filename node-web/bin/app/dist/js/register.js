@@ -141,6 +141,10 @@ $(function() {
             //     layer.msg("验证码发送失败，请稍后再试");
             //     return;
             // }
+
+        // 开始倒计时,发送验证码请求
+        $('.validate-btn').css('cursor', 'not-allowed')
+        $('.validate-btn').off('click', validateClick)
         $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
             console.log(data);
 
@@ -148,6 +152,8 @@ $(function() {
                 layer.msg(data.message, {
                     time: 1500
                 });
+
+                $('#account' + registerType).val('')
                 return;
             }
 
@@ -168,17 +174,21 @@ $(function() {
             $.picassoGet(url, valiData, function(data) {
                 console.log(data)
 
-                // 开始倒计时,发送验证码请求
-                $('.validate-btn').css('cursor', 'not-allowed')
-                $('.validate-btn').off('click', validateClick)
+
                 validateTime()
             }, function(err) {
+                $('.validate-btn').text('获取验证码');
+                $('.validate-btn').on('click', validateClick)
+                $('.validate-btn').css('cursor', 'pointer')
                 console.log(err);
                 layer.msg("请求出错");
             })
 
         }, function(err) {
             console.log(err);
+            $('.validate-btn').text('获取验证码');
+            $('.validate-btn').on('click', validateClick)
+            $('.validate-btn').css('cursor', 'pointer')
             layer.msg("验证码发送失败，请稍后再试");
         });
 
@@ -390,7 +400,7 @@ $(function() {
                 code: code
             }
             if (recommendCode.length > 0 && recommendCode.length <= 40 && (/^[0-9a-zA-Z\-]*$/g).test(recommendCode)) {
-                parameter.ref = recommendCode;
+                parameter.recommendCode = recommendCode;
             }
 
             // 注册请求
@@ -402,8 +412,19 @@ $(function() {
 
                 layer.msg('注册成功');
 
+                var txt = $('#slide_lang dt').text().trim()
+                var href = "index.html"
+
+                if (txt == "简体中文") {
+                    href += '?cn&ref='
+                } else if (txt == "English") {
+                    href += '?en&ref='
+
+                } else {
+                    href += '?cn&ref='
+                }
                 setTimeout(function() {
-                    location.href = "management.html";
+                    location.href = href + recommendCode ? recommendCode : '';
                 }, 1000);
 
             }, function(err) {
