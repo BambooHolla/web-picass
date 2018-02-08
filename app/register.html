@@ -18,9 +18,6 @@
     <!-- 登录跟注册页面差不多，参考登陆的样式 -->
     <link rel="stylesheet" type="text/css" href="./dist/css/login.css">
 
-    <!-- 注册页面样式,进行修改 跟 添加 -->
-    <link rel="stylesheet" type="text/css" href="./dist/css/register.css">
-
     <!-- 英文状态下的样式调整 -->
     <link rel="stylesheet" type="text/css" href="./dist/css/englishStyle.css">
 </head>
@@ -116,12 +113,16 @@
                                     <p>确认密码</p>
                                     <input type="password" name="againPwd" id="passwordAgain" autocomplete="off">
                                 </div>
+                                <div class="againPwd">
+                                    <p>邀请码</p>
+                                    <input type="text" name="recommendCode" id="recommendCode" autocomplete="off">
+                                </div>
                                 <div class="request">
                                     <input type="checkbox" name="request" id="userProtocol" autocomplete="off" /><span>我已阅读并同意<a data-href="userProtocol.html" target="_blank" id='userHref' style="cursor:pointer;">《用户协议》</a></span>
                                 </div>
                                 <div class="sub">
                                     <div>
-                                        <input type="submit" value="注册" autocomplete="off">
+                                        <input type="submit" value="注册" autocomplete="off" id="register">
                                         <div>
                                             <span>已有账户？ </span><a data-href="login.html" id="goLogin" style="cursor:pointer;">去登录</a>
                                         </div>
@@ -158,14 +159,14 @@
                     </div>
                 </div>
                 <ol>
-                    <li><a href="about.html" target="_blank">关于我们</a></li>
+                    <li><a target="_blank" data-i18n="foot.about" id="foot-about">关于我们</a></li>
                     <li>|</li>
-                    <li><a href="contact.html" target="_blank">联系我们</a></li>
+                    <li><a target="_blank" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
                     <li>|</li>
-                    <li><a href="business.html" target="_blank">商务合作</a></li>
+                    <li><a target="_blank" data-i18n="foot.service" id="foot-business">商务合作</a></li>
                 </ol>
                 <div class="grant">
-                    <p>Copyright @2017 厦门本能管家科技有限公司 I 闽ICP1234567890</p>
+                    <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
                 </div>
             </div>
         </div>
@@ -219,6 +220,8 @@
     <script type="text/javascript" src="./dist/js/login-state.js"></script>
     <!-- layer插件 -->
     <script type="text/javascript" src="./dist/libs/layer/layer.js"></script>
+    <!-- 关于我们   layer弹窗 -->
+    <script type="text/javascript" src="./dist/js/footAbout.js"></script>
     <!-- 验证插件 -->
     <script type="text/javascript" src="./dist/libs/validator-js/validator.min.js"></script>
 
@@ -229,8 +232,10 @@
 
     <!-- 页面导航下划线样式动作，注册类型切换,底下有注册事件 -->
     <script type="text/javascript" src="./dist/js/register.js"></script>
+    <script type="text/javascript" src="./dist/js/recommendCode.js"></script>
     <!-- 国际化 -->
     <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
     <script type="text/javascript" src="./dist/js/language.js"></script>
+
 
 </html>

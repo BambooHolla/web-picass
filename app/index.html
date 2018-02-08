@@ -228,13 +228,14 @@
                             </div>
                             <ul class="download-btn">
                                 <li class="left-block">
-                                    <button>
+                                    <button class="android-btn">
                                                     </button>
-                                    <button>
+                                    <button class="iphone-btn">
                                                     </button>
                                 </li>
                                 <li class="right-block">
-                                    <img src="./dist/images/home/QRcode.png" alt="">
+                                    <img src="./dist/images/home/a_code.png" alt="" class="android_code animated-1">
+                                    <img src="./dist/images/home/i_code.png" alt="" class="iphone_code animated-1 hidden">
                                 </li>
                             </ul>
                         </div>
@@ -267,11 +268,11 @@
                         </div>
                     </div>
                     <ol>
-                        <li><a data-href="about.html" target="_blank" data-i18n="foot.about">关于我们</a></li>
+                        <li><a target="_blank" data-i18n="foot.about" id="foot-about">关于我们</a></li>
                         <li>|</li>
-                        <li><a data-href="contact.html" target="_blank" data-i18n="foot.contact">联系我们</a></li>
+                        <li><a target="_blank" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
                         <li>|</li>
-                        <li><a data-href="business.html" target="_blank" data-i18n="foot.service">商务合作</a></li>
+                        <li><a target="_blank" data-i18n="foot.service" id="foot-business">商务合作</a></li>
                     </ol>
                     <div class="grant">
                         <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
@@ -332,7 +333,10 @@
     <!-- 登录状态 -->
     <script type="text/javascript" src="./dist/js/login-state.js"></script>
     <script type="text/javascript" src="./dist/js/fs_forse.js"></script>
-
+    <!-- layer插件 -->
+    <script type="text/javascript" src="./dist/libs/layer/layer.js"></script>
+    <!-- 关于我们   layer弹窗 -->
+    <script type="text/javascript" src="./dist/js/footAbout.js"></script>
 
 
     <script>
@@ -346,6 +350,12 @@
     </script>
     <script>
         $(function() {
+
+
+
+
+
+
 
             setTimeout(function() {
                 $('#body').css(
@@ -429,10 +439,12 @@
 
         })
     </script>
+
+
     <!-- 国际化 -->
     <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
     <script type="text/javascript" src="./dist/js/language.js"></script>
 
 </body>
 
-</html>
+</html>yy
