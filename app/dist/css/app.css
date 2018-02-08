@@ -177,6 +177,14 @@
             width: 100%;
             margin: 30px auto;
         }
+        
+        .tips-1 {
+            width: 225px!important;
+        }
+        
+        .tips-2 {
+            width: 234px!important;
+        }
         /* 自适应----------------------------------------------------------- */
         
         @media only screen and (min-width: 496px) {
@@ -199,14 +207,15 @@
             }
             .content-box {
                 width: 42%;
-                height: 50%;
+                min-height: 50%;
+                height: 292px;
                 margin-bottom: 2rem;
             }
             .section4 .advantage {
                 margin: 10rem 0;
             }
             .section4 .box-content {
-                height: 100%;
+                height: 310px;
             }
         }
         
@@ -252,7 +261,7 @@
             }
         }
         
-        @media screen and (max-width: 792px) {
+        @media screen and (max-width: 805px) {
             .nav li {
                 margin: 10px 3px 6px 0px!important
             }
@@ -261,11 +270,23 @@
                 margin: 21px;
             }
         }
+        
+        @media screen and (max-width:560px) {
+            .nav {
+                width: 100%;
+            }
+            .nav a {
+                font-size: 13px;
+            }
+            .select_lang {
+                font-size: 13px;
+            }
+        }
         /* 中屏 */
         
         @media screen and (max-width: 1270px) {
             .picasso {
-                background-size: 1700px auto;
+                background-size: 700px auto;
             }
             .picasso-txt>p:nth-child(1) img {
                 width: 500px;
@@ -578,7 +599,7 @@
                 background-size: auto 100%;
             }
             .section1 .picasso {
-                background-size: 886px auto;
+                background-size: 480px auto;
             }
             .picasso .picasso-txt {
                 margin-top: 180px;
@@ -790,7 +811,7 @@
             }
             .download-iphone {
                 width: 14rem!important;
-                height: 26rem!important;
+                height: 23rem!important;
             }
         }
         
@@ -800,7 +821,7 @@
                 height: 14rem;
             }
             .box-content {
-                height: auto;
+                height: 100%;
             }
             .box-content .content-txt {
                 width: 90%;
@@ -868,8 +889,8 @@
                 background-size: 1400px auto;
             }
             .section1 .picasso {
-                background-size: 650px auto;
-                background-position: 47% 50%;
+                background-size: 350px auto;
+                background-position: 50% 50%;
             }
             .picasso .picasso-txt {
                 margin-top: 14rem;
@@ -894,7 +915,8 @@
                 font-size: 2.4rem;
             }
             /* home_3 */
-            .section3 .advantage {
+            .section3 .advantage,
+            .section4 .advantage {
                 margin-top: 1rem;
             }
             .rate span:nth-child(2) {
@@ -930,7 +952,7 @@
             /* 下面是home_3 五筒排布 */
             .content-title>span {
                 display: block;
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 color: #b38623;
             }
             .content-title img {
@@ -1031,6 +1053,16 @@
             .grant a {
                 font-size: 1.2rem;
             }
+            .tips-1 {
+                width: 200px!important;
+            }
+            .tips-2 {
+                width: 198px!important;
+            }
+            .tips-3 {}
+            .layui-layer-tips .layui-layer-content {
+                font-size: 1rem!important;
+            }
         }
         
         @media screen and (max-width: 320px) {
@@ -1039,14 +1071,6 @@
             }
             .box-content .content-txt {
                 font-size: 1.3rem;
-            }
-        }
-        /* 页面高度过大 调整 页面margin top */
-        
-        @media screen and (min-height: 900px) {
-            .section3 .advantage,
-            .section4 .download {
-                margin-top: 180px
             }
         }
         /* .box-content {

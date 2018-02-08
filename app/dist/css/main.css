@@ -217,6 +217,14 @@
     -webkit-animation: nextPage 1.5s infinite;
 }
 
+.download-btn li:nth-child(2) {
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
 @keyframes nextPage {
     0% {
         left: 50%;
@@ -360,7 +368,7 @@
     margin-right: auto;
     width: 100%;
     height: 100%;
-    background-image: url(../images/home/picasso.png);
+    background-image: url(../images/home/picasso_1.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     display: flex;
@@ -531,6 +539,7 @@
     background-size: 100% 100%;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 }
 
 .box-content>* {
@@ -736,7 +745,7 @@
 
 .down-foot {
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     color: #999999;
@@ -782,6 +791,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 8px;
 }
 
 .company>div p {

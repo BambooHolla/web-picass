@@ -137,10 +137,10 @@ $(function() {
 
         var url = "/user"
         var valiData = {}
-        if (registerType == 0) {
-            layer.msg("验证码发送失败，请稍后再试");
-            return;
-        }
+            // if (registerType == 0) {
+            //     layer.msg("验证码发送失败，请稍后再试");
+            //     return;
+            // }
         $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
             console.log(data);
 
@@ -162,7 +162,7 @@ $(function() {
                 url += "/sendEmailCode"
                 valiData = {
                     email: account,
-                    type: "101"
+                    type: "201"
                 }
             }
             $.picassoGet(url, valiData, function(data) {
@@ -282,7 +282,7 @@ $(function() {
 
 
 
-    //登入事件
+    //注册事件
     $('input[type="submit"]').click(function(e) {
         var e = e || window.e
         e.preventDefault()
@@ -292,9 +292,10 @@ $(function() {
         var passwordAgain = $('#passwordAgain').val();
         var code = $('#code').val().trim();
         var type = validator.isEmail(account) ? 0 : 1;
-
+        var recommendCode = $('#recommendCode').val().trim();
         var data = registerType ? `telephone=${account}` : `email=${account}`;
-
+        // 注册传参变量
+        var parameter = {};
 
         if (registerType) {
             if (!account) {
@@ -382,14 +383,19 @@ $(function() {
                 return;
             }
 
-            // 注册请求
-
-            $.picassoPost("/user/authRegister", {
+            parameter = {
                 type: type,
                 account: account,
                 password: password,
                 code: code
-            }, function(data) {
+            }
+            if (recommendCode.length > 0 && recommendCode.length <= 40 && (/^[0-9a-zA-Z\-]*$/g).test(recommendCode)) {
+                parameter.ref = recommendCode;
+            }
+
+            // 注册请求
+
+            $.picassoPost("/user/authRegister", parameter, function(data) {
                 console.log(data);
                 sessionStorage.token = data.token;
                 sessionStorage.name = data.name;
