@@ -103,7 +103,7 @@ $(function() {
     }
 
     // 页脚 底部链接,跳转到用户协议
-    $('.down-foot ol a,#userHref').click(function() {
+    $('#userHref').click(function() {
         var href = $(this).attr("data-href");
         var txt = $('#slide_lang dt').text().trim()
         if (href == undefined) { return; }

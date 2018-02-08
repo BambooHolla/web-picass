@@ -48,7 +48,5 @@
         "btn-2": "充币",
         "layer-txt": "很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。",
         "layer-btn": "下载中心"
-    },
-    "flag": "img/french.jpg",
-    "alert": "Cliquez sur OK pour fermer."
+    }
 }
