@@ -11,6 +11,8 @@
     window.ServerHost = host;
     window.ServerPrefix = prefix;
 
+    // headers:{"x-auth-token": sessionStorage.token}
+
     $.picassoGet = function(path, data, success, error) {
         path = path.toLowerCase();
         var url = path;
@@ -21,7 +23,7 @@
         $.ajax({
             url: url,
             headers: {
-                "x-auth-token": sessionStorage.token
+                "x-auth-token": "8545236f-0e18-4102-8705-fa5ee777b270"
             },
             method: "GET",
             data: data,
@@ -43,7 +45,7 @@
         $.ajax({
             url: url,
             headers: {
-                "x-auth-token": sessionStorage.token
+                "x-auth-token": "8545236f-0e18-4102-8705-fa5ee777b270"
             },
             method: "POST",
             data: JSON.stringify(data),

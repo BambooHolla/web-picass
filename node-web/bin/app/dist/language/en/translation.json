@@ -48,7 +48,5 @@
         "btn-2": "withdraw",
         "layer-txt": "Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets. Please go to Download Center for Picasso App",
         "layer-btn": "Download Center"
-    },
-    "flag": "img/french.jpg",
-    "alert": "Cliquez sur OK pour fermer."
+    }
 }

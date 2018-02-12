@@ -185,6 +185,17 @@
         .tips-2 {
             width: 234px!important;
         }
+        /* 新增：高度自适应
+         */
+        
+        @media only screen and (max-height: 900px) {
+            .download {
+                padding: 8rem 0 0 0!important;
+            }
+            .content-box {
+                height: 270px!important;
+            }
+        }
         /* 自适应----------------------------------------------------------- */
         
         @media only screen and (min-width: 496px) {

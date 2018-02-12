@@ -234,8 +234,8 @@
                                                     </button>
                                 </li>
                                 <li class="right-block">
-                                    <img src="./dist/images/home/a_code.png" alt="" class="android_code animated-1">
-                                    <img src="./dist/images/home/i_code.png" alt="" class="iphone_code animated-1 hidden">
+                                    <!-- <img src="./dist/images/home/a_code.png" alt="" class="android_code animated-1">
+                                    <img src="./dist/images/home/i_code.png" alt="" class="iphone_code animated-1 hidden"> -->
                                 </li>
                             </ul>
                         </div>
@@ -268,11 +268,11 @@
                         </div>
                     </div>
                     <ol>
-                        <li><a target="_blank" data-i18n="foot.about" id="foot-about">关于我们</a></li>
+                        <li><a href="#" data-i18n="foot.about" id="foot-about">关于我们</a></li>
                         <li>|</li>
-                        <li><a target="_blank" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
+                        <li><a href="#" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
                         <li>|</li>
-                        <li><a target="_blank" data-i18n="foot.service" id="foot-business">商务合作</a></li>
+                        <li><a href="#" data-i18n="foot.service" id="foot-business">商务合作</a></li>
                     </ol>
                     <div class="grant">
                         <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
@@ -351,11 +351,13 @@
     <script>
         $(function() {
 
+            var ref = window.location.hash;
+            var refIndex = ref.indexOf("ref=");
+            if (refIndex != -1) {
 
+                localStorage.ref = ref.substring(refIndex + 4)
 
-
-
-
+            }
 
             setTimeout(function() {
                 $('#body').css(
