@@ -42,7 +42,7 @@ $(function() {
                 min: 6,
                 max: 20
             })) {
-            layer.msg('密码长度须在6~20位之间', {
+            layer.msg('密码长度须在4~20位之间', {
                 time: 1500
             });
             return;
