@@ -39,7 +39,7 @@ $(function() {
         var type = validator.isEmail(account) ? 0 : 1;
 
         if (!validator.isByteLength(password, {
-                min: 6,
+                min: 4,
                 max: 20
             })) {
             layer.msg('密码长度须在4~20位之间', {

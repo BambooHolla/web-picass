@@ -341,7 +341,7 @@ $(function() {
             return;
         }
         if (!validator.isByteLength(password, {
-                min: 6,
+                min: 4,
                 max: 20
             })) {
             layer.msg('登录密码长度须在4~20位之间', {
@@ -356,7 +356,7 @@ $(function() {
             return;
         }
         if (!validator.isByteLength(passwordAgain, {
-                min: 6,
+                min: 4,
                 max: 20
             })) {
             layer.msg('确认密码长度须在4~20位之间', {
