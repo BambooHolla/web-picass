@@ -464,7 +464,8 @@ $(function() {
                     href += '?cn&ref='
                 }
                 setTimeout(function() {
-                    location.href = href + recommendCode ? recommendCode : '';
+                    location.href = href + (recommendCode ? recommendCode : '');
+        
                 }, 1000);
 
             }, function(err) {
