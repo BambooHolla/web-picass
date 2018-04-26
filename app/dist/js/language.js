@@ -42,9 +42,9 @@ $(function() {
         var txt = $(this).text().trim()
         console.log(txt)
         if (txt == "简体中文") {
-            en();
-        } else if (txt == "English") {
             cn();
+        } else if (txt == "English") {
+            en();
         } else {
             cn();
         }
