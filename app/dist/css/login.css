@@ -54,7 +54,23 @@ form>div {
 form>div {
     margin-bottom: 26px;
 }
-
+#myform .pwd-box{
+    position: relative;
+}
+#myform .validate-pwd{
+    position: absolute;
+    color: red;
+    top: 50%;
+    right: 4%;
+    line-height: 1;
+    margin: 0;
+    transform: translate(0%,-50%); 
+    -ms-transform:translate(0%,-50%); 
+    -moz-transform:translate(0%,-50%); 
+    -webkit-transform:translate(0%,-50%); 
+    -o-transform:translate(0%,-50%); 
+    display: none;
+}
 .login-content p {
     font-size: 16px;
     font-family: "PingFangSC";
@@ -515,7 +531,7 @@ input[type='submit'] {
     }
     form input {
         height: 3.84rem;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         padding: 0 1rem;
         border-width: 0.1rem;
     }

@@ -290,7 +290,35 @@ $(function() {
     });
 
 
+    //密码校验提示
+    $('#password,#passwordAgain').blur(function(){
+        var password = $('#password').val();
+        var passwordAgain = $('#passwordAgain').val();
+       
+        if(password.length < 4 && password.length > 0){
+            $('.pwd-box .password').text("密码长度至少4位");
+            $('.pwd-box .password').css('display',"block");
+        }else{
+            $('.pwd-box .password').css('display',"none");
+        }
+        if(passwordAgain.length < 4 && passwordAgain.length > 0){
+            $('.pwd-box .passwordAgain').text("密码长度至少4位");
+            $('.pwd-box .passwordAgain').css('display',"block");
+        }else{
+            $('.pwd-box .passwordAgain').css('display',"none");
+        }
+        if( (password.length < 4 && password.length > 0) || (passwordAgain.length < 4 && passwordAgain.length > 0)){
+            return;
+        }
 
+        if(password && passwordAgain){
+            $('.pwd-box .validate-pwd').text("两次密码不一致");
+            $('.pwd-box .validate-pwd').css('display',password == passwordAgain ? "none":"block");
+        } else {
+            $('.pwd-box .validate-pwd').css('display', "none");
+        }
+
+    });
 
     //注册事件
     $('input[type="submit"]').click(function(e) {
@@ -360,6 +388,18 @@ $(function() {
                 max: 20
             })) {
             layer.msg('确认密码长度须在4~20位之间', {
+                time: 1500
+            });
+            return;
+        }
+        if(password.indexOf(' ') > 0){
+            layer.msg('登录密码不能包含空格', {
+                time: 1500
+            });
+            return;
+        }
+        if(passwordAgain.indexOf(' ') > 0){
+            layer.msg('确认密码不能包含空格', {
                 time: 1500
             });
             return;
