@@ -107,15 +107,21 @@
                                 </div>
                                 <div class="pwd">
                                     <p>登录密码</p>
-                                    <input type="password" name="pwd" id="password" autocomplete="off" placeholder="请输入登录密码">
+                                    <div class="pwd-box">
+                                        <input type="password" name="pwd" id="password" autocomplete="off" placeholder="请输入登录密码">
+                                        <p class="validate-pwd password">两次密码不一致</p>
+                                    </div>
                                 </div>
                                 <div class="againPwd">
                                     <p>确认密码</p>
-                                    <input type="password" name="againPwd" id="passwordAgain" autocomplete="off" placeholder="请输入确认密码">
+                                    <div class="pwd-box">
+                                        <input type="password" name="againPwd" id="passwordAgain" autocomplete="off" placeholder="请输入确认密码">
+                                        <p class="validate-pwd passwordAgain">两次密码不一致</p>
+                                    </div>
                                 </div>
                                 <div class="againPwd">
                                     <p>邀请码</p>
-                                    <input type="text" name="recommendCode" id="recommendCode" autocomplete="off">
+                                    <input type="text" name="recommendCode" id="recommendCode" autocomplete="off" placeholder="选填">
                                 </div>
                                 <div class="request">
                                     <input type="checkbox" name="request" id="userProtocol" autocomplete="off" /><span>我已阅读并同意<a data-href="userProtocol.html" target="_blank" id='userHref' style="cursor:pointer;">《用户协议》</a></span>
