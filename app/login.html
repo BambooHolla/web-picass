@@ -65,18 +65,18 @@
         <div class="main">
             <div class="main-box">
                 <div class="login-title">
-                    <p>欢迎登录</p>
+                    <p data-i18n='login.title'>欢迎登录</p>
                 </div>
                 <div class="login-content">
                     <div>
                         <form action="">
                             <div class="account">
-                                <p>账号</p>
+                                <p data-i18n='login.account'>账号</p>
 
                                 <input type="text" name="account" maxlength="254" id="account" autocomplete="off" autofocus="autofocus">
                             </div>
                             <div class="pwd">
-                                <p>密码</p>
+                                <p data-i18n='login.pwd'>密码</p>
                                 <input type="password" style="display: none;">
                                 <input type="password" name="pwd" id="password" autocomplete="off">
                             </div>
@@ -93,9 +93,9 @@
                                         </div> -->
                             <div class="sub">
                                 <div>
-                                    <input type="submit" value="登录">
+                                    <input type="submit" value="登录" id='login-submit'>
                                     <div>
-                                        <span>还没有账户？ </span><a data-href="register.html" id="goRegister" style="cursor:pointer;">去注册</a>
+                                        <span data-i18n='login.no-account'>还没有账户？ </span><a data-href="register.html" id="goRegister" style="cursor:pointer; text-decoration:none;" data-i18n="login.go-register">去注册</a>
 
                                     </div>
                                 </div>
@@ -132,11 +132,11 @@
                 </div>
             </div>
             <ol>
-                <li><a href="#" data-i18n="foot.about" id="foot-about">关于我们</a></li>
+                <li><a href="javascript:void(0)" data-i18n="foot.about" id="foot-about">关于我们</a></li>
                 <li>|</li>
-                <li><a href="#" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
+                <li><a href="javascript:void(0)" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
                 <li>|</li>
-                <li><a href="#" data-i18n="foot.service" id="foot-business">商务合作</a></li>
+                <li><a href="javascript:void(0)" data-i18n="foot.service" id="foot-business">商务合作</a></li>
             </ol>
             <div class="grant">
                 <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
