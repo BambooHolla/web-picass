@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <link href="dist/static/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <title>币加所</title>
+    <!-- swiper插件 -->
+    <link rel="stylesheet" href="./dist/libs/swiper-4.2.2/dist/css/swiper.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="./dist/css/hover.css"> -->
     <link rel="stylesheet" type="text/css" href="./dist/css/common.css">
 
@@ -20,6 +22,7 @@
     <link rel="stylesheet" href="./dist/css/jquery.fullPage.css">
     <!-- 英文状态下的样式调整 -->
     <link rel="stylesheet" type="text/css" href="./dist/css/englishStyle.css">
+    
 </head>
 
 
@@ -106,7 +109,7 @@
             </div>
 
             <div class="section section3 fp-section fp-table" style="height: 100%">
-                <div>
+                <!-- <div >
 
                     <div class="advantage">
                         <div class="advantage-title">
@@ -162,11 +165,105 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
+                   
+                </div> -->
+                <div class="swiper-container advantage-v2" style="height: 70%;width: 80%">
+                    
+                    <div class="advantage-title">
+
+                        <div class="title">
+                            <p data-i18n="section3.title">币加所的优势</p>
+
+                            <img src="./dist//images/home/home_3_title.png" alt="">
+                        </div>
+                        <div class="underline">
+                            <img src="./dist//images/home/ys.png" alt="">
+
+                        </div>
+                    </div>
+                    <div class="swiper-wrapper ">
+                      <div class="swiper-slide">
+                        <div class="content-box">
+                            <div class="box-content box-icon-1">
+                                <div>
+                                    <img src="./dist/images/home/securityIcon.png" alt="">
+                                </div>
+                                <p class="content-title">
+                                    <span data-i18n="section3.title-1">快速安全的技术保障</span>
+
+                                    <img src="./dist/images/home/guarantee.png" alt="">
+                                </p>
+                                <p class="content-txt" data-i18n="section3.txt-1">具备丰富交易平台和区块链开发经验的技术团队为您提供技术保障。</p>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                            <div class="content-box">
+                                    <div class="box-content box-icon-2">
+                                        <div>
+                                            <img src="./dist/images/home/integrationIcon.png" alt="">
+                                        </div>
+                                        <p class="content-title">
+                                            <span data-i18n="section3.title-2">资源的合理整合</span>
+                                            <img src="./dist/images/home/integration.png" alt="">
+                                        </p>
+                                        <p class="content-txt" data-i18n="section3.txt-2">致力于通过标准化的技术服务，来打通各大交易所之间的资源，帮助资源的合理整合。</p>
+                                    </div>
+                                </div>
+                      </div>
+                      <div class="swiper-slide">
+                            <div class="content-box">
+                                    <div class="box-content box-icon-3">
+                                        <div>
+                                            <img src="./dist/images/home/circulationIcon.png" alt="">
+                                        </div>
+                                        <p class="content-title">
+                                            <span data-i18n="section3.title-3">用户资源的流通</span>
+                                            <img src="./dist/images/home/user.png" alt="">
+                                        </p>
+                                        <p class="content-txt" data-i18n="section3.txt-3">使用币加所技术支持的各大交易所可互通用户资源，达成更高效的撮合，展现更准确的行情和市场发展。</p>
+                                    </div>
+                                </div>
+                      </div>
+                      <div class="swiper-slide">
+                            <div class="content-box">
+                                    <div class="box-content box-icon-4">
+                                        <div>
+                                            <img src="./dist/images/home/serviceIcon.png" alt="">
+                                        </div>
+                                        <p class="content-title">
+                                            <span data-i18n="section3.title-4">标准化的技术服务</span>
+    
+                                            <img src="./dist/images/home/service.png" alt="">
+                                        </p>
+                                        <p class="content-txt" data-i18n="section3.txt-4">为数字资产交易平台和区块链企业提供标准化的平台建设及上币服务。</p>
+                                    </div>
+                                </div>
+                      </div>
+                      <div class="swiper-slide">
+                            <div class="content-box">
+                                    <div class="box-content box-icon-5">
+                                        <div>
+                                            <img src="./dist/images/home/vectorIcon.png" alt="">
+                                        </div>
+                                        <p class="content-title">
+                                            <span data-i18n="section3.title-5">各类资产的风险共享</span>
+                                            <img src="./dist/images/home/risk.png" alt="">
+                                        </p>
+                                        <p class="content-txt" data-i18n="section3.txt-5">标准化的技术服务以及各大交易所之间的合理整合帮助促进风险的合理共享，提高保障。</p>
+                                    </div>
+                                </div>
+                      </div>
+                    </div>
+                   
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
 
-            <div class="section section4 fp-section fp-table" style="height: 100%">
+            <!-- <div class="section section4 fp-section fp-table" style="height: 100%">
                 <div class="advantage">
                     <div class="advantage-title">
 
@@ -210,9 +307,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="section section5 fp-section fp-table" style="height: 100%;position:relative">
+            <div class="section section4 fp-section fp-table" style="height: 100%;position:relative">
                 <div class="download">
                     <div class="download-box">
                         <div class="download-box-1">
@@ -268,11 +365,11 @@
                         </div>
                     </div>
                     <ol>
-                        <li><a href="#" data-i18n="foot.about" id="foot-about">关于我们</a></li>
+                        <li><a href="javascript:void(0)" data-i18n="foot.about" id="foot-about">关于我们</a></li>
                         <li>|</li>
-                        <li><a href="#" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
+                        <li><a href="javascript:void(0)" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
                         <li>|</li>
-                        <li><a href="#" data-i18n="foot.service" id="foot-business">商务合作</a></li>
+                        <li><a href="javascript:void(0)" data-i18n="foot.service" id="foot-business">商务合作</a></li>
                     </ol>
                     <div class="grant">
                         <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
@@ -422,10 +519,8 @@
                     if (index == 3) {
                         navActiveFunc(1)
                     }
+                   
                     if (index == 4) {
-                        navActiveFunc(1)
-                    }
-                    if (index == 5) {
                         navActiveFunc(2)
                         $('#nextPage').css("display", "none")
                     } else {
@@ -447,6 +542,23 @@
     <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
     <script type="text/javascript" src="./dist/js/language.js"></script>
 
+     <!-- swiper插件 -->
+    <script type="text/javascript" src="./dist/libs/swiper-4.2.2/dist/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            loop:true,
+            autoplay: true,//可选选项，自动滑动
+            initialSlide :0,
+            centeredSlides : true,
+            slidesPerView : 1,
+            loopedSlides :8,
+             // 如果需要分页器
+            pagination: {
+            el: '.swiper-pagination',
+            clickable :true,
+            },
+        })
+    </script>
 </body>
 
-</html>yy
+</html>

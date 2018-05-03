@@ -6,10 +6,8 @@ $(function() {
         $('.web-nav .login a,.moblie-nav a').click(function() {
             sessionStorage.removeItem('token');
             sessionStorage.removeItem('name');
-
             var href = $(this).attr("data-href");
             var txt = $('#slide_lang dt').text().trim()
-
             if (txt == "简体中文") {
                 window.location.href = href + "#cn";
             } else if (txt == "English") {
@@ -18,9 +16,9 @@ $(function() {
             } else {
                 window.location.href = href
             }
-
-
-        })
+            window.location.reload()
+            
+        });
 
 
 

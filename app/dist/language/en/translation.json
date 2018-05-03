@@ -48,5 +48,29 @@
         "btn-2": "withdraw",
         "layer-txt": "Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets. Please go to Download Center for Picasso App",
         "layer-btn": "Download Center"
+    },
+    "login":{
+        "title":"Welcome to login",
+        "account":"Account",
+        "pwd":"Password",
+        "login":"Gegister",
+        "noAccount":"No account yet? ",
+        "goRegister":" Go register"
+    },
+    "register":{
+        "title":"Welcome to register",
+        "tel":"Phone",
+        "email":"Email",
+        "account-tel":"Phone number",
+        "account-email":"Email",
+        "validate":"Verification code",
+        "get-code":"Get code",
+        "pwd":"Login password",
+        "pwd-again":"Confirm password",
+        "recommend-code":"Invitation code",
+        "read":"I have read and agree",
+        "user":"\"user agreement\"",
+        "existing-account":"Existing account? ",
+        "go-register":"Go register"
     }
 }
