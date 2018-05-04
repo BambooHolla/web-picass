@@ -158,8 +158,9 @@ $(function() {
             $('.assets-title p').removeClass('en-as-title')
             $('#totalsData .content-btn button').removeClass('en-as-btn')
 
-             //登录页面
+             //登录页面，登录的密码placeholder是再注册页面设置的
              $('#login-submit').val('登录');
+             $("#account").attr('placeholder',"请输入账号");
 
              //注册页面,placeholder主要在这修改
              $("#register").val("注册");
@@ -217,9 +218,9 @@ $(function() {
             $('#totalsData .content-btn button').addClass('en-as-btn')
 
 
-            //登录页面
+            //登录页面，登录的密码placeholder是再注册页面设置的
             $('#login-submit').val('Gegister');
-
+            $("#account").attr('placeholder',"Please input account");
 
             //注册页面,placeholder主要在这修改
             $("#register").val("Gegister");

@@ -114,7 +114,7 @@ $(function() {
     //注册类型,0邮箱,1手机 ,默认进来为手机
     var registerType = 1;
     //账号是否存在
-    var accountExist = false;
+    var accountExist = true;
     var accountExistText = $('.account-exist');
 
      // 切换注册类型,原来的类型表单内容清空
@@ -265,20 +265,21 @@ $(function() {
         var url = "/user"
         var valiData = {}
 
-        if(accountExist){
+        $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
             var lj = window.location.hash;
-            if(lj == "#en"){
-                $('.validate-btn').text('Get code');
-            }else{
-                $('.validate-btn').text('获取验证码');
+            if (data.status == 'ok') {
+                if(lj == "#en"){
+                    $('.validate-btn').text('Get code');
+                }else{
+                    $('.validate-btn').text('获取验证码');
+                }
+                $('.validate-btn').on('click', validateClick)
+                $('.validate-btn').css('cursor', 'pointer')
+                layer.msg("账号已被注册");
+                return ; 
             }
-            $('.validate-btn').on('click', validateClick)
-            $('.validate-btn').css('cursor', 'pointer')
-            layer.msg("账号已被注册");
-            return ; 
-        }
 
-        // 开始倒计时,发送验证码请求
+            // 开始倒计时,发送验证码请求
         $('.validate-btn').css('cursor', 'not-allowed');
         $('.validate-btn').off('click', validateClick);
         
@@ -308,11 +309,13 @@ $(function() {
             }else{
                 layer.msg("验证码发送失败");
             }
-            
            
         })
 
-        
+        }, function(err) {
+            console.log(err);
+            layer.msg(err.message);
+        });
 
     }
 
