@@ -88,11 +88,8 @@
                 setTimeout(function () {
                     window.top.location.href = "login.html";
                 }, 2100);
-            } else if (json.error.code == -2) {
-                // errorAlert('当前充值和抢购的人数太多，请稍后再试');
-                // } else if (json.error && json.error.code == -3) {
-                //     errorAlert("请输入正确的验证码");
-                //     $('.captcha').captcha();
+            } else if (json.error.code == -40002999 || json.error.code == -999) {
+                _error({ code: 999, message: "网络请求出错" });
             } else if (_error) {
                 if (typeof(json.error) == "string") {
                     _error({ code: 999, message: json.error });

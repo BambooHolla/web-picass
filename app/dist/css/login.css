@@ -54,7 +54,22 @@ form>div {
 form>div {
     margin-bottom: 26px;
 }
-
+#myform .pwd-box{
+    position: relative;
+}
+#myform .validate-pwd,#myform .validate-account{
+    position: absolute;
+    color: red;
+    top: 110%;
+    line-height: 1;
+    margin: 0;
+    /* transform: translate(0%,-50%); 
+    -ms-transform:translate(0%,-50%); 
+    -moz-transform:translate(0%,-50%); 
+    -webkit-transform:translate(0%,-50%); 
+    -o-transform:translate(0%,-50%);  */
+    display: none;
+}
 .login-content p {
     font-size: 16px;
     font-family: "PingFangSC";
@@ -373,9 +388,11 @@ form input {
     color: rgba(255, 255, 255, .7);
 }
 
-.request span a {
+.request a {
     font-size: 15px;
     color: #ac9e75;
+    position: relative;
+    top: 3px;
 }
 
 
@@ -515,7 +532,7 @@ input[type='submit'] {
     }
     form input {
         height: 3.84rem;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         padding: 0 1rem;
         border-width: 0.1rem;
     }
@@ -528,7 +545,7 @@ input[type='submit'] {
         font-size: 1.2rem;
         margin-left: 0.4rem;
     }
-    .request span a {
+    .request a {
         font-size: 1.2rem;
     }
     /* 下拉框 */

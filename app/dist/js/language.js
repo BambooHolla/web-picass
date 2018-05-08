@@ -140,15 +140,15 @@ $(function() {
             //首页section2
             $('.section2 .lab-text').removeClass('en-s2-p')
 
-            // 首页 优势 section3-4
-            $('.advantage .title p').removeClass('en-s3-bigTitle')
-            $('.advantage .title img').removeClass('en-s3-img')
-            $('.advantage .content-title span').removeClass('en-s3-title')
-            $('.advantage .content-title img').removeClass('en-s3-img')
-            $('.advantage .box-content .content-txt').removeClass('en-s3-txt')
+            // 首页 优势 section3
+            $('.advantage-title .title p').removeClass('en-s3-bigTitle')
+            $('.advantage-title .title img').removeClass('en-s3-img')
+            $('.swiper-slide .content-title span').removeClass('en-s3-title')
+            $('.swiper-slide .content-title img').removeClass('en-s3-img')
+            $('.swiper-slide .box-content .content-txt').removeClass('en-s3-txt')
 
 
-            // 首页 下载 section5
+            // 首页 下载 section4
             $('.download .box-2-title .down-app').removeClass('en-s5-app')
             $('.download .box-2-title img').removeClass('en-s5-img')
             $('.download .box-2-title .titile-2 span').removeClass('en-s5-txt')
@@ -157,6 +157,20 @@ $(function() {
             $('.assets-title img').removeClass('en-as-img')
             $('.assets-title p').removeClass('en-as-title')
             $('#totalsData .content-btn button').removeClass('en-as-btn')
+
+             //登录页面，登录的密码placeholder是再注册页面设置的
+             $('#login-submit').val('登录');
+             $("#account").attr('placeholder',"请输入账号");
+
+             //注册页面,placeholder主要在这修改
+             $("#register").val("注册");
+             $("#account1").attr('placeholder',"请输入手机号码"); 
+             $("#account0").attr('placeholder',"请输入邮箱"); 
+             $("#code").attr('placeholder',"请输入验证码"); 
+             $(".pwd #password").attr('placeholder',"请输入登录密码"); 
+             $(".againPwd #passwordAgain").attr('placeholder',"请输入确认密码"); 
+             $("#recommendCode").attr('placeholder',"选填"); 
+
 
             // 首页导航下划线，长度定位调整
 
@@ -185,14 +199,14 @@ $(function() {
             //首页section2
             $('.section2 .lab-text').addClass('en-s2-p')
 
-            // 首页 优势 section3-4
-            $('.advantage .title p').addClass('en-s3-bigTitle')
-            $('.advantage .title img').addClass('en-s3-img')
-            $('.advantage .content-title span').addClass('en-s3-title')
-            $('.advantage .content-title img').addClass('en-s3-img')
-            $('.advantage .box-content .content-txt').addClass('en-s3-txt')
+            // 首页 优势 section3
+            $('.advantage-title .title p').addClass('en-s3-bigTitle')
+            $('.advantage-title .title img').addClass('en-s3-img')
+            $('.swiper-slide .content-title span').addClass('en-s3-title')
+            $('.swiper-slide .content-title img').addClass('en-s3-img')
+            $('.swiper-slide .box-content .content-txt').addClass('en-s3-txt')
 
-            // 首页 下载 section5
+            // 首页 下载 section4
             $('.download .box-2-title .down-app').addClass('en-s5-app')
             $('.download .box-2-title img').addClass('en-s5-img')
             $('.download .box-2-title .titile-2 span').addClass('en-s5-txt')
@@ -202,6 +216,22 @@ $(function() {
             $('.assets-title img').addClass('en-as-img')
             $('.assets-title p').addClass('en-as-title')
             $('#totalsData .content-btn button').addClass('en-as-btn')
+
+
+            //登录页面，登录的密码placeholder是再注册页面设置的
+            $('#login-submit').val('Gegister');
+            $("#account").attr('placeholder',"Please input account");
+
+            //注册页面,placeholder主要在这修改
+            $("#register").val("Gegister");
+            $("#account1").attr('placeholder',"Please input account"); 
+            $("#account0").attr('placeholder',"Please input email"); 
+            $("#code").attr('placeholder',"please input code"); 
+            $(".pwd #password").attr('placeholder',"Please input login password"); 
+            $(".againPwd #passwordAgain").attr('placeholder',"Please input confirm password"); 
+            $("#recommendCode").attr('placeholder',"Optional"); 
+          
+
 
             // 首页导航下划线，长度定位调整
 

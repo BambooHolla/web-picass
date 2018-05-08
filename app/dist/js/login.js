@@ -1,5 +1,5 @@
 $(function() {
-
+ 
     // 滑动条下划线  start
     var navUnderline = document.querySelector('.nav ul');
 
@@ -13,25 +13,41 @@ $(function() {
     //登入事件
     $('input[type="submit"]').click(function(e) {
         var e = e || window.e
-        e.preventDefault()
-
+        e.preventDefault();
+       
         var account = $('#account').val().trim();
         var password = $('#password').val();
-
+        var lj = window.location.hash;
+        var promptText = "";
         if (!account) {
-            layer.msg('请输入账号', {
+            if (lj == "#en") {
+                promptText = "Please input account";
+            } else {
+                promptText = "请输入账号";
+            }
+            layer.msg(promptText, {
                 time: 1500
             });
             return;
         }
         if (!password) {
-            layer.msg('请输入密码', {
+            if (lj == "#en") {
+                promptText = "Please input password";
+            } else {
+                promptText = "请输入密码";
+            }
+            layer.msg(promptText, {
                 time: 1500
             });
             return;
         }
         if (!validator.isEmail(account) && !validator.isMobilePhone(account, 'zh-CN')) {
-            layer.msg('账号格式输入错误', {
+            if (lj == "#en") {
+                promptText = "Wrong account format";
+            } else {
+                promptText = "账号格式输入错误";
+            }
+            layer.msg(promptText, {
                 time: 1500
             });
             return;
@@ -39,12 +55,17 @@ $(function() {
         var type = validator.isEmail(account) ? 0 : 1;
 
         if (!validator.isByteLength(password, {
-                min: 6,
+                min: 4,
                 max: 20
             })) {
-            layer.msg('密码长度须在4~20位之间', {
-                time: 1500
-            });
+                if (lj == "#en") {
+                    promptText = "Password between 4~20 characters";
+                } else {
+                    promptText = "密码长度须在4~20位之间";
+                }
+                layer.msg(promptText, {
+                    time: 1500
+                });
             return;
         }
 
@@ -56,8 +77,16 @@ $(function() {
             console.log(data);
             sessionStorage.token = data.token;
             sessionStorage.name = data.name;
-
-            layer.msg('登录成功');
+            var lj = window.location.hash;
+            var promptText = "";
+            if (lj == "#en") {
+                promptText = "Login successfully";
+            } else {
+                promptText = "登入成功";
+            }
+            layer.msg(promptText, {
+                time: 1500
+            });
 
             setTimeout(function() {
                 var txt = $('#slide_lang dt').text().trim()

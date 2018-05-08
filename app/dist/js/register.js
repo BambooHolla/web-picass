@@ -1,7 +1,7 @@
 $(function() {
     /*
      *
-     *  样式调整
+     *  样式调整 ，下拉三角需求改变，已把对应的DOM隐藏
      */
 
 
@@ -13,23 +13,7 @@ $(function() {
     }
     navUnderline.addEventListener("mouseleave", mouseleaveFunc);
     // 滑动条下划线  end
-    // 邮箱注册
-    $('.register-email').click(function() {
-        registerType = 0;
-        //注册类型下划线
-        $('.register-phone  div').css('height', '0')
-        $('.register-email  div').css('height', '31px')
-
-        //注册输入框
-        $('.tel').css('display', "none")
-        $('.email').css('display', "block")
-        $('.register-validate p').text('邮箱验证码')
-
-        clearValue()
-
-        //手机区号清空
-        $('.tel .tel-content').text('')
-    })
+    
 
     // 国籍下拉框
     $('.nationality input').click(function(e) {
@@ -129,136 +113,12 @@ $(function() {
 
     //注册类型,0邮箱,1手机 ,默认进来为手机
     var registerType = 1;
+    //账号是否存在
+    var accountExist = true;
+    var accountExistText = $('.account-exist');
 
-    // 检测账号是否被占用,获取验证码
-    function accountOccupy() {
-        var account = $('#account' + registerType).val();
-        var dataOccupy = registerType ? `telephone=${account}` : `email=${account}`;
-
-        var url = "/user"
-        var valiData = {}
-            // if (registerType == 0) {
-            //     layer.msg("验证码发送失败，请稍后再试");
-            //     return;
-            // }
-
-        // 开始倒计时,发送验证码请求
-        $('.validate-btn').css('cursor', 'not-allowed')
-        $('.validate-btn').off('click', validateClick)
-        $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
-            console.log(data);
-
-            if (data.status == 'ok') {
-                layer.msg(data.message, {
-                    time: 1500
-                });
-
-                $('#account' + registerType).val('')
-                return;
-            }
-
-
-            if (registerType) {
-                url += "/sendSmsToAppointed"
-                valiData = {
-                    telephone: account,
-                    type: "1001"
-                }
-            } else {
-                url += "/sendEmailCode"
-                valiData = {
-                    email: account,
-                    type: "201"
-                }
-            }
-            $.picassoGet(url, valiData, function(data) {
-                console.log(data)
-
-
-                validateTime()
-            }, function(err) {
-                $('.validate-btn').text('获取验证码');
-                $('.validate-btn').on('click', validateClick)
-                $('.validate-btn').css('cursor', 'pointer')
-                console.log(err);
-                layer.msg("请求出错");
-            })
-
-        }, function(err) {
-            console.log(err);
-            $('.validate-btn').text('获取验证码');
-            $('.validate-btn').on('click', validateClick)
-            $('.validate-btn').css('cursor', 'pointer')
-            layer.msg("验证码发送失败，请稍后再试");
-        });
-
-    }
-
-
-    // 点击验证码，切换样式
-    var countDown = 60;
-    var validateSetTimeout;
-    // 倒计时
-    function validateTime() {
-        $('.validate-btn').text(countDown + '秒');
-
-        validateSetTimeout = setTimeout(function() {
-            countDown--;
-            if (countDown > 0) { validateTime() } else {
-                $('.validate-btn').text('获取验证码');
-                $('.validate-btn').on('click', validateClick)
-                $('.validate-btn').css('cursor', 'pointer')
-            }
-        }, 1000);
-    }
-
-    //先判断是否填写账号，发送验证码请求，之后倒计时
-    function validateClick() {
-        countDown = 60;
-
-        //验证账号
-        var account = $('#account' + registerType).val().trim();
-
-        if (registerType) {
-            if (!account) {
-                layer.msg('请输入手机号', {
-                    time: 1500
-                });
-                return;
-            }
-            if (!validator.isMobilePhone(account, 'zh-CN')) {
-                layer.msg('手机号输入错误', {
-                    time: 1500
-                });
-                return;
-            }
-        } else {
-            if (!account) {
-                layer.msg('请输入邮箱', {
-                    time: 1500
-                });
-                return;
-            }
-            if (!validator.isEmail(account)) {
-                layer.msg('邮箱输入错误', {
-                    time: 1500
-                });
-                return;
-            }
-        }
-
-        //验证格式通过，判断是否账号存在
-        accountOccupy()
-    }
-    //监听事件
-    $('.validate-btn').on('click', validateClick)
-
-
-
-    // 切换注册类型
-
-    // 切换状态,原来的类型表单内容清空
-    function clearValue() {
+     // 切换注册类型,原来的类型表单内容清空
+     function clearValue() {
         $(':input', '#myform')
             .not(':button, :submit, :reset, :hidden')
             .val('')
@@ -268,12 +128,116 @@ $(function() {
 
         clearTimeout(validateSetTimeout);
 
-        $('.validate-btn').text('获取验证码');
+        var lj = window.location.hash;
+       
+        if(lj == "#en"){
+
+            $('.validate-btn').text('Get code');
+        }else{
+            $('.validate-btn').text('获取验证码');
+        }
+        
         $('.validate-btn').off('click', validateClick)
         $('.validate-btn').on('click', validateClick)
         $('.validate-btn').css('cursor', 'pointer')
 
     }
+
+    //账号存在检测
+    $('#account0,#account1').blur(function(){
+        var account = $('#account' + registerType).val().trim();
+        var data = registerType ? "telephone=" + account : "email=" + account;
+        var lj = window.location.hash;
+        var text = "";
+      
+        accountExistText.css('display','block');
+        if (registerType) {
+            if (!account) {
+                if(lj == "#en"){
+                    text = "Please input phone number";
+                }else{
+                    text = "请输入手机号";
+                }
+                accountExistText.text('请输入手机号');
+                return;
+            }
+            if (!validator.isMobilePhone(account, 'zh-CN')) { 
+                if(lj == "#en"){
+                    text = "Wrong phone number";
+                }else{
+                    text = "手机号输入错误";
+                }
+                accountExistText.text(text);
+                return;
+            }
+        } else {
+            if (!account) {
+                if(lj == "#en"){
+                    text = "Please input email";
+                }else{
+                    text = "请输入邮箱";
+                }
+                accountExistText.text(text);
+                return;
+            }
+            if (!validator.isEmail(account)) {
+                if(lj == "#en"){
+                    text = "Wrong email";
+                }else{
+                    text = "邮箱输入错误";
+                }
+                accountExistText.text(text);
+                return;
+            }
+        }
+        accountExistText.css('display','none');
+
+
+        $.picassoGet("/user/checkRegAccount", data, function(data) {
+            var lj = window.location.hash;
+            //账号已注册
+            if (data.status == 'ok') {
+                accountExist = true;
+                accountExistText.css('display','block');
+                if(lj == "#en"){
+                    accountExistText.text('The account has been registered');
+                }else{
+                    accountExistText.text('账号已被注册');
+                }
+               
+                return;
+            }
+            accountExist = false;
+
+        }, function(err) {
+            console.log(err);
+            layer.msg(err.message);
+        });
+    })
+
+
+    // 邮箱注册
+    $('.register-email').click(function() {
+        registerType = 0;
+        //注册类型下划线
+        $('.register-phone  div').css('height', '0');
+        $('.register-email  div').css('height', '31px');
+
+        //注册输入框
+        $('.tel').css('display', "none");
+        $('.email').css('display', "block");
+        
+
+        clearValue();
+
+        //手机区号清空
+        $('.tel .tel-content').text('');
+
+        //初始化校验
+        accountExistText.css('display','none');
+        $('.pwd-box .validate-pwd').css('display', "none");
+    });
+
     // 手机注册
     $('.register-phone').click(function() {
         registerType = 1;
@@ -284,13 +248,233 @@ $(function() {
         //注册输入框
         $('.tel').css('display', "block")
         $('.email').css('display', "none")
-        $('.register-validate p').text('短信验证码')
+       
 
-        clearValue()
+        clearValue();
+         //初始化校验
+         accountExistText.css('display','none');
+         $('.pwd-box .validate-pwd').css('display', "none");
     });
 
 
+    // 检测账号是否被占用,获取验证码
+    function accountOccupy() {
+        var account = $('#account' + registerType).val();
+        var dataOccupy = registerType ? "telephone=" + account : "email=" + account;
+      
+        var url = "/user"
+        var valiData = {}
 
+        $.picassoGet("/user/checkRegAccount", dataOccupy, function(data) {
+            var lj = window.location.hash;
+            if (data.status == 'ok') {
+                if(lj == "#en"){
+                    $('.validate-btn').text('Get code');
+                }else{
+                    $('.validate-btn').text('获取验证码');
+                }
+                $('.validate-btn').on('click', validateClick)
+                $('.validate-btn').css('cursor', 'pointer')
+                layer.msg("账号已被注册");
+                return ; 
+            }
+
+            // 开始倒计时,发送验证码请求
+        $('.validate-btn').css('cursor', 'not-allowed');
+        $('.validate-btn').off('click', validateClick);
+        
+     
+        if (registerType) {
+            url += "/sendSmsToAppointed"
+            valiData = {
+                telephone: account,
+                type: "1001"
+            }
+        } else {
+            url += "/sendEmailCode"
+            valiData = {
+                email: account,
+                type: "201"
+            }
+        }
+        $.picassoGet(url, valiData, function(data) {
+            console.log(data)
+            validateTime()
+        }, function(err) {
+            validateTime();
+            console.log(err);
+            var lj = window.location.hash;
+            if(lj == "#en"){
+                layer.msg("Fail to send verificaiton code");
+            }else{
+                layer.msg("验证码发送失败");
+            }
+           
+        })
+
+        }, function(err) {
+            console.log(err);
+            layer.msg(err.message);
+        });
+
+    }
+
+
+    // 点击验证码，切换样式
+    var countDown = 60;
+    var validateSetTimeout;
+    // 倒计时
+    function validateTime() {
+        $('.validate-btn').text(countDown + 's');
+
+        validateSetTimeout = setTimeout(function() {
+            countDown--;
+            if (countDown > 0) {
+                 validateTime();
+            } else {
+                var lj = window.location.hash;
+                if(lj == "#en"){
+                    $('.validate-btn').text('Get code');
+                }else{
+                    $('.validate-btn').text('获取验证码');
+                }
+                $('.validate-btn').on('click', validateClick)
+                $('.validate-btn').css('cursor', 'pointer')
+            }
+        }, 1000);
+    }
+
+    //先判断是否填写账号，发送验证码请求，之后倒计时
+    function validateClick() {
+        var lj = window.location.hash;
+        var text = '';
+        countDown = 60;
+       
+        //验证账号
+        var account = $('#account' + registerType).val().trim();
+
+        if (registerType) {
+            if (!account) {
+                if(lj == "#en"){
+                    text = 'Please input phone number';
+                }else{
+                    text = '请输入手机号';
+                }
+                layer.msg(text, {
+                    time: 1500
+                });
+                return;
+            }
+            if (!validator.isMobilePhone(account, 'zh-CN')) {
+                if(lj == "#en"){
+                    text = 'Wrong phone number';
+                }else{
+                    text = '手机号输入错误';
+                }
+                layer.msg(text, {
+                    time: 1500
+                });
+                return;
+            }
+        } else {
+            if (!account) {
+                if(lj == "#en"){
+                    text = 'Please input email';
+                }else{
+                    text = '请输入邮箱';
+                }
+                layer.msg(text, {
+                    time: 1500
+                });
+                return;
+            }
+            if (!validator.isEmail(account)) {
+                if(lj == "#en"){
+                    text = 'Wrong email';
+                }else{
+                    text = '邮箱输入错误';
+                }
+                layer.msg(text, {
+                    time: 1500
+                });
+                return;
+            }
+        }
+
+        //验证格式通过，判断是否账号存在
+        accountOccupy()
+    }
+    //监听事件
+    $('.validate-btn').on('click', validateClick);
+
+
+    //密码校验提示
+    $('#password,#passwordAgain').blur(function(){
+        var password = $('#password').val();
+        var passwordAgain = $('#passwordAgain').val();
+        var lj = window.location.hash;
+        var text = "";
+        if(password.length < 4 && password.length > 0){
+            if(lj == "#en"){
+                text = "Password length 4 characters at least";
+            }else{
+                text = "密码长度至少4位";
+            }
+            $('.pwd-box .password').text(text);
+            $('.pwd-box .password').css('display',"block");
+        }else if(password.length > 20){
+            if(lj == "#en"){
+                text = "Password length 20 characters at most";
+            }else{
+                text = "密码长度最多20位";
+            }
+            $('.pwd-box .password').text(text);
+            $('.pwd-box .password').css('display',"block");
+            
+        }else{
+           
+            $('.pwd-box .password').css('display',"none");
+        }
+        if(passwordAgain.length < 4 && passwordAgain.length > 0){
+            if(lj == "#en"){
+                text = "Password length 4 characters at least";
+            }else{
+                text = "密码长度至少4位";
+            }
+            $('.pwd-box .passwordAgain').text(text);
+            $('.pwd-box .passwordAgain').css('display',"block");
+        }else if( passwordAgain.length > 20){
+            if(lj == "#en"){
+                text = "Password length 20 characters at most";
+            }else{
+                text = "密码长度最多20位";
+            }
+            $('.pwd-box .passwordAgain').text(text);
+            $('.pwd-box .passwordAgain').css('display',"block");
+        }else{
+            $('.pwd-box .passwordAgain').css('display',"none");
+        }
+        if( (password.length < 4 && password.length > 0) || (passwordAgain.length < 4 && passwordAgain.length > 0)
+            || password.length > 20 || passwordAgain.length > 20)
+        {
+            return;
+        }
+
+        if(password && passwordAgain){
+            if(lj == "#en"){
+                text = "Two passwords are not identical"
+            }else{
+                text = "两次密码不一致";
+            }
+            $('.pwd-box .validate-pwd').text(text);
+            $('.pwd-box .validate-pwd').css('display',password == passwordAgain ? "none":"block");
+        } else {
+            $('.pwd-box .validate-pwd').css('display', "none");
+        }
+
+    });
+
+    
 
     //注册事件
     $('input[type="submit"]').click(function(e) {
@@ -303,141 +487,222 @@ $(function() {
         var code = $('#code').val().trim();
         var type = validator.isEmail(account) ? 0 : 1;
         var recommendCode = $('#recommendCode').val().trim();
-        var data = registerType ? `telephone=${account}` : `email=${account}`;
+        var data = registerType ? "telephone=" + account : "email=" + account;
         // 注册传参变量
         var parameter = {};
 
+        var lj = window.location.hash;
+        var text = "";
         if (registerType) {
             if (!account) {
-                layer.msg('请输入手机号', {
+                if(lj == "#en"){
+                    text = "Please input phone number"
+                }else{
+                    text = "请输入手机号";
+                }
+                layer.msg(text, {
                     time: 1500
                 });
                 return;
             }
             if (!validator.isMobilePhone(account, 'zh-CN')) {
-                layer.msg('手机号输入错误', {
+                if(lj == "#en"){
+                    text = "Wrong phone number"
+                }else{
+                    text = "手机号输入错误";
+                }
+                layer.msg(text, {
                     time: 1500
                 });
                 return;
             }
         } else {
             if (!account) {
-                layer.msg('请输入邮箱', {
+                if(lj == "#en"){
+                    text = "Please input email"
+                }else{
+                    text = "请输入邮箱";
+                }
+                layer.msg(text, {
                     time: 1500
                 });
                 return;
             }
             if (!validator.isEmail(account)) {
-                layer.msg('邮箱输入错误', {
+                if(lj == "#en"){
+                    text = "Wrong email"
+                }else{
+                    text = "邮箱输入错误";
+                }
+                layer.msg(text, {
                     time: 1500
                 });
                 return;
             }
         }
+         //判断是否账号存在
+         if(accountExist){
+            if(lj == "#en"){
+                text = "The account has been registered"
+            }else{
+                text = "账号已被注册";
+            }
+            layer.msg(text);
+            return ; 
+        }
+        if (!code) {
+            if(lj == "#en"){
+                text = "Please input verification code"
+            }else{
+                text = "请输入验证码";
+            }
+            layer.msg(text, {
+                time: 1500
+            });
+            return;
+        }
         if (!password) {
-            layer.msg('请输入登录密码', {
+            if(lj == "#en"){
+                text = "Please input login password"
+            }else{
+                text = "请输入登录密码";
+            }
+            layer.msg(text, {
                 time: 1500
             });
             return;
         }
         if (!validator.isByteLength(password, {
-                min: 6,
+                min: 4,
                 max: 20
             })) {
-            layer.msg('登录密码长度须在4~20位之间', {
+                if(lj == "#en"){
+                    text = "Password between 4~20 characters"
+                }else{
+                    text = "登录密码长度须在4~20位之间";
+                }
+            layer.msg(text, {
                 time: 1500
             });
             return;
         }
         if (!passwordAgain) {
-            layer.msg('请输入确认密码', {
+            if(lj == "#en"){
+                text = "Please input confirm password"
+            }else{
+                text = "请输入确认密码";
+            }
+            layer.msg(text, {
                 time: 1500
             });
             return;
         }
         if (!validator.isByteLength(passwordAgain, {
-                min: 6,
+                min: 4,
                 max: 20
             })) {
-            layer.msg('确认密码长度须在4~20位之间', {
+                if(lj == "#en"){
+                    text = "Password between 4~20 characters"
+                }else{
+                    text = "确认密码长度须在4~20位之间";
+                }
+            layer.msg(text, {
+                time: 1500
+            });
+            return;
+        }
+        if(password.indexOf(' ') > 0){
+            if(lj == "#en"){
+                text = "No space in login password"
+            }else{
+                text = "登录密码不能包含空格";
+            }
+            layer.msg(text, {
+                time: 1500
+            });
+            return;
+        }
+        if(passwordAgain.indexOf(' ') > 0){
+            if(lj == "#en"){
+                text = "Confirm no space in login password"
+            }else{
+                text = "确认密码不能包含空格";
+            }
+            layer.msg(text, {
                 time: 1500
             });
             return;
         }
         if (password != passwordAgain) {
-            layer.msg('密码输入不一致', {
+            if(lj == "#en"){
+                text = "Passwords are not identical"
+            }else{
+                text = "密码输入不一致";
+            }
+            layer.msg(text, {
                 time: 1500
             });
             return;
         }
-        if (!code) {
-            layer.msg('请输入验证码', {
-                time: 1500
-            });
-            return;
-        }
+       
         if (!userProtocol) {
-            layer.msg('您未同意用户协议', {
+            if(lj == "#en"){
+                text = "you haven't agreed with \"user agreement\""
+            }else{
+                text = "您未同意用户协议";
+            }
+            layer.msg(text, {
                 time: 1500
             });
             return;
         }
-        //判断是否账号存在
-        $.picassoGet("/user/checkRegAccount", data, function(data) {
+       
+        
+        parameter = {
+            type: type,
+            account: account,
+            password: password,
+            code: code
+        }
+        if (recommendCode.length > 0 && recommendCode.length <= 40 && (/^[0-9a-zA-Z\-]*$/g).test(recommendCode)) {
+            parameter.recommendCode = recommendCode;
+            localStorage.recommendCode = recommendCode;
+        }
+        // 注册请求
+
+        $.picassoPost("/user/authRegister", parameter, function(data) {
             console.log(data);
-
-            if (data.status == 'ok') {
-                layer.msg(data.message, {
-                    time: 1500
-                });
-                return;
+            sessionStorage.token = data.token;
+            sessionStorage.name = data.name;
+            var lj = window.location.hash;
+            var text = "";
+            if(lj == "#en"){
+                text = "Register successfully"
+            }else{
+                text = "注册成功";
             }
+            layer.msg(text);
 
-            parameter = {
-                type: type,
-                account: account,
-                password: password,
-                code: code
+            var txt = $('#slide_lang dt').text().trim()
+            var href = "index.html"
+
+            if (txt == "简体中文") {
+                href += '?cn&ref='
+            } else if (txt == "English") {
+                href += '?en&ref='
+
+            } else {
+                href += '?cn&ref='
             }
-            if (recommendCode.length > 0 && recommendCode.length <= 40 && (/^[0-9a-zA-Z\-]*$/g).test(recommendCode)) {
-                parameter.recommendCode = recommendCode;
-            }
-
-            // 注册请求
-
-            $.picassoPost("/user/authRegister", parameter, function(data) {
-                console.log(data);
-                sessionStorage.token = data.token;
-                sessionStorage.name = data.name;
-
-                layer.msg('注册成功');
-
-                var txt = $('#slide_lang dt').text().trim()
-                var href = "index.html"
-
-                if (txt == "简体中文") {
-                    href += '?cn&ref='
-                } else if (txt == "English") {
-                    href += '?en&ref='
-
-                } else {
-                    href += '?cn&ref='
-                }
-                setTimeout(function() {
-                    location.href = href + recommendCode ? recommendCode : '';
-                }, 1000);
-
-            }, function(err) {
-                console.log(err);
-                layer.msg(err.message);
-            })
+            setTimeout(function() {
+                location.href = href + (recommendCode ? recommendCode : '');
+    
+            }, 1000);
 
         }, function(err) {
             console.log(err);
             layer.msg(err.message);
-        });
-
-
+        })
     })
 
 })
