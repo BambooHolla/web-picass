@@ -277,16 +277,59 @@
             totalStr = '';
             totalArr = [];
             totalnum = 0;
-            //保证币种顺序
-            function getAlltotals(){
-                if(!totalArr[0]){
+            function showTotalsList(){
+                if(!totalStr){
+                    $('#totalsData').html('<li class="content-td"><div style="width:100%;"><div>获取数据出错，请刷新网页</div></div></li>')
                     return ;
                 }
                 var accountId = totalArr[0].accountId;
+                setTimeout(function() {
+                    $('#totalsData').html(totalStr)
+                    getFrozenCount = 0;
+                    // 获取冻结
+                    getFrozen(accountId)
+                    var language = $('#slide_lang dt').text().trim()
+
+
+                    // layer弹出框
+                    $('.warning').click(function() {
+
+                        //判断语言
+                        var content = '';
+                        var language = $('#slide_lang dt').text().trim()
+                        if (language == "简体中文") {
+                            content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
+                        } else if (language == "English") {
+                            content = "<div class='en-as-layer'><div><img src='./dist/images/management/PromptIcon.png' alt=''></div><p>Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets.Please go to Download Center for Picasso App.</p><a href='index.html#download?en'>Download Center</a> </div>"
+
+                        } else {
+                            content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
+                        }
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['690px', '430px'],
+                            skin: 'layui-layer-demo', //样式类名
+                            closeBtn: 0, //不显示关闭按钮
+                            anim: 0, //动画效果
+                            shadeClose: true, //开启遮罩关闭
+                            content: content
+                        });
+                    });
+                }, 500);
+            }
+            //保证币种顺序
+            function getAlltotals(){
+                
+                if(!totalArr[totalnum]){
+                    showTotalsList();
+                    return ;
+                }
+                
                 var productId = totalArr[totalnum].productId
                 var totalAmount = (totalArr[totalnum].totalAmount / 100000000).toFixed(4);
                 totalAmount = totalAmount.toString();
-
+                ++totalnum;
 
                 $.picassoGet('/product/product/' + productId, {},
                     function(productIdData) {
@@ -305,64 +348,24 @@
                             str += '<div><div class="content-btn"><button class="warning" data-i18n="assets.btn-1">提币</button><button class="warning" data-i18n="assets.btn-2">充币</button></div></div></li>';
                         }
                         totalStr += str;
-                        totalCount++;
-                        if (totalCount == totalLength) {
-                            setTimeout(function() {
-                                $('#totalsData').html(totalStr)
-
-                                getFrozenCount = 0;
-                                // 获取冻结
-                                getFrozen(accountId)
-                                var language = $('#slide_lang dt').text().trim()
-
-
-                                // layer弹出框
-                                $('.warning').click(function() {
-
-                                    //判断语言
-                                    var content = '';
-                                    var language = $('#slide_lang dt').text().trim()
-                                    if (language == "简体中文") {
-                                        content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
-                                    } else if (language == "English") {
-                                        content = "<div class='en-as-layer'><div><img src='./dist/images/management/PromptIcon.png' alt=''></div><p>Sorry, the top up and withdrawal functions on PC are not available temporarily for the sake of guaranteeing the security of user's assets.Please go to Download Center for Picasso App.</p><a href='index.html#download?en'>Download Center</a> </div>"
-
-                                    } else {
-                                        content = '<div><div><img src="./dist/images/management/PromptIcon.png" alt=""></div><p>很抱歉的提醒您，为了保证用户资产的安全，目前币加所暂未上线PC端充币/提币等功能，请您赴下载中心下载币加所APP。</p><a href="index.html#download">下载中心</a></div>'
-                                    }
-                                    layer.open({
-                                        type: 1,
-                                        title: false,
-                                        area: ['690px', '430px'],
-                                        skin: 'layui-layer-demo', //样式类名
-                                        closeBtn: 0, //不显示关闭按钮
-                                        anim: 0, //动画效果
-                                        shadeClose: true, //开启遮罩关闭
-                                        content: content
-                                    });
-                                });
-                            }, 500);
-                        } else {
-                            getAlltotals(++totalnum)
-                        }
+                        getAlltotals();
+                        
                     },
                     function(productIdErr) {
-                       
-                        totalLength--;
+                        getAlltotals();
                     })
             }
 
             $.picassoGet('/account/position/totals', {},
                 function(totalsData) {
                     totalStr = ""
-                    totalCount = 0; //记录次数
                     totalArr = totalsData;
                     totalLength = totalsData.length;
                     totalnum = 0;
                     productIdArray = []
 
                     if (totalLength > 0) {
-                        getAlltotals(totalnum);
+                        getAlltotals();
                     } else {
 
                         var str = '<li class="content-td"><div style="width:100%;"><div>当前账户还没有资产，请先进行资产<a class="warning" style="border-bottom:1px solid #c1b17f;cursor:pointer;"> 充值 </a>。</div></div></li>';

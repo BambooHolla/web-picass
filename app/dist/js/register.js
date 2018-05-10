@@ -475,7 +475,7 @@ $(function() {
     });
 
     
-    if(JSON.parse(sessionStorage.ref)){
+    if(JSON.parse(sessionStorage.ref?sessionStorage.ref:"false")){
         $('#recommendCode').val(JSON.parse(sessionStorage.ref));
     }
 

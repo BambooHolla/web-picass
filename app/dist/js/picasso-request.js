@@ -23,7 +23,7 @@
         $.ajax({
             url: url,
             headers: {
-                "x-auth-token": JSON.parse(sessionStorage.token) || '',
+                "x-auth-token": JSON.parse(sessionStorage.token?sessionStorage.token:"false") || '',
                 "x-bnqkl-platform": "8545236f-0e18-4102-8705-fa5ee777b270"
             },
             method: "GET",
@@ -48,7 +48,7 @@
         $.ajax({
             url: url,
             headers: {
-                "x-auth-token": JSON.parse(sessionStorage.token) || '',
+                "x-auth-token": JSON.parse(sessionStorage.token?sessionStorage.token:"false") || '',
                 "x-bnqkl-platform": "8545236f-0e18-4102-8705-fa5ee777b270"
             },
             method: "POST",
