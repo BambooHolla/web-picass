@@ -475,6 +475,9 @@ $(function() {
     });
 
     
+    if(JSON.parse(sessionStorage.ref)){
+        $('#recommendCode').val(JSON.parse(sessionStorage.ref));
+    }
 
     //注册事件
     $('input[type="submit"]').click(function(e) {
@@ -672,8 +675,8 @@ $(function() {
 
         $.picassoPost("/user/authRegister", parameter, function(data) {
             console.log(data);
-            sessionStorage.token = data.token;
-            sessionStorage.name = data.name;
+            sessionStorage.token = JSON.stringify(data.token);
+            sessionStorage.name = JSON.stringify(data.name);
             var lj = window.location.hash;
             var text = "";
             if(lj == "#en"){
@@ -684,7 +687,7 @@ $(function() {
             layer.msg(text);
 
             var txt = $('#slide_lang dt').text().trim()
-            var href = "index.html"
+            var href = "management.html"
 
             if (txt == "简体中文") {
                 href += '?cn&ref='
