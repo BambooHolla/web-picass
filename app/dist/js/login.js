@@ -75,8 +75,8 @@ $(function() {
             password: password
         }, function(data) {
             console.log(data);
-            sessionStorage.token = data.token;
-            sessionStorage.name = data.name;
+            sessionStorage.token = JSON.stringify(data.token);
+            sessionStorage.name = JSON.stringify(data.name);
             var lj = window.location.hash;
             var promptText = "";
             if (lj == "#en") {

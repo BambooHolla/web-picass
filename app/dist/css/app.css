@@ -667,15 +667,17 @@
 } */
 /* iphone8sp  大多手机 以下 */
 
-@media screen and (max-height:570px) {
+@media screen and (max-height:810px) {
     .advantage-title {
         margin-bottom: 0rem!important;
     }
     .download-iphone {
-        width: 135px!important;
-        height: 220px!important;
+        width: auto!important;
+        height: 420px!important;
     }
 }
+
+
 
 @media screen and (max-width:495px) {
     /* 新增 */
@@ -688,6 +690,7 @@
     .box-content {
         height: 70%;
         max-height: 250px;
+        min-height: 0;
     }
     .down-title {
         display: none;
@@ -900,7 +903,7 @@
     }
     .grant span,
     .grant a {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .tips-1 {
         width: 200px!important;

@@ -53,9 +53,9 @@
         "title":"Welcome to login",
         "account":"Account",
         "pwd":"Password",
-        "login":"Gegister",
-        "noAccount":"No account yet? ",
-        "goRegister":" Go register"
+        "login":"Login",
+        "no-account":"No account yet? ",
+        "go-register":" Go register"
     },
     "register":{
         "title":"Welcome to register",
@@ -71,6 +71,6 @@
         "read":"I have read and agree",
         "user":"\"user agreement\"",
         "existing-account":"Existing account? ",
-        "go-register":"Go register"
+        "go-register":"Go login"
     }
 }
