@@ -82,7 +82,7 @@ $(function() {
             if (lj == "#en") {
                 promptText = "Login successfully";
             } else {
-                promptText = "登入成功";
+                promptText = "登录成功";
             }
             layer.msg(promptText, {
                 time: 1500
