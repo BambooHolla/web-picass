@@ -903,7 +903,7 @@
     }
     .grant span,
     .grant a {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     .tips-1 {
         width: 200px!important;
@@ -937,5 +937,13 @@
     }
     .advantage-title .title p{
         font-size: 2rem;
+    }
+    .section4 .download{
+        padding-top: 4rem!important;
+    }
+}
+@media screen and (max-width:330px)  {
+    .section4 .download{
+        padding-top: 0rem!important;
     }
 }
