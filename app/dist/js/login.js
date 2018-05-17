@@ -75,14 +75,14 @@ $(function() {
             password: password
         }, function(data) {
             console.log(data);
-            sessionStorage.token = data.token;
-            sessionStorage.name = data.name;
+            sessionStorage.token = JSON.stringify(data.token);
+            sessionStorage.name = JSON.stringify(data.name);
             var lj = window.location.hash;
             var promptText = "";
             if (lj == "#en") {
                 promptText = "Login successfully";
             } else {
-                promptText = "登入成功";
+                promptText = "登录成功";
             }
             layer.msg(promptText, {
                 time: 1500

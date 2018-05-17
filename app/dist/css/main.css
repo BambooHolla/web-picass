@@ -514,7 +514,7 @@
     height: 50%;
     max-width: 450px;
     max-height: 380px;
-
+    min-height: 275px;
     background-image: url(../images/home/home_3_rectangle.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;

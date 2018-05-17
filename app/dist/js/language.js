@@ -219,7 +219,7 @@ $(function() {
 
 
             //登录页面，登录的密码placeholder是再注册页面设置的
-            $('#login-submit').val('Gegister');
+            $('#login-submit').val('Login');
             $("#account").attr('placeholder',"Please input account");
 
             //注册页面,placeholder主要在这修改

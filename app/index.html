@@ -372,7 +372,7 @@
                         <li><a href="javascript:void(0)" data-i18n="foot.service" id="foot-business">商务合作</a></li>
                     </ol>
                     <div class="grant">
-                        <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
+                        <span>Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
                     </div>
                 </div>
                 <!-- end -->
@@ -450,9 +450,10 @@
 
             var ref = window.location.hash;
             var refIndex = ref.indexOf("ref=");
+            
             if (refIndex != -1) {
-
-                localStorage.ref = ref.substring(refIndex + 4)
+                
+                sessionStorage.ref = JSON.stringify(ref.substring(refIndex + 4))
 
             }
 
@@ -504,7 +505,7 @@
                 target.style.zIndex = 1;
             }
             $('#downPage').fullpage({
-                anchors: ['home', 'picasso', 'picassotxt', 'picassotxt1', 'download'],
+                anchors: ['home', 'picasso', 'picassotxt', 'download'],
                 continuousVertical: false,
                 verticalCentered: true,
                 navigation: false,
