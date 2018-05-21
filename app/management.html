@@ -217,8 +217,8 @@
                     accountId: accountId,
                     productId: productIdArray[getFrozenCount]
                 }, function(data) {
-                    var freezeBalance = (data.freezeBalance / 100000000).toFixed(4);
-                    freezeBalance = freezeBalance.toString();
+                    var freezeBalance = (data.freezeBalance / 100000000).toFixed(10);
+                    freezeBalance = numberFormat(freezeBalance,true);
                     $('#id_' + productIdArray[getFrozenCount]).text(parseFloat(freezeBalance))
                     getFrozenCount++;
                     getFrozen(accountId)
@@ -318,6 +318,48 @@
                     });
                 }, 500);
             }
+
+            function numberFormatDelete0(number){
+                var arrExp;
+                if(typeof number == "number") number = number.toString();
+                number = number.split("").reverse().join("");
+                arrExp = /[1-9|\.]/ig.exec(number)
+                if(arrExp){
+                    if(arrExp[0] == '.'){
+                    number = number.substring(arrExp.index+1)
+                    } else {
+                    number = number.substring(arrExp.index)
+                    }
+                    return  number.split("").reverse().join("")
+                }
+                return number;
+            }
+             //格式处理
+             function numberFormat(number,delete0){
+                var saveNumber = number;
+                number = typeof number == "string" ? number : number.toString();
+                if(delete0){
+                    number = numberFormatDelete0(number);
+                }
+                    number = number.split('.');
+                
+                if(!number[0]){
+                    return saveNumber;
+                }
+                if(number[0].length > 1){
+                    number[0] =  number[0].replace(/\b(0+)/gi,"");
+                    number[0] = number[0] == ''? "0": number[0];
+                }
+                if(number[1]) {
+                    number[1] =  number[1].length > 4? number[1].substr(0,4) : number[1];
+                    return number[0]+'.'+number[1];
+                } else {
+                    return number[0];
+                }
+            }
+
+            
+
             //保证币种顺序
             function getAlltotals(){
                 
@@ -327,15 +369,15 @@
                 }
                 
                 var productId = totalArr[totalnum].productId
-                var totalAmount = (totalArr[totalnum].totalAmount / 100000000).toFixed(4);
-                totalAmount = totalAmount.toString();
+                var totalAmount = (totalArr[totalnum].totalAmount / 100000000).toFixed(10);
+                totalAmount = numberFormat(totalAmount,true);
                 ++totalnum;
 
                 $.picassoGet('/product/product/' + productId, {},
                     function(productIdData) {
                         var str = '<li class="content-td"><div><div>';
                         str += productIdData.productName + "</div></div><div><div>";
-                        str += parseFloat(totalAmount) + "</div></div><div><div id='id_" + productId + "'>0</div></div>";
+                        str += totalAmount + "</div></div><div><div id='id_" + productId + "'>0</div></div>";
 
                         var language = $('#slide_lang dt').text().trim()
                         productIdArray.push(productId)
@@ -393,7 +435,7 @@
                 function(totalsErr) {
                     console.log(totalsErr);
                     $('#totalsData').html('<li class="content-td"><div style="width:100%;"><div>获取数据出错，请刷新网页</div></div></li>')
-                });
+            });
 
         })
     </script>
@@ -457,6 +499,7 @@
             }
             navUnderline.addEventListener("mouseleave", mouseleaveFunc);
         });
+
     </script>
     <!-- 国际化 -->
     <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
