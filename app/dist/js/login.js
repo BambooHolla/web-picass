@@ -72,7 +72,23 @@ $(function() {
         $.picassoPost('/user/login', {
             type: type,
             account: account,
-            password: password
+            password: password,
+            deviceNum: ' ',
+            deviceInfo:{
+                "uuid":" ",
+                "model":" ",
+                "platform":" ",
+                "version":" ",
+                "manufacturer":" ",
+                "serial":" "
+              },
+            deviceType: ' ',
+            operateSystem: ' ',
+            ip: "192.168.0.1",
+            location :  {
+                latitude : "",
+                longitude : ""
+            },
         }, function(data) {
             console.log(data);
             sessionStorage.token = JSON.stringify(data.token);
