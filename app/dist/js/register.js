@@ -665,7 +665,23 @@ $(function() {
             type: type,
             account: account,
             password: password,
-            code: code
+            code: code,
+            deviceNum: ' ',
+            deviceInfo:{
+                "uuid":" ",
+                "model":" ",
+                "platform":" ",
+                "version":" ",
+                "manufacturer":" ",
+                "serial":" "
+              },
+            deviceType: ' ',
+            operateSystem: ' ',
+            ip: "192.168.0.1",
+            location :  {
+                latitude : "",
+                longitude : ""
+            },
         }
         if (recommendCode.length > 0 && recommendCode.length <= 40 && (/^[0-9a-zA-Z\-]*$/g).test(recommendCode)) {
             parameter.recommendCode = recommendCode;
