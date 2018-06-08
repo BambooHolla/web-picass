@@ -237,9 +237,9 @@
                     $.picassoGet('/account/accounts/assets', {
                         accountType: '003'
                     }, function(assetsData) {
-                        var total = (assetsData.asset.total / 100000000).toFixed(4);
+                        var total = (assetsData.asset.total / 100000000).toFixed(10);
                         var priceId = assetsData.asset.priceId;
-                        total = total.toString();
+                        total = numberFormat(total,true)
                         
                         //获取总资产对应的单位
                         $.picassoGet('/product/product/' + priceId, {},
