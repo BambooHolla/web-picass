@@ -576,13 +576,13 @@ $(function() {
             return;
         }
         if (!validator.isByteLength(password, {
-                min: 4,
+                min: 3,
                 max: 20
             })) {
                 if(lj == "#en"){
-                    text = "Password between 4~20 characters"
+                    text = "Password between 3~20 characters"
                 }else{
-                    text = "登录密码长度须在4~20位之间";
+                    text = "登录密码长度须在3~20位之间";
                 }
             layer.msg(text, {
                 time: 1500
@@ -601,13 +601,13 @@ $(function() {
             return;
         }
         if (!validator.isByteLength(passwordAgain, {
-                min: 4,
+                min: 3,
                 max: 20
             })) {
                 if(lj == "#en"){
-                    text = "Password between 4~20 characters"
+                    text = "Password between 3~20 characters"
                 }else{
-                    text = "确认密码长度须在4~20位之间";
+                    text = "确认密码长度须在3~20位之间";
                 }
             layer.msg(text, {
                 time: 1500
