@@ -682,6 +682,10 @@
     margin-top:5%;
 }
 
+.download-zi {
+    margin-left:26%
+}
+
 .box-2-title .down-app {
     display: none;
 }
@@ -705,6 +709,10 @@
     
     .download-ios span {
         margin-left: 0%;
+    }
+
+    .download-zi {
+        margin-left:0%
     }
 }
 
