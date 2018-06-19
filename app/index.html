@@ -466,12 +466,19 @@
     <script>
         $(function() {
 
-            var ref = window.location.hash;
-            var refIndex = ref.indexOf("ref=");
+            var url = location.search; //获取url中"?"符后的字串  
+            var theRequest = new Object();  
+            if (url.indexOf("?") != -1) {  
+                var str = url.substr(1);  
+                strs = str.split("&");  
+                for(var i = 0; i < strs.length; i ++) {  
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);  
+                }  
+            }        
             
-            if (refIndex != -1) {
+            if (theRequest.ref) {
                 
-                sessionStorage.ref = JSON.stringify(ref.substring(refIndex + 4))
+                sessionStorage.ref = JSON.stringify(theRequest.ref);
 
             }
 
