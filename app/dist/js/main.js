@@ -2,7 +2,7 @@
 
 
 $(function() {
-    $('.topbar-btn').on('click', function() {
+    $('.topbar-btn .mob-navicon-text').on('click', function() {
         $('.navbar').show().removeClass('zoomOut').addClass('fadeInDown');
     })
     $('.navbar').click(function() {
