@@ -210,12 +210,22 @@ $(function() {
         });
     }
 
-    var language = JSON.parse(window.localStorage.language||JSON.stringify("cn"));
+
+    var language = window.localStorage.language;
+    if( !language ) {
+        var currentLang = navigator.language;   //判断除IE外其他浏览器使用语言
+        if(!currentLang){//判断IE浏览器使用语言
+            currentLang = navigator.browserLanguage;
+        }
+        language = currentLang.toLocaleLowerCase()
+    } else {
+        language = JSON.parse(language);
+    }
     
-    if (language == "cn") {
+    if (language.indexOf("cn") != -1) {
         cn()
     }
-    if (language == "en") {
+    if (language.indexOf("en") != -1) {
         en()
     }
 
