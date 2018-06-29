@@ -54,16 +54,8 @@ $(function() {
     // 导航跳转到资产管理,登录注册，去登入，去注册
     $('.asset,.web-nav .login a,.moblie-nav a,#goRegister,#goLogin').click(function() {
         var href = $(this).attr("data-href");
-        var txt = $('#slide_lang dt').text().trim()
-
-        if (txt == "简体中文") {
-            window.location.href = href + "#cn";
-        } else if (txt == "English") {
-            window.location.href = href + "#en";
-
-        } else {
-            window.location.href = href
-        }
+        window.location.href = href;
+       
 
     })
 
@@ -74,59 +66,36 @@ $(function() {
             var e = e || window.event;
             var href = e.target.dataset.href
             if (href == undefined) { return; }
-            var txt = $('#slide_lang dt').text().trim()
-            if (txt == "简体中文") {
-                window.location.href = href + "?cn";
-            } else if (txt == "English") {
-                window.location.href = href + "?en";
-
-            } else {
-                window.location.href = href
-            }
-
+            
+            window.location.href = href
         })
 
         //moblie
         $('#page-list li').eq(i).find('a').click(function() {
             var href = $(this).attr("data-href");
-            var txt = $('#slide_lang dt').text().trim()
             if (href == undefined) { return; }
-            if (txt == "简体中文") {
-                window.location.href = href + "?cn";
-            } else if (txt == "English") {
-                window.location.href = href + "?en";
-
-            } else {
-                window.location.href = href
-            }
+            window.location.href = href
         })
     }
 
     // 页脚 底部链接,跳转到用户协议
     $('#userHref').click(function() {
         var href = $(this).attr("data-href");
-        var txt = $('#slide_lang dt').text().trim()
         if (href == undefined) { return; }
-        if (txt == "简体中文") {
-            window.open(href + "#cn");
-        } else if (txt == "English") {
-            window.open(href + "#en");
-
-        } else {
-            window.open(href);
-        }
+       
+        window.open(href);
     })
 
 
 
     // 简体中文
     function cn() {
+        window.localStorage.language = JSON.stringify("cn");
         i18n.init({
             resGetPath: './dist/language/cn/__ns__.json'
         }, function(t) {
             // i18n est maintenant initialisé
             $('body').i18n();
-            window.location.hash = '#cn'
 
 
             // 导航栏
@@ -182,12 +151,12 @@ $(function() {
 
     // English
     function en() {
+        window.localStorage.language = JSON.stringify("en");
         i18n.init({
             resGetPath: './dist/language/en/__ns__.json'
         }, function(t) {
             // i18n est maintenant initialisé
             $('body').i18n();
-            window.location.hash = '#en'
 
             // 导航栏
             $('.nav').addClass('en-nav')
@@ -242,31 +211,23 @@ $(function() {
     }
 
 
-    // 跳转到其他页面语言选择
-    var lj = window.location.hash;
-    if (lj == "#cn") {
+    var language = window.localStorage.language;
+    if( !language ) {
+        var currentLang = navigator.language;   //判断除IE外其他浏览器使用语言
+        if(!currentLang){//判断IE浏览器使用语言
+            currentLang = navigator.browserLanguage;
+        }
+        language = currentLang.toLocaleLowerCase()
+    } else {
+        language = JSON.parse(language);
+    }
+    
+    if (language.indexOf("cn") != -1) {
         cn()
     }
-    if (lj == "#en") {
+    if (language.indexOf("en") != -1) {
         en()
     }
-
-    // 跳转到主页语言选择，主页的#是用来定位轮播图的，用?标记语言
-    var homeLj = window.location.hash;
-
-    if (homeLj.indexOf("?cn") != -1) {
-        var ljArr = homeLj.split('?')
-        cn();
-        location.href = ljArr[0]
-    }
-    if (homeLj.indexOf("?en") != -1) {
-        var ljArr = homeLj.split('?')
-        en();
-        location.href = ljArr[0]
-    }
-
-
-
 
 
 })

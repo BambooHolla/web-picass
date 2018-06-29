@@ -24,18 +24,44 @@
 }
 
 .nav .mob-navicon {
-    width: 30px;
-    height: 21.34px;
+    /*width: 140px;*/
+    /*height: 21.34px;*/
     position: absolute;
     top: 0;
-    right: 3%;
+    left: 0;
     display: none;
     top: 20%;
+    width: 100%;
 }
 
 .mob-navicon-logo {
     height: 2.8rem;
     width: 2.2rem;
+    position: absolute;
+    left: 3%;
+    /* display: none; */
+}
+
+.mob-navicon-text{
+   width: 2.4rem;
+   height: 1.8rem;
+    position: absolute;
+    right: 3%;
+    
+}
+
+.mob-navicon-text:after{
+    margin-top: -5px;
+    margin-left: 8px;
+    content: '';
+    color: #cb9c35;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+    border-bottom: 1px solid currentColor;
+    border-left: 1px solid currentColor;
 }
 
 .mob-navicon {
@@ -725,7 +751,7 @@
     padding: 0;
     margin: 0;
     font-size: 25px;
-    color: #d6b962!important;
+    color: #b38623!important;
     font-weight: 100;
 }
 
