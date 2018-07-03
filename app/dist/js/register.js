@@ -414,11 +414,12 @@ $(function() {
         var passwordAgain = $('#passwordAgain').val();
         var lj = window.location.hash;
         var text = "";
-        if(password.length < 4 && password.length > 0){
+        
+        if(password.length > 0 && !(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{3,}$/.test(password))){
             if(lj == "#en"){
-                text = "Password length 4 characters at least";
+                text = "Password must include capital letter, lowercase and number";
             }else{
-                text = "密码长度至少4位";
+                text = "密码需包含大写字母，小写字母和数字";
             }
             $('.pwd-box .password').text(text);
             $('.pwd-box .password').css('display',"block");
@@ -435,11 +436,11 @@ $(function() {
            
             $('.pwd-box .password').css('display',"none");
         }
-        if(passwordAgain.length < 4 && passwordAgain.length > 0){
+        if(passwordAgain.length > 0 && !(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{3,}$/.test(passwordAgain))){
             if(lj == "#en"){
-                text = "Password length 4 characters at least";
+                text = "Password must include capital letter, lowercase and number";
             }else{
-                text = "密码长度至少4位";
+                text = "密码需包含大写字母，小写字母和数字";
             }
             $('.pwd-box .passwordAgain').text(text);
             $('.pwd-box .passwordAgain').css('display',"block");
@@ -454,7 +455,8 @@ $(function() {
         }else{
             $('.pwd-box .passwordAgain').css('display',"none");
         }
-        if( (password.length < 4 && password.length > 0) || (passwordAgain.length < 4 && passwordAgain.length > 0)
+        if( (!(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{3,}$/.test(password)) && password.length > 0) 
+            || (!(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{3,}$/.test(passwordAgain)) && passwordAgain.length > 0)
             || password.length > 20 || passwordAgain.length > 20)
         {
             return;
@@ -493,7 +495,7 @@ $(function() {
         var data = registerType ? "telephone=" + account : "email=" + account;
         // 注册传参变量
         var parameter = {};
-
+       
         var lj = window.location.hash;
         var text = "";
         if (registerType) {
@@ -575,40 +577,12 @@ $(function() {
             });
             return;
         }
-        if (!validator.isByteLength(password, {
-                min: 3,
-                max: 20
-            })) {
-                if(lj == "#en"){
-                    text = "Password between 3~20 characters"
-                }else{
-                    text = "登录密码长度须在3~20位之间";
-                }
-            layer.msg(text, {
-                time: 1500
-            });
-            return;
-        }
         if (!passwordAgain) {
             if(lj == "#en"){
                 text = "Please input confirm password"
             }else{
                 text = "请输入确认密码";
             }
-            layer.msg(text, {
-                time: 1500
-            });
-            return;
-        }
-        if (!validator.isByteLength(passwordAgain, {
-                min: 3,
-                max: 20
-            })) {
-                if(lj == "#en"){
-                    text = "Password between 3~20 characters"
-                }else{
-                    text = "确认密码长度须在3~20位之间";
-                }
             layer.msg(text, {
                 time: 1500
             });
@@ -664,19 +638,19 @@ $(function() {
         parameter = {
             type: type,
             account: account,
-            password: password,
+            password: md5(password),
             code: code,
-            deviceNum: ' ',
+            deviceNum: '',
             deviceInfo:{
-                "uuid":" ",
-                "model":" ",
-                "platform":" ",
-                "version":" ",
-                "manufacturer":" ",
-                "serial":" "
+                "uuid":"",
+                "model":"",
+                "platform":"",
+                "version":"",
+                "manufacturer":"",
+                "serial":""
               },
-            deviceType: ' ',
-            operateSystem: ' ',
+            deviceType: '',
+            operateSystem: '',
             ip: "192.168.0.1",
             location :  {
                 latitude : "",

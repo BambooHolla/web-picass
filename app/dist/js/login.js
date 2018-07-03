@@ -72,18 +72,18 @@ $(function() {
         $.picassoPost('/user/login', {
             type: type,
             account: account,
-            password: password,
-            deviceNum: ' ',
+            password: md5(password),
+            deviceNum: '',
             deviceInfo:{
-                "uuid":" ",
-                "model":" ",
-                "platform":" ",
-                "version":" ",
-                "manufacturer":" ",
-                "serial":" "
+                "uuid":"",
+                "model":"",
+                "platform":"",
+                "version":"",
+                "manufacturer":"",
+                "serial":""
               },
-            deviceType: ' ',
-            operateSystem: ' ',
+            deviceType: '',
+            operateSystem: '',
             ip: "192.168.0.1",
             location :  {
                 latitude : "",
