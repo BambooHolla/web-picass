@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <link href="dist/static/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>币加所</title>
+
+    <link rel="stylesheet" type="text/css" href="./dist/css/common.css">
+
+    <link rel="stylesheet" type="text/css" href="./dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/app.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/animate.css">
+
+    <!-- 登录跟注册页面差不多，参考登陆的样式 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/login.css">
+
+    <!-- 英文状态下的样式调整 -->
+    <link rel="stylesheet" type="text/css" href="./dist/css/englishStyle.css">
+</head>
+
+<body>
+    <div id="app" style="height:100%;">
+        <!-- 导航 -->
+        <nav class="nav right ">
+            <div class="nav-logo">
+                <img src="./dist/images/home/nav_logo.png" alt="">
+            </div>
+            <div class="mob-navicon topbar-btn">
+                <img class="mob-navicon-logo" src="./dist/images/home/nav_logo.png" alt="">
+                <img class="mob-navicon-text" src="./dist/images/home/mob_navicon.png" alt="">
+            </div>
+            <ul class="web-nav">
+                <li class="tag  ">
+                    <a data-href="index.html#home" data-i18n='nav.home'>首页</a>
+                </li>
+                <li class="tag ">
+                    <a data-href="index.html#picassotxt" data-i18n='nav.picasso'>币加所</a>
+                </li>
+                <li class="tag">
+                    <a data-href="index.html#download" data-i18n='nav.download'>下载中心</a>
+                </li>
+                <li class="tag">
+                    <a data-href="management.html" data-i18n='nav.assets' class="asset">资产管理</a>
+                </li>
+                <li>
+                    <dl class="select_lang" id="slide_lang" data-widget="#slide_lang"> <dt data-i18n='nav.language'>简体中文</dt>
+                        <dd id="slide_lang_box" data-widget="#slide_lang" style="display: none;"> <a data-lang="zh_cn" class="" data-i18n='nav.languageSwich'>English</a> </dd>
+                    </dl>
+                </li>
+                <li class="login nav-login">
+                    <a data-href="login.html" style="font-size: 12px;" data-i18n='nav.login'>登录 / 注册</a>
+
+                </li>
+            </ul>
+        </nav>
+        <span class="target mobile-none"></span>
+
+
+        <!--  显示内容-->
+
+        <div style=" position: relative; ">
+
+            <div class="main">
+                <div class="main-box">
+                    <div class="login-title">
+                        <p data-i18n="register.title">欢迎注册</p>
+                    </div>
+                    <div class="register-type">
+                        <div class="register-phone">
+                            <p data-i18n="register.tel">手机注册</p>
+                            <div><img src="./dist/images/login/border_bottom.png" alt=""></div>
+                        </div>
+                        <div class="register-email">
+                            <p data-i18n="register.email">邮箱注册</p>
+                            <!-- 点击效果切换 -->
+                            <div><img src="./dist/images/login/border_bottom.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="login-content">
+                        <div>
+                            <form action="" id="myform">
+                                <div class="tel">
+                                    <p data-i18n="register.account-tel">手机号码</p>
+                                    <div class="pwd-box">
+                                        <input id="account1" type="tel" name="tel" autocomplete="off" placeholder="请输入手机号码">
+                                        <p class="validate-account account-exist"></p>
+                                    </div>
+                                </div>
+                                <div class="email">
+                                    <p data-i18n="register.account-email">邮箱</p>
+                                    <div class="pwd-box">
+                                        <input id="account0" type="email" name="email" autocomplete="off" placeholder="请输入邮箱">
+                                        <p class="validate-account account-exist"></p>
+                                    </div>
+                                </div>
+                                <div class="register-validate">
+                                    <p data-i18n="register.validate">验证码</p>
+
+                                    <div class="validate-box">
+                                        <input type="tel" name="telValidate" maxlength="6" id="code" autocomplete="off" placeholder="请输入验证码">
+                                        <!-- 获取验证码按钮 -->
+                                        <div class="validate-btn" data-i18n="register.get-code">
+                                            获取验证码
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pwd">
+                                    <p data-i18n="register.pwd">登录密码</p>
+                                    <div class="pwd-box">
+                                        <input type="password" name="pwd" id="password" autocomplete="off" placeholder="请输入登录密码">
+                                        <p class="validate-pwd password"></p>
+                                    </div>
+                                </div>
+                                <div class="againPwd">
+                                    <p data-i18n="register.pwd-again">确认密码</p>
+                                    <div class="pwd-box">
+                                        <input type="password" name="againPwd" id="passwordAgain" autocomplete="off" placeholder="请输入确认密码">
+                                        <p class="validate-pwd passwordAgain"></p>
+                                    </div>
+                                </div>
+                                <div class="againPwd">
+                                    <p data-i18n="register.recommend-code">邀请码</p>
+                                    <input type="text" name="recommendCode" id="recommendCode" autocomplete="off" placeholder="选填">
+                                </div>
+                                <div class="request">
+                                    <input type="checkbox" name="request" id="userProtocol" autocomplete="off" /><span data-i18n="register.read">我已阅读并同意</span>
+                                    <a data-href="userProtocol.html" target="_blank" id='userHref' style="cursor:pointer; text-decoration:none;" data-i18n="register.user">《用户协议》</a>
+                                </div>
+                                <div class="sub">
+                                    <div>
+                                        <input type="submit" value="注册" autocomplete="off" id="register">
+                                        <div>
+                                            <span data-i18n="register.existing-account">已有账户？ </span><a data-href="login.html" id="goLogin" style="cursor:pointer; text-decoration:none;" data-i18n="register.go-register">去登录</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="down-foot">
+                <div class="company">
+                    <div class="contact-icon">
+                        <a>
+                            <img src="./dist/images/home/1.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/weixin.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/xinglang.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/4.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/5.png" alt="">
+                        </a>
+                        <a>
+                            <img src="./dist/images/home/6.png" alt="">
+                        </a>
+
+                    </div>
+                </div>
+                <ol>
+                    <li><a href="javascript:void(0)" data-i18n="foot.about" id="foot-about">关于我们</a></li>
+                    <li>|</li>
+                    <li><a href="javascript:void(0)" data-i18n="foot.contact" id="foot-contact">联系我们</a></li>
+                    <li>|</li>
+                    <li><a href="javascript:void(0)" data-i18n="foot.service" id="foot-business">商务合作</a></li>
+                </ol>
+                <div class="grant">
+                    <span data-i18n="foot.copyright">Copyright @2017 PICASSO BLOCKCHAIN TECHNOLOGY (MALTA) LIMITED</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <!-- mobile menu -->
+    <div class=" navbar  animated-1 fff" id="navbar">
+        <ul class="page-list" id="page-list">
+            <li>
+                <a data-href="index.html#home">
+                    <p data-to="toIndex" data-i18n="nav.home">主页</p>
+                </a>
+            </li>
+            <li>
+                <a data-href="index.html#picassotxt">
+                    <p data-i18n='nav.picasso'>币加所</p>
+                </a>
+            </li>
+            <li>
+                <a data-href="index.html#download">
+                    <p data-i18n='nav.download'>下载中心</p>
+                </a>
+            </li>
+            <li>
+                <a data-href="management.html" class="asset">
+                    <p data-i18n='nav.assets'>资产管理</p>
+                </a>
+            </li>
+            <li class="moblie-nav">
+                <!-- <a href="login.html" style="font-size: 14px;">登录</a>
+                <a href="javascript:;">&nbsp;/&nbsp;</a>
+                <a href="register.html" style="font-size: 14px;">注册</a> -->
+                <a data-href="login.html" style="font-size: 12px;" data-i18n="nav.login">登录 / 注册</a>
+            </li>
+            <li>
+                <p id="lan_exchange" data-i18n="nav.languageSwich">English</p>
+            </li>
+        </ul>
+    </div>
+    <!-- end -->
+
+
+    <script type="text/javascript" src="./dist/js/jquery.min.js"></script>
+    <!-- 登录状态 -->
+    <script type="text/javascript" src="./dist/js/login-state.js"></script>
+    <!-- layer插件 -->
+    <script type="text/javascript" src="./dist/libs/layer/layer.js"></script>
+    <!-- 关于我们   layer弹窗 -->
+    <script type="text/javascript" src="./dist/js/footAbout.js"></script>
+    <!-- 验证插件 -->
+    <script type="text/javascript" src="./dist/libs/validator-js/validator.min.js"></script>
+
+    <script type="text/javascript" src="./dist/js/picasso-request.js"></script>
+
+
+    <script type="text/javascript" src="./dist/js/main.js"></script>
+    <script type="text/javascript" src="./dist/js/md5.min.js"></script>
+    <!-- 页面导航下划线样式动作，注册类型切换,底下有注册事件 -->
+    <script type="text/javascript" src="./dist/js/register.js"></script>
+    <script type="text/javascript" src="./dist/js/recommendCode.js"></script>
+    <!-- 国际化 -->
+    <script type="text/javascript" src="./dist/js/i18next-1.6.3.js"></script>
+    <script type="text/javascript" src="./dist/js/language.js"></script>
+
+
+</html>
