@@ -5,9 +5,13 @@
 
     // var host = document.location.protocol + "//192.168.16.101:40001";
     // var host = "http://192.168.16.101:40001";
-    var host = window.location.protocol?window.location.protocol+"//www.picaex.com" : "//www.picaex.com";
+    var host = window.location.protocol?window.location.protocol : "";
     var prefix = "/api/v1/bngj";
-
+    if(/^www/.test(window.location.host)) {
+        host = host + '//www.picaex.com';
+    } else {
+        host = host + '//test.picaex.com';
+    }
     window.ServerHost = host;
     window.ServerPrefix = prefix;
 
