@@ -678,17 +678,8 @@ $(function() {
 
             var txt = $('#slide_lang dt').text().trim()
             var href = "management.html"
-
-            if (txt == "简体中文") {
-                href += '?cn&ref='
-            } else if (txt == "English") {
-                href += '?en&ref='
-
-            } else {
-                href += '?cn&ref='
-            }
             setTimeout(function() {
-                location.href = href + (recommendCode ? recommendCode : '');
+                location.href = href + (recommendCode ? ("?ref=" + recommendCode) : '');
     
             }, 1000);
 

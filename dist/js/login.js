@@ -9,6 +9,35 @@ $(function() {
     navUnderline.addEventListener("mouseleave", mouseleaveFunc);
     // 滑动条下划线  end
 
+    var codeBoxShow = JSON.parse(localStorage.getItem('PICASSP_CODE')) || false;
+    var codeBox = $('#code-box');
+    var codeImg = $('#code-img');
+    var codeId = '';
+    var codeSwitch = true;
+    if( codeBoxShow) {
+        codeBox.css('display','block');
+        getCodeImg();
+    } else {
+        codeBox.css('display','none')
+    }
+    codeImg.click(function(){
+        if(codeSwitch) return ;
+        codeSwitch = true;
+        getCodeImg();
+    })
+    function getCodeImg() {
+        $.picassoGet('/captcha/getCaptcha',{},function(data){
+            codeSwitch = false;
+            codeId = data.id;
+            codeImg.attr("src", "data:image/png;base64,"+data.data);
+        },function(err){
+            codeSwitch = false;
+            codeImg.attr("src", "./dist/images/login/codeImg2.jpg");
+            layer.msg(err.message||err, {
+                time: 1500
+            });
+        })
+    }
 
     //登入事件
     $('input[type="submit"]').click(function(e) {
@@ -17,10 +46,13 @@ $(function() {
        
         var account = $('#account').val().trim();
         var password = $('#password').val();
-        var lj = window.location.hash;
+        var code = $('#code-input').val();
+        var parameter;
+        var header;
+        var lj = JSON.parse(localStorage.getItem('language'));
         var promptText = "";
         if (!account) {
-            if (lj == "#en") {
+            if (lj == "en") {
                 promptText = "Please input account";
             } else {
                 promptText = "请输入账号";
@@ -31,7 +63,7 @@ $(function() {
             return;
         }
         if (!password) {
-            if (lj == "#en") {
+            if (lj == "en") {
                 promptText = "Please input password";
             } else {
                 promptText = "请输入密码";
@@ -42,7 +74,7 @@ $(function() {
             return;
         }
         if (!validator.isEmail(account) && !validator.isMobilePhone(account, 'zh-CN')) {
-            if (lj == "#en") {
+            if (lj == "en") {
                 promptText = "Wrong account format";
             } else {
                 promptText = "账号格式输入错误";
@@ -58,7 +90,7 @@ $(function() {
                 min: 3,
                 max: 20
             })) {
-                if (lj == "#en") {
+                if (lj == "en") {
                     promptText = "Password between 3~20 characters";
                 } else {
                     promptText = "密码长度须在3~20位之间";
@@ -68,8 +100,7 @@ $(function() {
                 });
             return;
         }
-
-        $.picassoPost('/user/login', {
+        parameter = {
             type: type,
             account: account,
             password: md5(password),
@@ -89,13 +120,30 @@ $(function() {
                 latitude : "",
                 longitude : ""
             },
-        }, function(data) {
-            console.log(data);
+        };
+        if(codeSwitch) {
+            if(!code) {
+                if (lj == "en") {
+                    promptText = "Please input code";
+                } else {
+                    promptText = "请输入验证码";
+                }
+                layer.msg(promptText, {
+                    time: 1500
+                });
+            } else {
+                header = {
+                    "x-bnqkl-captchaId": codeId,
+                    "x-bnqkl-captchaToken": code,
+                }
+            }
+        }
+        $.picassoPost('/user/login',parameter , function(data) {
             sessionStorage.token = JSON.stringify(data.token);
             sessionStorage.name = JSON.stringify(data.name);
             var lj = window.location.hash;
             var promptText = "";
-            if (lj == "#en") {
+            if (lj == "en") {
                 promptText = "Login successfully";
             } else {
                 promptText = "登录成功";
@@ -103,25 +151,23 @@ $(function() {
             layer.msg(promptText, {
                 time: 1500
             });
-
+            localStorage.setItem("PICASSP_CODE",JSON.stringify(false))
             setTimeout(function() {
-                var txt = $('#slide_lang dt').text().trim()
-
-                if (txt == "简体中文") {
-                    window.location.href = "management.html" + "#cn";
-                } else if (txt == "English") {
-                    window.location.href = "management.html" + "#en";
-
-                } else {
-                    window.location.href = "management.html"
-                }
+                window.location.href = "management.html"
 
             }, 800);
 
         }, function(err) {
-            console.log(err);
-            layer.msg(err.message);
-        });
+            if(err.code == -2) {
+                localStorage.setItem("PICASSP_CODE",JSON.stringify(true))
+                codeBoxShow = true;
+                codeBox.css('display','block');
+                getCodeImg();
+            }
+            layer.msg(err.message, {
+                time: 1500
+            });
+        },header);
 
 
 
