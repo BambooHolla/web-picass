@@ -53,6 +53,7 @@
         "title":"欢迎登录",
         "account":"账号",
         "pwd":"密码",
+        "validate":"验证码",
         "login":"登录",
         "no-account":"还没有账户？",
         "go-register":"去注册"

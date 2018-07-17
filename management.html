@@ -208,22 +208,21 @@
             var getFrozenCount = 0;
             var productIdArray = []
                 //冻结持仓，在最后才调用
+                
             function getFrozen(accountId) {
                 if (getFrozenCount >= productIdArray.length) {
                     return;
                 }
-
                 $.picassoGet('/account/accounts/products', {
                     accountId: accountId,
-                    productId: productIdArray[getFrozenCount]
+                    productHouseId: productIdArray[getFrozenCount]
                 }, function(data) {
                     var freezeBalance = (data.freezeBalance / 100000000).toFixed(10);
                     freezeBalance = numberFormat(freezeBalance,true);
-                    $('#id_' + productIdArray[getFrozenCount]).text(parseFloat(freezeBalance))
+                    $('#id_' + productIdArray[getFrozenCount]).text(freezeBalance)
                     getFrozenCount++;
                     getFrozen(accountId)
                 }, function(err) {
-                    console.log(err);
                     layer.msg(err.message, {
                         time: 2000
                     });
@@ -238,26 +237,23 @@
                         accountType: '003'
                     }, function(assetsData) {
                         var total = (assetsData.asset.total / 100000000).toFixed(10);
-                        var priceId = assetsData.asset.priceId;
+                        var priceId = assetsData.asset.instPriceProductHouseId;
                         total = numberFormat(total,true)
-                        
                         //获取总资产对应的单位
-                        $.picassoGet('/product/product/' + priceId, {},
+                        $.picassoGet('/product/producthouse/' + priceId, {},
                             function(priceIdData) {
                                 setTimeout(function() {
-                                    $('#total').text(parseFloat(total));
+                                    $('#total').text(total);
                                     $('#priceId').text(priceIdData.productName);
                                 }, 500);
 
                             },
                             function(priceIdErr) {
-                                console.log(priceIdErr);
-                                $('#total').text(parseFloat('获取数据失败,请刷新网页'));
+                                $('#total').text('获取数据失败,请刷新网页');
                                 $('#priceId').text("");
                             });
 
                     }, function(assetsErr) {
-                        console.log(assetsErr);
                         getAllAssets(--frequency)
                     });
                 } else {
@@ -367,13 +363,12 @@
                     showTotalsList();
                     return ;
                 }
-                
-                var productId = totalArr[totalnum].productId
+                var productId = totalArr[totalnum].productHouseId
                 var totalAmount = (totalArr[totalnum].totalAmount / 100000000).toFixed(10);
                 totalAmount = numberFormat(totalAmount,true);
                 ++totalnum;
 
-                $.picassoGet('/product/product/' + productId, {},
+                $.picassoGet('/product/producthouse/' + productId, {},
                     function(productIdData) {
                         var str = '<li class="content-td"><div><div>';
                         str += productIdData.productName + "</div></div><div><div>";
@@ -433,7 +428,6 @@
 
                 },
                 function(totalsErr) {
-                    console.log(totalsErr);
                     $('#totalsData').html('<li class="content-td"><div style="width:100%;"><div>获取数据出错，请刷新网页</div></div></li>')
             });
 

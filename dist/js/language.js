@@ -136,6 +136,7 @@ $(function() {
              $("#account1").attr('placeholder',"请输入手机号码"); 
              $("#account0").attr('placeholder',"请输入邮箱"); 
              $("#code").attr('placeholder',"请输入验证码"); 
+             $("#code-input").attr('placeholder',"请输入验证码");
              $(".pwd #password").attr('placeholder',"请输入登录密码"); 
              $(".againPwd #passwordAgain").attr('placeholder',"请输入确认密码"); 
              $("#recommendCode").attr('placeholder',"选填"); 
@@ -195,10 +196,11 @@ $(function() {
             $("#register").val("Gegister");
             $("#account1").attr('placeholder',"Please input account"); 
             $("#account0").attr('placeholder',"Please input email"); 
-            $("#code").attr('placeholder',"please input code"); 
-            $(".pwd #password").attr('placeholder',"Please input login password"); 
-            $(".againPwd #passwordAgain").attr('placeholder',"Please input confirm password"); 
-            $("#recommendCode").attr('placeholder',"Optional"); 
+            $("#code").attr('placeholder',"Please input code"); 
+            $("#code-input").attr('placeholder',"Please input code");
+            $(".pwd #password").attr('Placeholder',"Please input login password"); 
+            $(".againPwd #passwordAgain").attr('Placeholder',"Please input confirm password"); 
+            $("#recommendCode").attr('Placeholder',"Optional"); 
           
 
 

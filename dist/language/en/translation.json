@@ -53,6 +53,7 @@
         "title":"Welcome to login",
         "account":"Account",
         "pwd":"Password",
+        "validate":"Verification code",
         "login":"Login",
         "no-account":"No account yet? ",
         "go-register":" Go register"

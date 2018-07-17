@@ -4,27 +4,33 @@
 (function($) {
 
     // var host = document.location.protocol + "//192.168.16.101:40001";
-    // var host = "http://192.168.16.101:40001";
-    var host = window.location.protocol?window.location.protocol+'//'+window.location.host : '//'+window.location.host;
+    var host = "http://192.168.18.23:40001";
+    // var host = window.location.protocol?window.location.protocol+'//'+window.location.host : '//'+window.location.host;
     var prefix = "/api/v1/bngj";
     window.ServerHost = host;
     window.ServerPrefix = prefix;
 
     // headers:{"x-auth-token": sessionStorage.token}
 
-    $.picassoGet = function(path, data, success, error) {
+    $.picassoGet = function(path, data, success, error, _headers) {
         path = path.toLowerCase();
         var url = path;
+        var headers = {
+            "x-auth-token": JSON.parse(sessionStorage.token?sessionStorage.token:"false") || '',
+            "x-bnqkl-platform": "10011001"
+        };
         if (path.indexOf('http://') < 0 && path.indexOf('https://') < 0) {
             url = host + prefix + path;
         }
         data.rnd = Date.now().toString();
+        if(_headers) {
+            for( var key in _headers) {
+                headers[key] = _headers[key]
+            }
+        }
         $.ajax({
             url: url,
-            headers: {
-                "x-auth-token": JSON.parse(sessionStorage.token?sessionStorage.token:"false") || '',
-                "x-bnqkl-platform": "10011001"
-            },
+            headers: headers,
             method: "GET",
             data: data,
             contentType: "application/json",
@@ -36,20 +42,25 @@
         });
     }
 
-    $.picassoPost = function(path, data, success, error) {
+    $.picassoPost = function(path, data, success, error, _headers) {
         path = path.toLowerCase();
         var url = path;
+        var headers = {
+            "x-auth-token": JSON.parse(sessionStorage.token?sessionStorage.token:"false") || '',
+            "x-bnqkl-platform": "10011001"
+        };
         if (path.indexOf('http://') < 0 && path.indexOf('https://') < 0) {
             url = host + prefix + path;
         }
         data.rnd = Date.now().toString();
-
+        if(_headers) {
+            for( var key in _headers) {
+                headers[key] = _headers[key]
+            }
+        }
         $.ajax({
             url: url,
-            headers: {
-                "x-auth-token": JSON.parse(sessionStorage.token?sessionStorage.token:"false") || '',
-                "x-bnqkl-platform": "10011001"
-            },
+            headers: headers,
             method: "POST",
             data: JSON.stringify(data),
             contentType: "application/json",
